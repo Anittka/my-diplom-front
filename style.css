@@ -4147,3 +4147,106 @@ section {
         font-size: 0.7rem;
     }
 }
+/* ===================================================== */
+/* B2B REDESIGN OVERRIDES — INDUSTRIAL AGRI STYLE        */
+/* ===================================================== */
+.b2b-theme { font-size: 16px; }
+
+.b2b-theme p,
+.b2b-theme li,
+.b2b-theme a,
+.b2b-theme input,
+.b2b-theme textarea,
+.b2b-theme button,
+.b2b-theme select,
+.b2b-theme label {
+    font-size: 1rem;
+    line-height: 1.55;
+}
+
+:root {
+    --industry-green: #2F4F3A;
+    --industry-blue: #2F3F57;
+}
+
+body.b2b-theme {
+    background: linear-gradient(180deg, #FEFBF5 0%, #FFFFFF 68%, #FEFBF5 100%);
+}
+
+.b2b-theme .top-bar {
+    background: linear-gradient(90deg, #2f3f57 0%, #3b4d68 45%, #2f4f3a 100%);
+    color: #f4ecd8;
+}
+
+.b2b-theme .header {
+    border-bottom: 2px solid rgba(47, 79, 58, 0.18);
+    box-shadow: 0 8px 22px rgba(47, 63, 87, 0.1);
+}
+
+.b2b-theme .btn,
+.b2b-theme .btn-call,
+.b2b-theme .header-phone {
+    min-height: 48px;
+    font-size: 1rem;
+    border-radius: 12px;
+}
+
+.b2b-theme .btn-primary {
+    background: linear-gradient(180deg, #E6C87C 0%, #d9b666 100%);
+    border: 1px solid #c9a95b;
+}
+
+.b2b-theme .product-card {
+    border-radius: 14px;
+    border: 1px solid rgba(47, 79, 58, 0.2);
+    background: #fff;
+    box-shadow: 0 8px 18px rgba(60, 55, 40, 0.08);
+}
+
+.b2b-theme .product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(47, 63, 87, 0.16);
+    border-color: rgba(47, 79, 58, 0.35);
+}
+
+.b2b-theme .product-gallery {
+    height: 235px;
+    background: linear-gradient(180deg, #fff 0%, #f8f3e8 100%);
+}
+
+.b2b-theme .gallery-slide img {
+    object-fit: contain;
+    padding: 14px;
+}
+
+.b2b-theme .product-title {
+    font-size: 1.05rem;
+    line-height: 1.35;
+}
+
+.b2b-theme .product-article {
+    font-size: 0.92rem;
+    color: #707070;
+}
+
+.b2b-theme .product-status {
+    color: #1f6a39;
+    background: #e8f5ea;
+    border: 1px solid rgba(31, 106, 57, 0.26);
+}
+
+.b2b-theme input,
+.b2b-theme textarea,
+.b2b-theme select {
+    min-height: 48px;
+    border-radius: 10px;
+    border: 1px solid rgba(47, 79, 58, 0.28);
+    font-size: 1rem;
+}
+
+.b2b-theme .bot-button { background: var(--industry-green); }
+.b2b-theme .bot-button i { color: #fff; }
+
+@media (max-width: 768px) {
+    .b2b-theme .product-gallery { height: 210px; }
+}
