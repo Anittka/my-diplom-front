@@ -1,0 +1,3002 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>АГРОМАРКЕТ ТОРШЕНКО - Запчасти для комбайнов</title>
+    
+    <!-- Микроразметка для организации -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "АГРОМАРКЕТ ТОРШЕНКО",
+        "description": "Запчасти для зерноуборочных и кормоуборочных комбайнов Дон, Вектор, Торум, Акрос, Бюлер",
+        "telephone": "+7 (908) 188-11-11",
+        "email": "info@agromarkettorshenko.ru",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Аксай",
+            "addressRegion": "Ростовская область",
+            "streetAddress": "ул. Ленина, 48",
+            "addressCountry": "RU"
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                "opens": "10:00",
+                "closes": "19:00"
+            }
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "12"
+        }
+    }
+    </script>
+
+    <!-- Подключение шрифтов -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* ======================================== */
+        /* ПОЛНЫЙ CSS ДЛЯ ГЛАВНОЙ СТРАНИЦЫ          */
+        /* ======================================== */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --wheat-dark: #D4A55C;
+            --wheat: #E6C87C;
+            --wheat-light: #F5E2B2;
+            --wheat-soft: #FAF1D8;
+            --brown-dark: #4A3A28;
+            --brown: #6B5A4A;
+            --brown-light: #9C8A78;
+            --white: #FFFFFF;
+            --text-dark: #2C2C2C;
+            --text-soft: #5C5C5C;
+            --text-light: #6E6E6E;
+            --bg-light: #FEFBF5;
+            --border-light: #F0E6D8;
+            --border-gray: #E0D6C8;
+            --yellow: #FFD966;
+            
+            --shadow-sm: 0 4px 12px rgba(0,0,0,0.05);
+            --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+            --shadow-lg: 0 16px 40px rgba(0,0,0,0.12);
+            --shadow-hover: 0 20px 40px rgba(0,0,0,0.15);
+            
+            --font-main: 'Inter', sans-serif;
+            --radius-sm: 8px;
+            --radius: 12px;
+            --radius-lg: 20px;
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: var(--font-main);
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+        }
+        
+        /* ===== ТИПОГРАФИЯ ===== */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+        
+        h1 {
+            font-size: clamp(1.8rem, 5vw, 3.2rem);
+            font-weight: 800;
+        }
+        
+        h2 {
+            font-size: clamp(1.4rem, 4vw, 2rem);
+            font-weight: 700;
+            text-align: center;
+            position: relative;
+            padding-bottom: 16px;
+            margin-bottom: 16px;
+            color: var(--brown-dark);
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--wheat);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--brown);
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto 48px;
+        }
+        
+        /* ===== КНОПКИ ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+        
+        .btn-primary {
+            background: var(--wheat);
+            color: var(--brown-dark);
+        }
+        
+        .btn-primary:hover {
+            background: var(--wheat-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--wheat);
+            color: var(--brown-dark);
+        }
+        
+        .btn-outline:hover {
+            background: var(--wheat);
+            transform: translateY(-2px);
+        }
+        
+        /* ===== ВЕРХНЯЯ ПАНЕЛЬ ===== */
+        .top-bar {
+            background: var(--brown-dark);
+            color: var(--wheat-light);
+            padding: 8px 0;
+            font-size: 0.8rem;
+        }
+        
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .city-selector {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .top-links {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .top-links a {
+            color: var(--wheat-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .top-links a:hover {
+            color: var(--wheat);
+        }
+        
+        /* ===== ШАПКА ===== */
+        .header {
+            background: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .logo a {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--brown-dark);
+            text-decoration: none;
+            line-height: 1.2;
+        }
+        
+        .logo span {
+            font-size: 0.7rem;
+            color: var(--brown);
+            display: block;
+        }
+        
+        .header-search {
+            flex: 1;
+            max-width: 500px;
+            position: relative;
+        }
+        
+        .search-form {
+            display: flex;
+            width: 100%;
+        }
+        
+        .search-form input {
+            flex: 1;
+            height: 44px;
+            padding: 0 18px;
+            border: 1px solid var(--border-gray);
+            border-right: none;
+            border-radius: 50px 0 0 50px;
+            font-size: 0.9rem;
+            background: var(--bg-light);
+            transition: var(--transition);
+        }
+        
+        .search-form input:focus {
+            outline: none;
+            border-color: var(--wheat);
+            background: var(--white);
+        }
+        
+        .search-form button {
+            width: 50px;
+            height: 44px;
+            background: var(--wheat);
+            border: none;
+            border-radius: 0 50px 50px 0;
+            color: var(--brown-dark);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .search-form button:hover {
+            background: var(--wheat-dark);
+        }
+        
+        .search-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+            max-height: 400px;
+            overflow-y: auto;
+            display: none;
+            border: 1px solid var(--border-light);
+        }
+        
+        .search-results.active {
+            display: block;
+        }
+        
+        .search-result-item {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-light);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .search-result-item:hover {
+            background: var(--wheat-soft);
+        }
+        
+        .search-result-title {
+            font-weight: 600;
+            color: var(--brown-dark);
+            font-size: 0.85rem;
+        }
+        
+        .search-result-article {
+            font-size: 0.7rem;
+            color: var(--text-light);
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+        
+        .header-phone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--brown-dark);
+            text-decoration: none;
+            white-space: nowrap;
+            background: var(--wheat-soft);
+            padding: 10px 16px;
+            border-radius: 50px;
+            border: 1px solid var(--wheat);
+            transition: var(--transition);
+            height: 44px;
+        }
+        
+        .header-phone:hover {
+            background: var(--wheat);
+            transform: translateY(-2px);
+        }
+        
+        .btn-call {
+            background: var(--white);
+            border: 1px solid var(--wheat);
+            color: var(--brown-dark);
+            padding: 10px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: var(--transition);
+            height: 44px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-call:hover {
+            background: var(--wheat);
+            transform: translateY(-2px);
+        }
+        
+        .burger {
+            display: none;
+            width: 44px;
+            height: 44px;
+            background: var(--wheat-soft);
+            border-radius: 12px;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        
+        /* ===== НАВИГАЦИЯ ===== */
+        .nav-bar {
+            background: var(--white);
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            gap: 40px;
+        }
+        
+        .nav-menu a {
+            color: var(--brown-dark);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 8px 0;
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--wheat);
+            transition: var(--transition);
+        }
+        
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+        
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--brown);
+        }
+        
+        /* ===== МОБИЛЬНОЕ МЕНЮ ===== */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: var(--white);
+            z-index: 200;
+            padding: 80px 20px 20px;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        .mobile-menu a {
+            display: block;
+            padding: 15px;
+            text-align: center;
+            font-size: 1rem;
+            color: var(--brown-dark);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .mobile-menu a.active {
+            background: var(--wheat-soft);
+            font-weight: 600;
+        }
+        
+        /* ===== HERO СЕКЦИЯ ===== */
+        .hero-photo {
+            position: relative;
+            min-height: 550px;
+            height: 90vh;
+            max-height: 700px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .hero-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('../images/truck0.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 0;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.45) 100%);
+            z-index: 1;
+        }
+        
+        .hero-photo .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-content-center {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(230,200,124,0.2);
+            backdrop-filter: blur(4px);
+            color: var(--wheat-light);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero-photo h1 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .hero-brands {
+            font-size: 1rem;
+            margin-bottom: 30px;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .hero-brands span {
+            font-weight: 600;
+            color: var(--wheat-light);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-outline-light {
+            background: white;
+            border: 2px solid white;
+            color: var(--brown-dark);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-outline-light:hover {
+            background: var(--wheat);
+            border-color: var(--wheat);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .hero-features {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            background: rgba(0,0,0,0.35);
+            backdrop-filter: blur(4px);
+            padding: 6px 16px;
+            border-radius: 50px;
+        }
+        
+        .hero-feature i {
+            color: var(--wheat);
+        }
+        
+        .hero-note {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.7);
+            margin-top: 20px;
+        }
+        
+        /* ===== СЕКЦИИ ===== */
+        section {
+            padding: 80px 0;
+        }
+        
+        /* АССОРТИМЕНТ */
+        .assortment-section {
+            background: var(--white);
+        }
+        
+        .assortment-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .assortment-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            transition: var(--transition);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .assortment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--wheat);
+        }
+        
+        .assortment-card-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--wheat);
+            margin-bottom: 20px;
+            color: var(--brown-dark);
+        }
+        
+        .assortment-card-content {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .assortment-lists {
+            flex: 2;
+            display: flex;
+            gap: 15px;
+        }
+        
+        .assortment-list {
+            list-style: none;
+            flex: 1;
+        }
+        
+        .assortment-list li {
+            padding: 6px 0;
+            font-size: 0.85rem;
+            color: var(--brown);
+            padding-left: 18px;
+            position: relative;
+        }
+        
+        .assortment-list li::before {
+            content: "•";
+            color: var(--wheat);
+            position: absolute;
+            left: 0;
+        }
+        
+        .assortment-card-image {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .assortment-card-image img {
+            max-width: 100%;
+            max-height: 100px;
+            object-fit: contain;
+        }
+        
+        .assortment-card .btn-primary {
+            width: 100%;
+        }
+        
+        /* ДИЛЕРЫ */
+        .dealers-section {
+            background: var(--bg-light);
+        }
+        
+        .dealers-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .dealer-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 15px 10px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid var(--border-light);
+        }
+        
+        .dealer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--wheat);
+        }
+        
+        .dealer-logo {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 12px;
+            background: var(--wheat-soft);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .dealer-logo img {
+            max-width: 50px;
+            max-height: 50px;
+            object-fit: contain;
+        }
+        
+        .dealer-name {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--brown-dark);
+        }
+        
+        /* ДОСТАВКА */
+        .delivery-section {
+            background: var(--white);
+        }
+        
+        .delivery-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .delivery-item {
+            background: var(--white);
+            padding: 10px;
+            border-radius: var(--radius);
+            text-align: center;
+            transition: var(--transition);
+            filter: grayscale(0.2);
+            opacity: 0.7;
+            border: 1px solid var(--border-light);
+        }
+        
+        .delivery-item:hover {
+            transform: translateY(-3px);
+            filter: grayscale(0);
+            opacity: 1;
+            box-shadow: var(--shadow-sm);
+            border-color: var(--wheat);
+        }
+        
+        .delivery-item img {
+            max-width: 80px;
+            max-height: 45px;
+            object-fit: contain;
+        }
+        
+        /* ПОПУЛЯРНЫЕ ТОВАРЫ */
+        .popular-section {
+            background: var(--bg-light);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+        
+        .product-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--wheat);
+        }
+        
+        .product-gallery {
+            position: relative;
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            background: var(--bg-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .gallery-container {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .gallery-track {
+            display: flex;
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-slide {
+            flex: 0 0 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .gallery-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            background: var(--bg-light);
+            padding: 10px;
+        }
+        
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 28px;
+            height: 28px;
+            background: rgba(255,255,255,0.9);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--brown-dark);
+            font-size: 0.8rem;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            z-index: 5;
+            border: 1px solid var(--border-light);
+        }
+        
+        .product-gallery:hover .gallery-nav {
+            opacity: 1;
+        }
+        
+        .gallery-nav.prev {
+            left: 8px;
+        }
+        
+        .gallery-nav.next {
+            right: 8px;
+        }
+        
+        .gallery-nav:hover {
+            background: var(--wheat);
+        }
+        
+        .gallery-dots {
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 5;
+        }
+        
+        .dot {
+            width: 7px;
+            height: 7px;
+            background: rgba(0,0,0,0.4);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        
+        .dot.active {
+            background: var(--wheat);
+            transform: scale(1.2);
+        }
+        
+        .gallery-counter {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            border-radius: 20px;
+            z-index: 5;
+        }
+        
+        .product-info {
+            padding: 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-category {
+            font-size: 0.7rem;
+            color: var(--wheat-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+        
+        .product-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--brown-dark);
+            margin-bottom: 5px;
+            line-height: 1.3;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .product-title:hover {
+            color: var(--wheat);
+        }
+        
+        .product-article {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+        
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 12px;
+            border-top: 1px dashed var(--border-light);
+        }
+        
+        .product-price {
+            font-size: 0.8rem;
+            color: var(--wheat-dark);
+            font-weight: 500;
+        }
+        
+        .product-price i {
+            margin-right: 4px;
+            color: var(--brown-dark);
+        }
+        
+        .product-status {
+            font-size: 0.7rem;
+            color: #27AE60;
+            font-weight: 500;
+            padding: 3px 8px;
+            background: #E8F8E8;
+            border-radius: 20px;
+        }
+        
+        /* ПРЕИМУЩЕСТВА */
+        .advantages-section {
+            background: var(--white);
+        }
+        
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+        
+        .advantage-card {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 20px;
+            background: var(--bg-light);
+            border-radius: var(--radius-lg);
+            transition: var(--transition);
+            border: 1px solid var(--border-light);
+        }
+        
+        .advantage-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            background: var(--white);
+            border-color: var(--wheat);
+        }
+        
+        .advantage-icon {
+            font-size: 2.5rem;
+            color: var(--wheat);
+            margin-bottom: 15px;
+        }
+        
+        .advantage-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--wheat);
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .advantage-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--brown-dark);
+            margin-bottom: 5px;
+        }
+        
+        .advantage-desc {
+            font-size: 0.8rem;
+            color: var(--brown);
+        }
+        
+        /* ОТЗЫВЫ */
+        .reviews-section {
+            background: var(--bg-light);
+        }
+        
+        .reviews-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .reviews-rating {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: var(--white);
+            padding: 8px 20px;
+            border-radius: 50px;
+            border: 1px solid var(--border-light);
+        }
+        
+        .rating-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--yellow);
+        }
+        
+        .rating-stars {
+            color: var(--yellow);
+            font-size: 1rem;
+        }
+        
+        .reviews-scroll {
+            display: flex;
+            gap: 25px;
+            overflow-x: auto;
+            padding: 10px 0 20px;
+            scrollbar-width: thin;
+        }
+        
+        .reviews-scroll::-webkit-scrollbar {
+            height: 6px;
+        }
+        
+        .reviews-scroll::-webkit-scrollbar-thumb {
+            background: var(--wheat);
+            border-radius: 10px;
+        }
+        
+        .review-card {
+            min-width: 300px;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+        }
+        
+        .review-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--wheat);
+        }
+        
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .review-avatar-initials {
+            width: 50px;
+            height: 50px;
+            background: var(--wheat);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--brown-dark);
+            flex-shrink: 0;
+        }
+        
+        .review-author-info h4 {
+            font-size: 0.95rem;
+            margin-bottom: 2px;
+            color: var(--brown-dark);
+        }
+        
+        .review-author-info p {
+            font-size: 0.7rem;
+            color: var(--text-light);
+        }
+        
+        .review-stars {
+            color: var(--yellow);
+            margin-bottom: 10px;
+            font-size: 0.85rem;
+        }
+        
+        .review-text {
+            color: var(--brown);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+        
+        /* ПОМОЩЬ + ФОРМА */
+        .help-feedback-section {
+            background: linear-gradient(135deg, var(--wheat-soft) 0%, var(--white) 100%);
+        }
+        
+        .help-feedback-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 48px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-light);
+        }
+        
+        .help-feedback-content h2 {
+            text-align: left;
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+        }
+        
+        .help-feedback-content h2:after {
+            left: 0;
+            transform: none;
+            width: 50px;
+        }
+        
+        .help-feedback-content p {
+            font-size: 0.95rem;
+            color: var(--brown);
+            margin-bottom: 25px;
+        }
+        
+        .help-feedback-buttons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .help-feedback-note {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+        
+        .feedback-form-short {
+            background: var(--bg-light);
+            padding: 32px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-light);
+        }
+        
+        .feedback-form-short h3 {
+            margin-bottom: 24px;
+            font-size: 1.3rem;
+            text-align: center;
+            color: var(--brown-dark);
+        }
+        
+        .feedback-form-short .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .feedback-form-short input,
+        .feedback-form-short textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid var(--border-gray);
+            border-radius: var(--radius-sm);
+            font-family: var(--font-main);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .feedback-form-short input:focus,
+        .feedback-form-short textarea:focus {
+            outline: none;
+            border-color: var(--wheat);
+            box-shadow: 0 0 0 3px rgba(230,200,124,0.2);
+        }
+        
+        .checkbox-group {
+            margin: 15px 0;
+        }
+        
+        .checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            cursor: pointer;
+        }
+        
+        .checkbox-label input {
+            width: 18px;
+            height: 18px;
+            margin-top: 2px;
+            flex-shrink: 0;
+            accent-color: var(--wheat);
+        }
+        
+        .checkbox-text {
+            font-size: 0.8rem;
+            color: var(--text-soft);
+            line-height: 1.4;
+        }
+        
+        .checkbox-text a {
+            color: var(--wheat-dark);
+            text-decoration: underline;
+        }
+        
+        .checkbox-text a:hover {
+            color: var(--wheat);
+        }
+        
+        .feedback-form-short .btn-primary {
+            width: 100%;
+            padding: 14px;
+        }
+        
+        /* СХЕМА РАБОТЫ */
+        .how-it-works-section {
+            background: var(--white);
+        }
+        
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+        
+        .step {
+            text-align: center;
+            padding: 30px 20px;
+            background: var(--bg-light);
+            border-radius: var(--radius-lg);
+            transition: var(--transition);
+            border: 1px solid var(--border-light);
+        }
+        
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            background: var(--white);
+            border-color: var(--wheat);
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--wheat);
+            color: var(--brown-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        
+        /* О КОМПАНИИ В ЦИФРАХ */
+        .about-stats-section {
+            background: var(--bg-light);
+        }
+        
+        .about-stats-card {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            background: var(--white);
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .about-stats-grid {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .about-stat-item .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--wheat);
+            display: block;
+        }
+        
+        .about-stat-item .stat-label {
+            color: var(--brown);
+            font-size: 0.9rem;
+        }
+        
+        .about-stats-card .about-link {
+            color: var(--brown);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+            display: inline-block;
+            padding: 8px 20px;
+            border: 1px solid var(--wheat);
+            border-radius: 30px;
+        }
+        
+        .about-stats-card .about-link:hover {
+            background: var(--wheat);
+            color: var(--brown-dark);
+        }
+        
+        /* ПОЛЕЗНЫЕ СТАТЬИ */
+        .articles-preview-section {
+            background: var(--white);
+        }
+        
+        .articles-preview-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .article-preview-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 25px;
+            text-decoration: none;
+            transition: var(--transition);
+            display: block;
+            border: 1px solid var(--border-light);
+        }
+        
+        .article-preview-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--wheat);
+        }
+        
+        .article-preview-icon {
+            width: 55px;
+            height: 55px;
+            background: var(--wheat-soft);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--wheat-dark);
+            margin-bottom: 15px;
+        }
+        
+        .article-preview-category {
+            font-size: 0.7rem;
+            color: var(--wheat-dark);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        
+        .article-preview-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--brown-dark);
+            margin-bottom: 10px;
+        }
+        
+        .article-preview-text {
+            color: var(--brown);
+            font-size: 0.8rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        
+        .article-preview-link {
+            color: var(--wheat);
+            font-weight: 500;
+            font-size: 0.85rem;
+        }
+        
+        .articles-preview-all {
+            text-align: center;
+        }
+        
+        /* FAQ */
+        .faq-section {
+            background: var(--bg-light);
+        }
+        
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            gap: 15px;
+        }
+        
+        .faq-item {
+            background: var(--white);
+            border-radius: var(--radius);
+            border: 1px solid var(--border-light);
+        }
+        
+        .faq-question {
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--brown-dark);
+            transition: var(--transition);
+        }
+        
+        .faq-question:hover {
+            color: var(--wheat);
+        }
+        
+        .faq-question i {
+            color: var(--wheat);
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0 20px 18px;
+            color: var(--brown);
+            line-height: 1.6;
+            display: none;
+            font-size: 0.9rem;
+        }
+        
+        .faq-answer.visible {
+            display: block;
+        }
+        
+        /* КОНТАКТЫ */
+        .contacts-section {
+            background: var(--white);
+        }
+        
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .contact-card {
+            background: var(--white);
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: var(--radius-lg);
+            transition: var(--transition);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--wheat);
+        }
+        
+        .contact-card i {
+            font-size: 1.8rem;
+            color: var(--wheat);
+            margin-bottom: 15px;
+        }
+        
+        .contact-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--brown-dark);
+        }
+        
+        .contact-card p {
+            color: var(--brown);
+            margin-bottom: 5px;
+        }
+        
+        .contact-phone {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--wheat-dark);
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 8px;
+        }
+        
+        /* КАРТА */
+        .map-section {
+            background: var(--bg-light);
+        }
+        
+        .map-container {
+            width: 100%;
+            height: 350px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .map-hours {
+            text-align: center;
+            margin-top: 20px;
+            background: var(--white);
+            padding: 10px 20px;
+            border-radius: var(--radius);
+            display: inline-block;
+            width: auto;
+        }
+        
+        /* ПОДВАЛ */
+        .footer {
+            background: var(--brown-dark);
+            color: var(--wheat-light);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo a {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--wheat);
+            text-decoration: none;
+        }
+        
+        .footer-col p {
+            margin: 15px 0;
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+        
+        .footer-col h4 {
+            color: var(--wheat);
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+        
+        .footer-col a {
+            color: var(--wheat-light);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+        
+        .footer-col a:hover {
+            color: var(--wheat);
+            transform: translateX(5px);
+        }
+        
+        .footer-contacts p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        
+        .footer-contacts i {
+            color: var(--wheat);
+            width: 20px;
+        }
+        
+        .footer-phone {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--wheat) !important;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .social-icons a:hover {
+            background: var(--wheat);
+            color: var(--brown-dark);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.75rem;
+            opacity: 0.7;
+        }
+        
+        /* ===== СТРЕЛКА ВВЕРХ - ЗОЛОТАЯ ===== */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 55px;
+            height: 55px;
+            background: var(--wheat);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 99;
+            color: var(--brown-dark);
+            box-shadow: var(--shadow-lg);
+            border: 2px solid var(--white);
+        }
+        
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            background: var(--wheat-dark);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .scroll-top i {
+            font-size: 1.3rem;
+        }
+        
+        /* ===== БОТ-ПОМОЩНИК ===== */
+        .bot-widget {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 1000;
+        }
+        
+        .bot-button {
+            width: 55px;
+            height: 55px;
+            background: var(--wheat);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            border: 2px solid var(--white);
+        }
+        
+        .bot-button:hover {
+            transform: scale(1.1);
+            background: var(--wheat-dark);
+        }
+        
+        .bot-button i {
+            font-size: 1.8rem;
+            color: var(--brown-dark);
+        }
+        
+        .bot-box {
+            position: absolute;
+            bottom: 80px;
+            left: 0;
+            width: 350px;
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-hover);
+            border: 1px solid var(--border-light);
+            display: none;
+            overflow: hidden;
+            z-index: 1000;
+        }
+        
+        .bot-box.active {
+            display: block;
+        }
+        
+        .bot-header {
+            padding: 15px;
+            background: var(--wheat);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .bot-header-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .bot-header-info i {
+            font-size: 1.8rem;
+            color: var(--brown-dark);
+        }
+        
+        .bot-header-info h4 {
+            color: var(--brown-dark);
+            margin: 0;
+            font-size: 1rem;
+        }
+        
+        .bot-header-info p {
+            color: var(--brown);
+            margin: 0;
+            font-size: 0.7rem;
+        }
+        
+        .bot-header button {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: var(--brown-dark);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+        
+        .bot-messages {
+            height: 300px;
+            padding: 15px;
+            overflow-y: auto;
+            background: var(--bg-light);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .message {
+            max-width: 85%;
+            padding: 10px 14px;
+            border-radius: var(--radius);
+            font-size: 0.85rem;
+            line-height: 1.4;
+            word-wrap: break-word;
+        }
+        
+        .bot-message {
+            background: var(--white);
+            border: 1px solid var(--border-light);
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+        }
+        
+        .user-message {
+            background: var(--wheat);
+            color: var(--brown-dark);
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+        
+        .bot-questions {
+            padding: 12px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+            background: var(--white);
+        }
+        
+        .bot-questions button {
+            padding: 8px;
+            background: var(--bg-light);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-size: 0.75rem;
+            color: var(--brown-dark);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        
+        .bot-questions button:hover {
+            background: var(--wheat-soft);
+            border-color: var(--wheat);
+        }
+        
+        .bot-input {
+            display: flex;
+            padding: 12px;
+            background: var(--white);
+            gap: 8px;
+        }
+        
+        .bot-input input {
+            flex: 1;
+            padding: 10px 12px;
+            border: 1px solid var(--border-gray);
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            outline: none;
+        }
+        
+        .bot-input input:focus {
+            border-color: var(--wheat);
+        }
+        
+        .bot-input button {
+            width: 40px;
+            background: var(--wheat);
+            border: none;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            color: var(--brown-dark);
+            transition: var(--transition);
+        }
+        
+        .bot-input button:hover {
+            background: var(--wheat-dark);
+        }
+        
+        .bot-footer {
+            padding: 10px;
+            text-align: center;
+            background: var(--bg-light);
+            border-top: 1px solid var(--border-light);
+            font-size: 0.7rem;
+            color: var(--brown);
+        }
+        
+        .typing-indicator {
+            display: flex;
+            gap: 4px;
+            padding: 10px 14px;
+            background: var(--white);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius);
+            align-self: flex-start;
+            width: fit-content;
+        }
+        
+        .typing-indicator span {
+            width: 6px;
+            height: 6px;
+            background: var(--wheat);
+            border-radius: 50%;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+        
+        .typing-indicator span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .typing-indicator span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+            30% { transform: translateY(-8px); opacity: 1; }
+        }
+        
+        /* ===== МОДАЛЬНЫЕ ОКНА ===== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1001;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-overlay.active {
+            display: flex;
+        }
+        
+        .modal-container {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            max-width: 450px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .modal-header {
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-header h3 {
+            font-size: 1.2rem;
+            color: var(--brown-dark);
+        }
+        
+        .modal-close {
+            width: 36px;
+            height: 36px;
+            background: var(--bg-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        
+        .modal-body {
+            padding: 24px;
+        }
+        
+        .modal-body .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .modal-body label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: var(--brown-dark);
+        }
+        
+        .modal-body input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--border-gray);
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+        }
+        
+        .modal-body .checkbox-group {
+            margin: 20px 0;
+        }
+        
+        .modal-body .checkbox-label {
+            display: flex !important;
+            align-items: flex-start !important;
+            gap: 10px !important;
+            cursor: pointer;
+        }
+        
+        .modal-body .checkbox-label input {
+            width: 18px !important;
+            height: 18px !important;
+            margin: 0 !important;
+            flex-shrink: 0;
+            accent-color: var(--wheat);
+        }
+        
+        .modal-body .checkbox-label .checkbox-text {
+            font-size: 0.8rem;
+            color: var(--text-soft);
+            line-height: 1.4;
+        }
+        
+        /* ===== АДАПТИВ ===== */
+        @media (max-width: 1024px) {
+            .assortment-grid,
+            .products-grid,
+            .advantages-grid,
+            .articles-preview-grid,
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .dealers-grid,
+            .delivery-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        @media (max-width: 850px) {
+            .header-search {
+                display: none;
+            }
+            .nav-menu {
+                display: none;
+            }
+            .burger {
+                display: flex;
+            }
+            .header-phone span {
+                display: none;
+            }
+            .help-feedback-card {
+                grid-template-columns: 1fr;
+                padding: 32px;
+            }
+            .bot-box {
+                width: 320px;
+                right: 0;
+                left: auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+            .assortment-grid,
+            .products-grid,
+            .advantages-grid,
+            .articles-preview-grid,
+            .steps-grid,
+            .contacts-grid {
+                grid-template-columns: 1fr;
+            }
+            .dealers-grid,
+            .delivery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .about-stats-grid {
+                gap: 30px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .footer-contacts p {
+                justify-content: center;
+            }
+            .social-icons {
+                justify-content: center;
+            }
+            .hero-photo {
+                min-height: 500px;
+                height: auto;
+                padding: 60px 0;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .hero-features {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            .feedback-form-short .form-row {
+                grid-template-columns: 1fr;
+            }
+            .reviews-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .bot-box {
+                width: 300px;
+                bottom: 70px;
+            }
+            .bot-messages {
+                height: 250px;
+            }
+            .scroll-top {
+                bottom: 90px;
+                right: 70px;
+                width: 45px;
+                height: 45px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .dealers-grid,
+            .delivery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero-buttons .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+            .bot-box {
+                width: 280px;
+            }
+            .scroll-top {
+                right: 60px;
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Верхняя панель -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="city-selector">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Аксай, Ростовская область</span>
+            </div>
+            <div class="top-links">
+                <a href="about.html">О компании</a>
+                <a href="delivery.html">Доставка и оплата</a>
+                <a href="contacts.html">Контакты</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">АГРОМАРКЕТ<br>ТОРШЕНКО</a>
+                <span>Запчасти для комбайнов с 2014 года</span>
+            </div>
+
+            <div class="header-search">
+                <form class="search-form" onsubmit="handleSearch(event)">
+                    <input type="text" id="searchInput" placeholder="Введите артикул или название..." autocomplete="off">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+                <div class="search-results" id="searchResults"></div>
+            </div>
+
+            <div class="header-actions">
+                <a href="tel:+79081881111" class="header-phone">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>8 (908) 188-11-11</span>
+                </a>
+                <button class="btn-call" onclick="openCallModal()">
+                    <i class="fas fa-headset"></i> Заказать звонок
+                </button>
+                <div class="burger" id="burgerBtn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Навигация -->
+    <div class="nav-bar">
+        <div class="container">
+            <nav class="nav-menu">
+                <a href="index.html" class="active">Главная</a>
+                <a href="catalog.html">Каталог</a>
+                <a href="articles.html">Полезные советы</a>
+                <a href="about.html">О компании</a>
+                <a href="delivery.html">Доставка</a>
+                <a href="contacts.html">Контакты</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Мобильное меню -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="articles.html">Полезные советы</a>
+        <a href="about.html">О компании</a>
+        <a href="delivery.html">Доставка</a>
+        <a href="contacts.html">Контакты</a>
+    </div>
+
+    <main>
+        <!-- HERO блок -->
+        <section class="hero-photo">
+            <div class="hero-bg-image"></div>
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content-center">
+                    <div class="hero-badge">С 2014 года на рынке</div>
+                    <h1>Запчасти для зерноуборочных<br>и кормоуборочных комбайнов</h1>
+                    <div class="hero-brands">
+                        <span>Дон</span> • <span>Вектор</span> • <span>Торум</span> • <span>Акрос</span> • <span>Бюлер</span>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="tel:+79081881111" class="btn btn-primary">
+                            <i class="fas fa-phone-alt"></i> Позвонить сейчас
+                        </a>
+                        <button class="btn-outline-light" onclick="openCallModal()">
+                            <i class="fas fa-headset"></i> Заказать звонок
+                        </button>
+                    </div>
+                    <div class="hero-features">
+                        <div class="hero-feature"><i class="fas fa-boxes"></i> 5000+ запчастей</div>
+                        <div class="hero-feature"><i class="fas fa-clock"></i> Ответ за 1 минуту</div>
+                        <div class="hero-feature"><i class="fas fa-smile"></i> 1000+ клиентов</div>
+                    </div>
+                    <p class="hero-note">*Наличие и цены уточняйте по телефону</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- АССОРТИМЕНТ ДЛЯ ПОСТАВКИ -->
+        <section class="assortment-section">
+            <div class="container">
+                <h2>Ассортимент для поставки</h2>
+                <p class="section-subtitle">Более 5000 наименований запчастей в наличии и под заказ</p>
+                <div class="assortment-grid">
+                    <div class="assortment-card">
+                        <h3 class="assortment-card-title">Комбайновые запчасти</h3>
+                        <div class="assortment-card-content">
+                            <div class="assortment-lists">
+                                <ul class="assortment-list">
+                                    <li>Дон</li>
+                                    <li>Вектор</li>
+                                    <li>Торум</li>
+                                    <li>Акрос</li>
+                                    <li>Бюлер</li>
+                                    <li>ПАЛЕССЕ</li>
+                                </ul>
+                                <ul class="assortment-list">
+                                    <li>Двигатель</li>
+                                    <li>Гидравлика</li>
+                                    <li>Трансмиссия</li>
+                                    <li>Фильтры</li>
+                                    <li>Ходовая часть</li>
+                                    <li>Электрика</li>
+                                </ul>
+                            </div>
+                            <div class="assortment-card-image">
+                                <img src="../images/truck5.jpg" alt="Комбайн">
+                            </div>
+                        </div>
+                        <button onclick="sendToWhatsApp('комбайновые запчасти')" class="btn btn-primary">Запросить прайс</button>
+                    </div>
+                    
+                    <div class="assortment-card">
+                        <h3 class="assortment-card-title">Сельхозтехника</h3>
+                        <div class="assortment-card-content">
+                            <div class="assortment-lists">
+                                <ul class="assortment-list">
+                                    <li>Трактора</li>
+                                    <li>Плуги</li>
+                                    <li>Бороны</li>
+                                    <li>Сеялки</li>
+                                    <li>Культиваторы</li>
+                                </ul>
+                                <ul class="assortment-list">
+                                    <li>Косилки</li>
+                                    <li>Пресс-подборщики</li>
+                                    <li>Опрыскиватели</li>
+                                    <li>Разбрасыватели</li>
+                                    <li>Прицепы</li>
+                                </ul>
+                            </div>
+                            <div class="assortment-card-image">
+                                <img src="../images/truck6.jpg" alt="Трактор">
+                            </div>
+                        </div>
+                        <button onclick="sendToWhatsApp('сельхозтехника')" class="btn btn-primary">Запросить прайс</button>
+                    </div>
+                    
+                    <div class="assortment-card">
+                        <h3 class="assortment-card-title">Запчасти и расходники</h3>
+                        <div class="assortment-card-content">
+                            <div class="assortment-lists">
+                                <ul class="assortment-list">
+                                    <li>Подшипники</li>
+                                    <li>Ремни и цепи</li>
+                                    <li>Фильтры</li>
+                                    <li>Сальники</li>
+                                    <li>Масла и смазки</li>
+                                </ul>
+                                <ul class="assortment-list">
+                                    <li>Гидравлика</li>
+                                    <li>Электрооборудование</li>
+                                    <li>Резинотехника</li>
+                                    <li>Крепеж</li>
+                                    <li>Инструмент</li>
+                                </ul>
+                            </div>
+                            <div class="assortment-card-image">
+                                <img src="../images/truck7.jpg" alt="Запчасти">
+                            </div>
+                        </div>
+                        <button onclick="sendToWhatsApp('запчасти и расходники')" class="btn btn-primary">Запросить прайс</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ДИЛЕРСКИЕ КОНТРАКТЫ -->
+        <section class="dealers-section">
+            <div class="container">
+                <h2>Дилерские контракты</h2>
+                <p class="section-subtitle">Осуществляем прямые поставки от заводов производителей</p>
+                <div class="dealers-grid">
+                    <div class="dealer-card"><div class="dealer-logo"><img src="../images/brands/rostselmash.png" alt="Ростсельмаш"></div><div class="dealer-name">Ростсельмаш</div></div>
+                    <div class="dealer-card"><div class="dealer-logo"><img src="../images/brands/claas.png" alt="CLAAS"></div><div class="dealer-name">CLAAS</div></div>
+                    <div class="dealer-card"><div class="dealer-logo"><img src="../images/brands/john-deere.png" alt="John Deere"></div><div class="dealer-name">John Deere</div></div>
+                    <div class="dealer-card"><div class="dealer-logo"><img src="../images/brands/new-holland.png" alt="New Holland"></div><div class="dealer-name">New Holland</div></div>
+                    <div class="dealer-card"><div class="dealer-logo"><img src="../images/brands/case-ih.png" alt="Case IH"></div><div class="dealer-name">Case IH</div></div>
+                    <div class="dealer-card"><div class="dealer-logo"><img src="../images/brands/mtz.png" alt="МТЗ"></div><div class="dealer-name">МТЗ (Беларус)</div></div>
+                    <div class="dealer-card"><div class="dealer-logo"><img src="../images/brands/yamz.png" alt="ЯМЗ"></div><div class="dealer-name">ЯМЗ</div></div>
+                    <div class="dealer-card"><div class="dealer-logo"><img src="../images/brands/smd.png" alt="СМД"></div><div class="dealer-name">СМД</div></div>
+                    <div class="dealer-card"><div class="dealer-logo"><img src="../images/brands/chaz.png" alt="ЧАЗ"></div><div class="dealer-name">ЧАЗ</div></div>
+                    <div class="dealer-card"><div class="dealer-logo"><img src="../images/brands/almaz.png" alt="Алмаз"></div><div class="dealer-name">Алмаз</div></div>
+                    <div class="dealer-card"><div class="dealer-logo"><img src="../images/brands/stihl.png" alt="STIHL"></div><div class="dealer-name">STIHL</div></div>
+                    <div class="dealer-card"><div class="dealer-logo"><img src="../images/brands/belarus.png" alt="Беларусь"></div><div class="dealer-name">Беларусь</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ДОСТАВКА ТРАНСПОРТНЫМИ КОМПАНИЯМИ -->
+        <section class="delivery-section">
+            <div class="container">
+                <h2>Доставка транспортными компаниями</h2>
+                <p class="section-subtitle">Отправляем запчасти любой транспортной компанией. Доставляем до ТК бесплатно</p>
+                <div class="delivery-grid">
+                    <div class="delivery-item"><img src="../images/delivery/dewellines.png" alt="Деловые линии"></div>
+                    <div class="delivery-item"><img src="../images/delivery/pek.png" alt="ПЭК"></div>
+                    <div class="delivery-item"><img src="../images/delivery/baikal.png" alt="Байкал Сервис"></div>
+                    <div class="delivery-item"><img src="../images/delivery/zhd.png" alt="ЖелДорЭкспедиция"></div>
+                    <div class="delivery-item"><img src="../images/delivery/kit.png" alt="КИТ"></div>
+                    <div class="delivery-item"><img src="../images/delivery/sdek.png" alt="СДЭК"></div>
+                    <div class="delivery-item"><img src="../images/delivery/russian-post.png" alt="Почта России"></div>
+                    <div class="delivery-item"><img src="../images/delivery/dellin.png" alt="Деллин"></div>
+                    <div class="delivery-item"><img src="../images/delivery/gtk.png" alt="ГТК"></div>
+                    <div class="delivery-item"><img src="../images/delivery/energy.png" alt="Энергия"></div>
+                    <div class="delivery-item"><img src="../images/delivery/glav-dostavka.png" alt="ГлавДоставка"></div>
+                    <div class="delivery-item"><img src="../images/delivery/trans-express.png" alt="ТрансЭкспресс"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ПОПУЛЯРНЫЕ ТОВАРЫ -->
+        <section class="popular-section">
+            <div class="container">
+                <h2>Популярные запчасти</h2>
+                <div class="products-grid" id="productsGrid"></div>
+            </div>
+        </section>
+
+        <!-- ПРЕИМУЩЕСТВА -->
+        <section class="advantages-section">
+            <div class="container">
+                <h2>Почему фермеры выбирают нас</h2>
+                <div class="advantages-grid">
+                    <div class="advantage-card">
+                        <div class="advantage-icon"><i class="fas fa-boxes"></i></div>
+                        <span class="advantage-number">5000+</span>
+                        <div class="advantage-title">запчастей на складе</div>
+                        <div class="advantage-desc">найдем даже редкую деталь</div>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-icon"><i class="fas fa-truck"></i></div>
+                        <span class="advantage-number">10+</span>
+                        <div class="advantage-title">лет на рынке</div>
+                        <div class="advantage-desc">знаем все нюансы ремонта</div>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-icon"><i class="fas fa-certificate"></i></div>
+                        <span class="advantage-number">ГОСТ</span>
+                        <div class="advantage-title">качество</div>
+                        <div class="advantage-desc">не подведет в поле</div>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-icon"><i class="fas fa-clock"></i></div>
+                        <span class="advantage-number">24/7</span>
+                        <div class="advantage-title">на связи</div>
+                        <div class="advantage-desc">ответим на звонок</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ОТЗЫВЫ КЛИЕНТОВ -->
+        <section class="reviews-section">
+            <div class="container">
+                <div class="reviews-header">
+                    <h2>Отзывы клиентов</h2>
+                    <div class="reviews-rating">
+                        <span class="rating-number">4.8</span>
+                        <span class="rating-stars">★★★★★</span>
+                    </div>
+                </div>
+                <div class="reviews-scroll">
+                    <div class="review-card">
+                        <div class="review-author">
+                            <div class="review-avatar-initials">ИП</div>
+                            <div class="review-author-info">
+                                <h4>Иван Петров</h4>
+                                <p>КФХ "Рассвет"</p>
+                            </div>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Брал гидроцилиндры на Дон-1500. Всё подошло идеально. Доставка быстрая, качество отличное. Рекомендую!</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-author">
+                            <div class="review-avatar-initials">АГ</div>
+                            <div class="review-author-info">
+                                <h4>Алексей Григорьев</h4>
+                                <p>Частное хозяйство</p>
+                            </div>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Искал вал домолачивающего устройства. Нашел здесь, помогли с подбором, все четко.</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-author">
+                            <div class="review-avatar-initials">НИ</div>
+                            <div class="review-author-info">
+                                <h4>ООО "Нива"</h4>
+                                <p>Сельхозпредприятие</p>
+                            </div>
+                        </div>
+                        <div class="review-stars">★★★★☆</div>
+                        <p class="review-text">Работаем 3 года. Всегда помогают, хороший ассортимент и адекватные цены.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ПОМОЩЬ + ФОРМА -->
+        <section class="help-feedback-section">
+            <div class="container">
+                <div class="help-feedback-card">
+                    <div class="help-feedback-content">
+                        <h2>Нужна помощь с подбором запчасти?</h2>
+                        <p>Позвоните нам или оставьте заявку — ответим в течение 15 минут</p>
+                        <div class="help-feedback-buttons">
+                            <a href="tel:+79081881111" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Позвонить</a>
+                            <button class="btn-outline-light" onclick="openCallModal()">Заказать звонок</button>
+                        </div>
+                        <div class="help-feedback-note"><i class="fas fa-clock"></i> Звоните с 10:00 до 19:00</div>
+                    </div>
+                    <div class="feedback-form-short">
+                        <h3>Или напишите нам</h3>
+                        <form id="feedbackFormShort" onsubmit="handleFormSubmit(event)">
+                            <div class="form-row">
+                                <input type="text" placeholder="Ваше имя *" required>
+                                <input type="tel" placeholder="Телефон *" required>
+                            </div>
+                            <textarea rows="3" placeholder="Ваш вопрос..."></textarea>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" required>
+                                    <span class="checkbox-text">Согласие на обработку <a href="politik.html" target="_blank">персональных данных</a></span>
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Отправить сообщение</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СХЕМА РАБОТЫ -->
+        <section class="how-it-works-section">
+            <div class="container">
+                <h2>Как мы работаем</h2>
+                <div class="steps-grid">
+                    <div class="step"><div class="step-number">1</div><h4>Звонок</h4><p>Позвоните или оставьте заявку</p></div>
+                    <div class="step"><div class="step-number">2</div><h4>Консультация</h4><p>Поможем подобрать запчасть</p></div>
+                    <div class="step"><div class="step-number">3</div><h4>Подтверждение</h4><p>Согласуем наличие и сроки</p></div>
+                    <div class="step"><div class="step-number">4</div><h4>Получение</h4><p>Самовывоз или доставка</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- О КОМПАНИИ В ЦИФРАХ -->
+        <section class="about-stats-section">
+            <div class="container">
+                <div class="about-stats-card">
+                    <h2>О компании в цифрах</h2>
+                    <div class="about-stats-grid">
+                        <div class="about-stat-item"><span class="stat-number">10+</span><span class="stat-label">лет на рынке</span></div>
+                        <div class="about-stat-item"><span class="stat-number">5000+</span><span class="stat-label">товаров в наличии</span></div>
+                        <div class="about-stat-item"><span class="stat-number">1000+</span><span class="stat-label">довольных клиентов</span></div>
+                    </div>
+                    <a href="about.html" class="about-link">Подробнее о компании →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ПОЛЕЗНЫЕ СТАТЬИ -->
+        <section class="articles-preview-section">
+            <div class="container">
+                <h2>Полезные советы для фермеров</h2>
+                <div class="articles-preview-grid">
+                    <a href="articles.html#oil" class="article-preview-card">
+                        <div class="article-preview-icon"><i class="fas fa-oil-can"></i></div>
+                        <div class="article-preview-category">Совет месяца</div>
+                        <div class="article-preview-title">Какое масло лить в гидросистему?</div>
+                        <p class="article-preview-text">Разбираемся в вязкости, брендах и сроках замены масла в гидравлической системе комбайнов.</p>
+                        <span class="article-preview-link">Читать →</span>
+                    </a>
+                    <a href="articles.html#bearings" class="article-preview-card">
+                        <div class="article-preview-icon"><i class="fas fa-wrench"></i></div>
+                        <div class="article-preview-category">Полезное</div>
+                        <div class="article-preview-title">5 признаков износа подшипников</div>
+                        <p class="article-preview-text">Как вовремя заметить проблему и избежать серьезной поломки.</p>
+                        <span class="article-preview-link">Читать →</span>
+                    </a>
+                    <a href="articles.html#winter" class="article-preview-card">
+                        <div class="article-preview-icon"><i class="fas fa-snowplow"></i></div>
+                        <div class="article-preview-category">Сезонное</div>
+                        <div class="article-preview-title">Подготовка комбайна к зиме</div>
+                        <p class="article-preview-text">Чек-лист из 10 пунктов для правильного хранения техники.</p>
+                        <span class="article-preview-link">Читать →</span>
+                    </a>
+                </div>
+                <div class="articles-preview-all">
+                    <a href="articles.html" class="btn btn-outline">Все советы →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ЧАСТЫЕ ВОПРОСЫ -->
+        <section class="faq-section">
+            <div class="container">
+                <h2>Частые вопросы</h2>
+                <div class="faq-grid">
+                    <div class="faq-item"><div class="faq-question" data-faq-id="faq1">Как быстро узнать цену?<i class="fas fa-chevron-down"></i></div><div class="faq-answer" id="faq1">Позвоните нам по телефону 8 (908) 188-11-11 — назовем цену сразу.</div></div>
+                    <div class="faq-item"><div class="faq-question" data-faq-id="faq2">Есть ли доставка?<i class="fas fa-chevron-down"></i></div><div class="faq-answer" id="faq2">Да, отправляем транспортными компаниями по всей России. Подробности по телефону.</div></div>
+                    <div class="faq-item"><div class="faq-question" data-faq-id="faq3">Что делать, если нет артикула?<i class="fas fa-chevron-down"></i></div><div class="faq-answer" id="faq3">Назовите модель комбайна и узел — мы поможем подобрать.</div></div>
+                    <div class="faq-item"><div class="faq-question" data-faq-id="faq4">Работаете с аналогами?<i class="fas fa-chevron-down"></i></div><div class="faq-answer" id="faq4">Да, поможем подобрать качественный аналог по более низкой цене.</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- КОНТАКТЫ -->
+        <section class="contacts-section">
+            <div class="container">
+                <h2>Контакты</h2>
+                <div class="contacts-grid">
+                    <div class="contact-card"><i class="fas fa-map-marker-alt"></i><h3>Адрес</h3><p>г. Аксай, ул. Ленина, 48<br>Ростовская область</p></div>
+                    <div class="contact-card"><i class="fas fa-clock"></i><h3>Время работы</h3><p>Пн–Сб: 10:00–19:00<br>Вс: выходной</p></div>
+                    <div class="contact-card"><i class="fas fa-phone-alt"></i><h3>Телефон</h3><a href="tel:+79081881111" class="contact-phone">8 (908) 188-11-11</a><p>Директор: Торшенко Т.А.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- КАРТА -->
+        <section class="map-section">
+            <div class="container">
+                <h2>Схема проезда</h2>
+                <div class="map-container">
+                    <iframe src="https://yandex.ru/map-widget/v1/?ll=39.874674%2C47.267858&z=17&pt=39.874674%2C47.267858%2Cpm2rdm&l=map" allowfullscreen title="Карта проезда"></iframe>
+                </div>
+                <div class="map-hours"><p><i class="fas fa-clock"></i> Пн–Сб: 10:00–19:00 | Вс: выходной</p></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ПОДВАЛ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col"><div class="footer-logo"><a href="index.html">АГРОМАРКЕТ<br>ТОРШЕНКО</a></div><p>Запчасти для комбайнов с 2014 года</p><div class="social-icons"><a href="#"><i class="fab fa-vk"></i></a><a href="#"><i class="fab fa-telegram"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div></div>
+                <div class="footer-col"><h4>Навигация</h4><a href="index.html">Главная</a><a href="catalog.html">Каталог</a><a href="articles.html">Полезные советы</a><a href="about.html">О компании</a><a href="delivery.html">Доставка</a><a href="contacts.html">Контакты</a></div>
+                <div class="footer-col"><h4>Информация</h4><a href="delivery.html">Доставка и оплата</a><a href="politik.html">Политика конфиденциальности</a><a href="sitemap.html">Карта сайта</a></div>
+                <div class="footer-col footer-contacts"><h4>Контакты</h4><a href="tel:+79081881111" class="footer-phone"><i class="fas fa-phone-alt"></i> 8 (908) 188-11-11</a><p><i class="fas fa-envelope"></i> info@agromarkettorshenko.ru</p><p><i class="fas fa-map-marker-alt"></i> г. Аксай, ул. Ленина, 48</p></div>
+            </div>
+            <div class="copyright"><p>© 2026 ООО «АГРОМАРКЕТТОРШЕНКО». Все права защищены.</p></div>
+        </div>
+    </footer>
+
+    <!-- ПЛАВАЮЩИЕ КНОПКИ -->
+    <div class="scroll-top" id="scrollTop" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></div>
+
+    <!-- АГРО-БОТ -->
+    <div class="bot-widget" id="botWidget">
+        <div class="bot-button" onclick="toggleBot(event)">
+            <i class="fas fa-robot"></i>
+        </div>
+        <div class="bot-box" id="botBox">
+            <div class="bot-header">
+                <div class="bot-header-info">
+                    <i class="fas fa-robot"></i>
+                    <div>
+                        <h4>Агро-бот</h4>
+                        <p>Онлайн 24/7</p>
+                    </div>
+                </div>
+                <button onclick="closeBot()">✕</button>
+            </div>
+            <div class="bot-messages" id="botMessages">
+                <div class="message bot-message">
+                    🌾 Здравствуйте! Я агро-бот компании АГРОМАРКЕТ ТОРШЕНКО.<br><br>
+                    📞 По вопросам цен и наличия лучше сразу звонить: <strong>8 (908) 188-11-11</strong><br><br>
+                    Что я умею:<br>
+                    • <strong>наличие</strong> — проверить запчасть по артикулу<br>
+                    • <strong>цена</strong> — узнать стоимость<br>
+                    • <strong>подбор</strong> — помочь подобрать аналог<br>
+                    • <strong>заявка</strong> — оставить заявку на звонок<br>
+                    • <strong>каталог</strong> — ссылка на каталог<br>
+                    • <strong>адрес</strong> — узнать адрес<br><br>
+                    Напишите нужную команду или задайте вопрос!
+                </div>
+            </div>
+            <div class="bot-questions">
+                <button onclick="botAnswer('наличие')"><i class="fas fa-search"></i> Наличие</button>
+                <button onclick="botAnswer('цена')"><i class="fas fa-ruble-sign"></i> Цена</button>
+                <button onclick="botAnswer('подбор')"><i class="fas fa-cog"></i> Подбор</button>
+                <button onclick="botAnswer('заявка')"><i class="fas fa-phone"></i> Заявка</button>
+                <button onclick="botAnswer('каталог')"><i class="fas fa-list"></i> Каталог</button>
+                <button onclick="botAnswer('адрес')"><i class="fas fa-map-marker-alt"></i> Адрес</button>
+            </div>
+            <div class="bot-input">
+                <input type="text" id="botInput" placeholder="Напишите артикул или вопрос...">
+                <button onclick="sendBotMessage()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+            <div class="bot-footer">
+                <span>📞 Лучше позвонить: 8 (908) 188-11-11</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО (ЗАКАЗАТЬ ЗВОНОК) -->
+    <div class="modal-overlay" id="callModal">
+        <div class="modal-container">
+            <div class="modal-header"><h3>Заказать звонок</h3><div class="modal-close" onclick="closeModal('callModal')">✕</div></div>
+            <div class="modal-body">
+                <form id="callForm" onsubmit="handleFormSubmit(event, 'callModal')">
+                    <div class="form-group"><label>Ваше имя *</label><input type="text" placeholder="Иван Петрович" required></div>
+                    <div class="form-group"><label>Телефон *</label><input type="tel" placeholder="+7 (___) ___-__-__" required></div>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" required>
+                            <span class="checkbox-text">Согласие на обработку <a href="politik.html" target="_blank">персональных данных</a></span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Заказать звонок</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ========================================
+        // ПОЛНЫЙ JS ДЛЯ ГЛАВНОЙ СТРАНИЦЫ
+        // ========================================
+        
+        // ТОВАРЫ (4 популярных товара)
+        const products = [
+            { id: 1, article: "152.10.28.570A", title: "Жгут верхнего решета", category: "Жгуты / Решета", images: 3, status: "В наличии" },
+            { id: 2, article: "152.10.28.580", title: "Жгут нижнего решета", category: "Жгуты / Решета", images: 3, status: "В наличии" },
+            { id: 3, article: "02602.02 / 15956", title: "Головка привода 27 мм", category: "Привод / Редукторы", images: 5, status: "В наличии" },
+            { id: 4, article: "3877965", title: "Блок гидроаккумуляторов", category: "Гидравлика", images: 2, status: "В наличии" }
+        ];
+
+        // Каталог для поиска
+        const catalog = {};
+        products.forEach(p => {
+            const mainArticle = p.article.split(' / ')[0];
+            catalog[mainArticle] = `✅ ${p.title} - ${p.status}\n📞 Цену уточняйте по телефону: 8 (908) 188-11-11`;
+            catalog[p.article] = `✅ ${p.title} - ${p.status}\n📞 Цену уточняйте по телефону: 8 (908) 188-11-11`;
+        });
+
+        // Функция для получения имени изображения
+        function getImageName(productId, index) {
+            const imageMap = {
+                1: ['jgut-verh-1.jpg', 'jgut-verh-2.jpg', 'jgut-verh-3.jpg'],
+                2: ['jgut-niz-1.jpg', 'jgut-niz-2.jpg', 'jgut-niz-3.jpg'],
+                3: ['golovka-1.jpg', 'golovka-2.jpg', 'golovka-3.jpg', 'golovka-4.jpg', 'golovka-5.jpg'],
+                4: ['gidroakkum-1.jpg', 'gidroakkum-2.jpg']
+            };
+            if (imageMap[productId] && imageMap[productId][index]) return imageMap[productId][index];
+            return `placeholder-${productId}-${index+1}.jpg`;
+        }
+
+        // Рендер товаров
+        function renderProducts() {
+            const grid = document.getElementById('productsGrid');
+            if (!grid) return;
+            grid.innerHTML = products.map(p => `
+                <div class="product-card" data-product-id="${p.id}">
+                    <div class="product-gallery">
+                        <div class="gallery-container" id="gallery-${p.id}">
+                            <div class="gallery-track">
+                                ${Array(p.images).fill(0).map((_, i) => `<div class="gallery-slide"><img src="../products/${getImageName(p.id, i)}" alt="${p.title}"></div>`).join('')}
+                            </div>
+                        </div>
+                        <button class="gallery-nav prev" onclick="slideGallery(-1, ${p.id})"><i class="fas fa-chevron-left"></i></button>
+                        <button class="gallery-nav next" onclick="slideGallery(1, ${p.id})"><i class="fas fa-chevron-right"></i></button>
+                        <div class="gallery-dots">
+                            ${Array(p.images).fill(0).map((_, i) => `<span class="dot ${i === 0 ? 'active' : ''}" onclick="goToSlide(${i}, ${p.id})"></span>`).join('')}
+                        </div>
+                        <div class="gallery-counter">${p.images} фото</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">${p.category}</div>
+                        <a href="#" class="product-title">${p.article} ${p.title}</a>
+                        <div class="product-article">${p.article}</div>
+                        <div class="product-footer">
+                            <span class="product-price"><i class="fas fa-phone-alt"></i> Цена по телефону</span>
+                            <span class="product-status">${p.status}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            products.forEach(p => { galleryIndices[p.id] = 0; });
+        }
+
+        // Галерея
+        const galleryIndices = {};
+        
+        function slideGallery(direction, id) {
+            const track = document.querySelector(`#gallery-${id} .gallery-track`);
+            if (!track) return;
+            const slides = track.children;
+            if (galleryIndices[id] === undefined) galleryIndices[id] = 0;
+            let newIndex = galleryIndices[id] + direction;
+            if (newIndex < 0) newIndex = slides.length - 1;
+            if (newIndex >= slides.length) newIndex = 0;
+            track.style.transform = `translateX(-${newIndex * 100}%)`;
+            galleryIndices[id] = newIndex;
+            updateDots(id, newIndex);
+        }
+        
+        function goToSlide(index, id) {
+            const track = document.querySelector(`#gallery-${id} .gallery-track`);
+            if (!track || index < 0 || index >= track.children.length) return;
+            track.style.transform = `translateX(-${index * 100}%)`;
+            galleryIndices[id] = index;
+            updateDots(id, index);
+        }
+        
+        function updateDots(id, active) {
+            const dots = document.querySelectorAll(`#gallery-${id} ~ .gallery-dots .dot, .product-card[data-product-id="${id}"] .gallery-dots .dot`);
+            dots.forEach((d, i) => d.classList.toggle('active', i === active));
+        }
+
+        // Поиск
+        function handleSearch(e) {
+            e.preventDefault();
+            const q = document.getElementById('searchInput').value.toLowerCase().trim();
+            if (!q) return;
+            const results = products.filter(p => p.article.toLowerCase().includes(q) || p.title.toLowerCase().includes(q));
+            const resDiv = document.getElementById('searchResults');
+            if (results.length === 0) {
+                resDiv.innerHTML = `<div class="search-result-item">Ничего не найдено по запросу "${q}"</div>`;
+                resDiv.classList.add('active');
+                setTimeout(() => resDiv.classList.remove('active'), 3000);
+                return;
+            }
+            resDiv.innerHTML = results.map(p => `<div class="search-result-item" onclick="selectResult('${p.article}', '${p.title}')"><div class="search-result-title">${p.article} - ${p.title}</div><div class="search-result-article">${p.status}</div></div>`).join('');
+            resDiv.classList.add('active');
+        }
+        
+        function selectResult(article, title) {
+            document.getElementById('searchInput').value = `${article} - ${title}`;
+            document.getElementById('searchResults').classList.remove('active');
+            alert(`🔍 Найдено: ${article} - ${title}\n📞 Цену уточняйте по телефону: 8 (908) 188-11-11`);
+        }
+
+        // WhatsApp для прайса
+        function sendToWhatsApp(category) {
+            window.open(`https://wa.me/79081881111?text=${encodeURIComponent(`Здравствуйте! Меня интересует оптовый прайс на категорию: ${category}.`)}`, '_blank');
+        }
+
+        // Бот
+        let waitingForArticle = false;
+        let waitingForModel = false;
+        
+        function toggleBot(event) {
+            if (event) event.stopPropagation();
+            const box = document.getElementById('botBox');
+            if (box) box.classList.toggle('active');
+        }
+        
+        function closeBot() {
+            const box = document.getElementById('botBox');
+            if (box) box.classList.remove('active');
+        }
+        
+        function addMessage(text, isUser = false) {
+            const container = document.getElementById('botMessages');
+            if (!container) return;
+            const div = document.createElement('div');
+            div.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
+            div.innerHTML = text.replace(/\n/g, '<br>');
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
+        }
+        
+        function showTyping() {
+            const container = document.getElementById('botMessages');
+            if (!container) return;
+            const typing = document.createElement('div');
+            typing.className = 'typing-indicator';
+            typing.id = 'typingIndicator';
+            typing.innerHTML = '<span></span><span></span><span></span>';
+            container.appendChild(typing);
+            container.scrollTop = container.scrollHeight;
+        }
+        
+        function hideTyping() {
+            const el = document.getElementById('typingIndicator');
+            if (el) el.remove();
+        }
+        
+        function botAnswer(topic) {
+            waitingForArticle = false;
+            waitingForModel = false;
+            switch(topic) {
+                case 'наличие':
+                    addMessage('Введите артикул запчасти (например: 152.10.28.570A):');
+                    waitingForArticle = true;
+                    break;
+                case 'цена':
+                    addMessage('💰 Для уточнения цены лучше позвонить: <strong>8 (908) 188-11-11</strong>');
+                    break;
+                case 'подбор':
+                    addMessage('🔧 Напишите модель комбайна (Дон, Вектор, Торум, Акрос, Бюлер)');
+                    waitingForModel = true;
+                    break;
+                case 'заявка':
+                    addMessage('📝 Оставьте заявку через форму на сайте или звоните: <strong>8 (908) 188-11-11</strong>');
+                    break;
+                case 'каталог':
+                    addMessage('📚 Наш каталог запчастей: <a href="catalog.html" style="color: #D4A55C;">Перейти в каталог →</a>');
+                    break;
+                case 'адрес':
+                    addMessage('📍 Наш адрес: г. Аксай, ул. Ленина, 48<br>📞 Телефон: <strong>8 (908) 188-11-11</strong>');
+                    break;
+                default:
+                    addMessage('Напишите: наличие, цена, подбор, заявка, каталог, адрес');
+            }
+        }
+        
+        function sendBotMessage() {
+            const input = document.getElementById('botInput');
+            const text = input.value.trim();
+            if (!text) return;
+            addMessage(text, true);
+            input.value = '';
+            showTyping();
+            setTimeout(() => {
+                hideTyping();
+                if (waitingForArticle) {
+                    const found = Object.keys(catalog).find(k => text.toUpperCase().includes(k.toUpperCase()) || k.toUpperCase().includes(text.toUpperCase()));
+                    addMessage(found ? catalog[found] : `❌ "${text}" не найдено. Звоните: 8 (908) 188-11-11`);
+                    waitingForArticle = false;
+                } else if (waitingForModel) {
+                    addMessage(`🔧 По модели "${text}" поможем подобрать. Звоните: 8 (908) 188-11-11`);
+                    waitingForModel = false;
+                } else {
+                    addMessage('Я вас понял. Для точного ответа лучше позвонить: 8 (908) 188-11-11');
+                }
+            }, 1000);
+        }
+
+        // Модальные окна
+        function openCallModal() {
+            document.getElementById('callModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        function handleFormSubmit(e, modalId = null) {
+            e.preventDefault();
+            alert('Спасибо! Мы свяжемся с вами.');
+            e.target.reset();
+            if (modalId) closeModal(modalId);
+            document.body.style.overflow = '';
+        }
+
+        // Кнопка наверх
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('scrollTop');
+            if (btn) btn.classList.toggle('visible', window.scrollY > 300);
+        });
+
+        // Бургер-меню
+        document.getElementById('burgerBtn')?.addEventListener('click', () => {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+            document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+        });
+        
+        document.querySelectorAll('.mobile-menu a').forEach(l => l.addEventListener('click', () => {
+            document.getElementById('mobileMenu').classList.remove('active');
+            document.body.style.overflow = '';
+        }));
+
+        // FAQ аккордеон
+        document.querySelectorAll('.faq-question').forEach(q => q.addEventListener('click', () => {
+            q.parentElement.classList.toggle('active');
+            q.nextElementSibling.classList.toggle('visible');
+        }));
+
+        // Закрытие бота при клике вне
+        document.addEventListener('click', function(e) {
+            const widget = document.getElementById('botWidget');
+            const box = document.getElementById('botBox');
+            if (box && box.classList.contains('active') && widget && !widget.contains(e.target)) {
+                closeBot();
+            }
+        });
+        
+        document.getElementById('botWidget')?.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+        
+        document.getElementById('botInput')?.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') sendBotMessage();
+        });
+        
+        document.addEventListener('click', function(e) {
+            const res = document.getElementById('searchResults');
+            if (res && !e.target.closest('.header-search')) res.classList.remove('active');
+        });
+
+        // Инициализация
+        renderProducts();
+    </script>
+</body>
+</html>

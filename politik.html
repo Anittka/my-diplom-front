@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Политика конфиденциальности - АГРОМАРКЕТ ТОРШЕНКО</title>
+    
+    <!-- Подключение шрифтов -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Подключение стилей -->
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Дополнительные стили для страницы политики */
+        .policy-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 50px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+        }
+        
+        .policy-content h1 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--brown-dark);
+            text-align: center;
+        }
+        
+        .policy-content h2 {
+            font-size: 1.4rem;
+            margin: 30px 0 15px;
+            text-align: left;
+            color: var(--brown-dark);
+        }
+        
+        .policy-content h2:after {
+            left: 0;
+            transform: none;
+            width: 50px;
+        }
+        
+        .policy-content h3 {
+            font-size: 1.2rem;
+            margin: 20px 0 10px;
+            color: var(--brown-dark);
+        }
+        
+        .policy-content p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+            color: var(--brown);
+            font-size: 1rem;
+        }
+        
+        .policy-content ul, 
+        .policy-content ol {
+            margin: 15px 0 15px 25px;
+            color: var(--brown);
+            line-height: 1.7;
+        }
+        
+        .policy-content li {
+            margin-bottom: 8px;
+        }
+        
+        .policy-content strong {
+            color: var(--brown-dark);
+        }
+        
+        .policy-date {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-light);
+            text-align: right;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .policy-note {
+            background: var(--wheat-soft);
+            padding: 20px;
+            border-radius: var(--radius);
+            margin: 25px 0;
+            border-left: 4px solid var(--wheat);
+        }
+        
+        @media (max-width: 768px) {
+            .policy-content {
+                padding: 30px 20px;
+            }
+            
+            .policy-content h1 {
+                font-size: 1.6rem;
+            }
+            
+            .policy-content h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Верхняя панель -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="city-selector">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Аксай, Ростовская область</span>
+            </div>
+            <div class="top-links">
+                <a href="about.html">О компании</a>
+                <a href="delivery.html">Доставка и оплата</a>
+                <a href="contacts.html">Контакты</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">АГРОМАРКЕТ<br>ТОРШЕНКО</a>
+                <span>Запчасти для комбайнов с 2014 года</span>
+            </div>
+
+            <div class="header-search">
+                <form class="search-form" action="catalog.html">
+                    <input type="text" placeholder="Введите артикул или название...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+
+            <div class="header-actions">
+                <a href="tel:+79081881111" class="header-phone">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>8 (908) 188-11-11</span>
+                </a>
+                <button class="btn-call" onclick="openCallModal()">Заказать звонок</button>
+                <div class="burger" id="burgerBtn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Навигация -->
+    <div class="nav-bar">
+        <div class="container">
+            <nav class="nav-menu">
+                <a href="index.html">Главная</a>
+                <a href="catalog.html">Каталог</a>
+                <a href="articles.html">Полезные советы</a>
+                <a href="about.html">О компании</a>
+                <a href="delivery.html">Доставка</a>
+                <a href="contacts.html">Контакты</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Мобильное меню -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="articles.html">Полезные советы</a>
+        <a href="about.html">О компании</a>
+        <a href="delivery.html">Доставка</a>
+        <a href="contacts.html">Контакты</a>
+    </div>
+
+    <main>
+        <!-- Хлебные крошки -->
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="index.html">Главная</a>
+                <span class="separator">/</span>
+                <span class="current">Политика конфиденциальности</span>
+            </div>
+        </div>
+
+        <!-- Содержание страницы политики -->
+        <section class="policy-section" style="padding: 40px 0 80px;">
+            <div class="container">
+                <div class="policy-content">
+                    <h1>Политика конфиденциальности</h1>
+                    
+                    <div class="policy-note">
+                        <p><strong>Настоящая Политика конфиденциальности</strong> определяет порядок сбора, хранения, обработки и защиты персональных данных пользователей сайта <strong>agromarkettorshenko.ru</strong>.</p>
+                    </div>
+
+                    <h2>1. Общие положения</h2>
+                    <p>1.1. Настоящая Политика конфиденциальности (далее — Политика) является официальным документом ООО «АГРОМАРКЕТТОРШЕНКО» (далее — Оператор) и определяет порядок обработки и защиты информации о физических лицах, использующих сайт Оператора.</p>
+                    <p>1.2. Целью настоящей Политики является обеспечение защиты прав и свобод человека и гражданина при обработке его персональных данных, в том числе защиты прав на неприкосновенность частной жизни, личную и семейную тайну.</p>
+                    <p>1.3. Используя сайт и оставляя свои персональные данные, Пользователь выражает согласие с условиями настоящей Политики.</p>
+
+                    <h2>2. Какие данные мы собираем</h2>
+                    <p>Оператор может собирать следующие персональные данные:</p>
+                    <ul>
+                        <li>Фамилия, имя, отчество Пользователя;</li>
+                        <li>Номер контактного телефона;</li>
+                        <li>Адрес электронной почты;</li>
+                        <li>Адрес доставки (при оформлении заказа);</li>
+                        <li>Информация о заказах и предпочтениях;</li>
+                        <li>IP-адрес, данные о браузере и устройстве.</li>
+                    </ul>
+
+                    <h2>3. Цели сбора персональных данных</h2>
+                    <p>Персональные данные Пользователя обрабатываются в следующих целях:</p>
+                    <ul>
+                        <li>Оформление и обработка заказов;</li>
+                        <li>Консультирование по вопросам подбора запчастей;</li>
+                        <li>Обратная связь с Пользователем;</li>
+                        <li>Доставка товаров;</li>
+                        <li>Улучшение качества обслуживания и работы сайта;</li>
+                        <li>Проведение маркетинговых и рекламных акций (с согласия Пользователя).</li>
+                    </ul>
+
+                    <h2>4. Правовые основания обработки персональных данных</h2>
+                    <p>4.1. Обработка персональных данных осуществляется на основании:</p>
+                    <ul>
+                        <li>Федерального закона от 27.07.2006 № 152-ФЗ «О персональных данных»;</li>
+                        <li>Согласия Пользователя на обработку персональных данных, предоставляемого при заполнении форм обратной связи, заказа звонка или оформлении заказа;</li>
+                        <li>Договорных отношений между Оператором и Пользователем.</li>
+                    </ul>
+
+                    <h2>5. Обработка персональных данных</h2>
+                    <p>5.1. Обработка персональных данных осуществляется с использованием средств автоматизации и без использования средств автоматизации.</p>
+                    <p>5.2. Оператор осуществляет следующие действия с персональными данными: сбор, запись, систематизация, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, обезличивание, блокирование, удаление, уничтожение.</p>
+                    <p>5.3. Персональные данные Пользователя хранятся в электронном виде в информационных системах Оператора, а также на бумажных носителях.</p>
+
+                    <h2>6. Передача персональных данных третьим лицам</h2>
+                    <p>6.1. Оператор не передает персональные данные Пользователя третьим лицам, за исключением случаев, предусмотренных законодательством РФ.</p>
+                    <p>6.2. Передача персональных данных возможна в следующих случаях:</p>
+                    <ul>
+                        <li>Согласие Пользователя на такую передачу;</li>
+                        <li>Передача данных транспортным компаниям для доставки заказов;</li>
+                        <li>По запросу уполномоченных государственных органов в соответствии с законодательством РФ.</li>
+                    </ul>
+
+                    <h2>7. Сроки обработки и хранения персональных данных</h2>
+                    <p>7.1. Персональные данные Пользователя хранятся не дольше, чем этого требуют цели их обработки, если иное не установлено законодательством РФ.</p>
+                    <p>7.2. После достижения целей обработки или в случае утраты необходимости в достижении этих целей персональные данные подлежат уничтожению или обезличиванию.</p>
+                    <p>7.3. Договорная информация о заказах хранится в течение 5 лет с момента последнего взаимодействия с Пользователем.</p>
+
+                    <h2>8. Права Пользователя</h2>
+                    <p>Пользователь имеет право:</p>
+                    <ul>
+                        <li>Получать информацию о наличии его персональных данных у Оператора;</li>
+                        <li>Требовать уточнения, блокирования или уничтожения своих персональных данных;</li>
+                        <li>Отозвать согласие на обработку персональных данных;</li>
+                        <li>Обжаловать действия или бездействие Оператора в уполномоченный орган по защите прав субъектов персональных данных.</li>
+                    </ul>
+
+                    <h2>9. Меры защиты персональных данных</h2>
+                    <p>9.1. Оператор принимает необходимые организационные и технические меры для защиты персональных данных от неправомерного или случайного доступа, уничтожения, изменения, блокирования, копирования, распространения.</p>
+                    <p>9.2. К таким мерам относятся:</p>
+                    <ul>
+                        <li>Использование защищенных каналов связи;</li>
+                        <li>Ограничение доступа к персональным данным;</li>
+                        <li>Применение средств защиты информации;</li>
+                        <li>Контроль за соблюдением требований по защите персональных данных.</li>
+                    </ul>
+
+                    <div class="policy-note">
+                        <p><strong>Важно!</strong> Для уточнения информации по обработке персональных данных, а также для отзыва согласия, Вы можете связаться с нами:</p>
+                        <p>📞 Телефон: <a href="tel:+79081881111" style="color: var(--wheat-dark);">8 (908) 188-11-11</a></p>
+                        <p>📧 Email: <a href="mailto:info@agromarkettorshenko.ru" style="color: var(--wheat-dark);">info@agromarkettorshenko.ru</a></p>
+                        <p>📍 Адрес: г. Аксай, ул. Ленина, 48</p>
+                    </div>
+
+                    <h2>10. Изменение Политики конфиденциальности</h2>
+                    <p>10.1. Оператор оставляет за собой право вносить изменения в настоящую Политику конфиденциальности без предварительного уведомления Пользователя.</p>
+                    <p>10.2. Актуальная версия Политики всегда доступна на сайте по адресу: <a href="politik.html" style="color: var(--wheat-dark);">agromarkettorshenko.ru/politik.html</a></p>
+                    <p>10.3. Использование сайта после внесения изменений означает согласие Пользователя с обновленной Политикой.</p>
+
+                    <div class="policy-date">
+                        <p>Дата последнего обновления: 23 марта 2026 года</p>
+                        <p>© 2026 ООО «АГРОМАРКЕТТОРШЕНКО». Все права защищены.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Баннер с телефоном -->
+        <section class="about-phone-banner">
+            <div class="container">
+                <div class="phone-banner-card">
+                    <h3>Остались вопросы?</h3>
+                    <p>Позвоните нам — мы поможем разобраться</p>
+                    <a href="tel:+79081881111" class="big-phone">
+                        <i class="fas fa-phone-alt"></i> 8 (908) 188-11-11
+                    </a>
+                    <div class="note">Звоните с 10:00 до 19:00, без выходных</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ПОДВАЛ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <a href="index.html">АГРОМАРКЕТ<br>ТОРШЕНКО</a>
+                    </div>
+                    <p>Запчасти для комбайнов с 2014 года</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="VK"><i class="fab fa-vk"></i></a>
+                        <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <div class="footer-credits">
+                        Иконки от <a href="https://fontawesome.com" target="_blank" rel="noopener">Font Awesome</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Навигация</h4>
+                    <a href="index.html">Главная</a>
+                    <a href="catalog.html">Каталог</a>
+                    <a href="articles.html">Полезные советы</a>
+                    <a href="about.html">О компании</a>
+                    <a href="delivery.html">Доставка</a>
+                    <a href="contacts.html">Контакты</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <a href="delivery.html">Доставка и оплата</a>
+                    <a href="politik.html">Политика конфиденциальности</a>
+                    <a href="sitemap.html">Карта сайта</a>
+                </div>
+                <div class="footer-col footer-contacts">
+                    <h4>Контакты</h4>
+                    <a href="tel:+79081881111" class="footer-phone">
+                        <i class="fas fa-phone-alt"></i> 8 (908) 188-11-11
+                    </a>
+                    <p><i class="fas fa-envelope"></i> info@agromarkettorshenko.ru</p>
+                    <p><i class="fas fa-map-marker-alt"></i> г. Аксай, ул. Ленина, 48</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2026 ООО «АГРОМАРКЕТТОРШЕНКО». Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ПЛАВАЮЩАЯ КНОПКА ТЕЛЕФОНА -->
+    <div class="float-phone">
+        <a href="tel:+79081881111" aria-label="Позвонить"><i class="fas fa-phone-alt"></i></a>
+    </div>
+
+    <!-- КНОПКА НАВЕРХ -->
+    <div class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+      <!-- АГРО-БОТ -->
+    <div class="bot-widget" id="botWidget">
+        <div class="bot-button" onclick="toggleBot(event)">
+            <i class="fas fa-robot"></i>
+        </div>
+        <div class="bot-box" id="botBox">
+            <div class="bot-header">
+                <div class="bot-header-info">
+                    <i class="fas fa-robot"></i>
+                    <div>
+                        <h4>Агро-бот</h4>
+                        <p>Онлайн 24/7</p>
+                    </div>
+                </div>
+                <button onclick="closeBot()">✕</button>
+            </div>
+            <div class="bot-messages" id="botMessages">
+                <div class="message bot-message">
+                    🌾 Здравствуйте! Я агро-бот компании АГРОМАРКЕТ ТОРШЕНКО.<br><br>
+                    📞 По вопросам цен и наличия лучше сразу звонить: <strong>8 (908) 188-11-11</strong><br><br>
+                    Что я умею:<br>
+                    • <strong>наличие</strong> — проверить запчасть по артикулу<br>
+                    • <strong>цена</strong> — узнать стоимость<br>
+                    • <strong>подбор</strong> — помочь подобрать аналог<br>
+                    • <strong>заявка</strong> — оставить заявку на звонок<br>
+                    • <strong>каталог</strong> — ссылка на каталог<br>
+                    • <strong>адрес</strong> — узнать адрес<br><br>
+                    Напишите нужную команду или задайте вопрос!
+                </div>
+            </div>
+            <div class="bot-questions">
+                <button onclick="botAnswer('наличие')"><i class="fas fa-search"></i> Наличие</button>
+                <button onclick="botAnswer('цена')"><i class="fas fa-ruble-sign"></i> Цена</button>
+                <button onclick="botAnswer('подбор')"><i class="fas fa-cog"></i> Подбор</button>
+                <button onclick="botAnswer('заявка')"><i class="fas fa-phone"></i> Заявка</button>
+                <button onclick="botAnswer('каталог')"><i class="fas fa-list"></i> Каталог</button>
+                <button onclick="botAnswer('адрес')"><i class="fas fa-map-marker-alt"></i> Адрес</button>
+            </div>
+            <div class="bot-input">
+                <input type="text" id="botInput" placeholder="Напишите артикул или вопрос...">
+                <button onclick="sendBotMessage()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+            <div class="bot-footer">
+                <span>📞 Лучше позвонить: 8 (908) 188-11-11</span>
+            </div>
+        </div>
+    </div>
+    <!-- МОДАЛЬНЫЕ ОКНА -->
+    <div class="modal-overlay" id="callModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>Заказать звонок</h3>
+                <div class="modal-close" onclick="closeModal('callModal')">✕</div>
+            </div>
+            <div class="modal-body">
+                <form id="callForm">
+                    <div class="form-group">
+                        <label for="call-name">Ваше имя *</label>
+                        <input type="text" id="call-name" placeholder="Иван Петрович" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="call-phone">Телефон *</label>
+                        <input type="tel" id="call-phone" placeholder="+7 (___) ___-__-__" required>
+                    </div>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" required>
+                            <span class="checkbox-text">Согласие на обработку <a href="politik.html" target="_blank" style="color: #D4A55C; text-decoration: underline;">персональных данных</a></span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Заказать звонок</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="reviewModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>Оставить отзыв</h3>
+                <div class="modal-close" onclick="closeModal('reviewModal')">✕</div>
+            </div>
+            <div class="modal-body">
+                <form id="reviewForm">
+                    <div class="form-group">
+                        <label for="review-name">Ваше имя *</label>
+                        <input type="text" id="review-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="review-phone">Телефон *</label>
+                        <input type="tel" id="review-phone" placeholder="+7 (___) ___-__-__" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Оценка</label>
+                        <div class="rating-input">
+                            <span onclick="setRating(1)">★</span>
+                            <span onclick="setRating(2)">★</span>
+                            <span onclick="setRating(3)">★</span>
+                            <span onclick="setRating(4)">★</span>
+                            <span onclick="setRating(5)">★</span>
+                        </div>
+                        <input type="hidden" id="review-rating" value="5">
+                    </div>
+                    <div class="form-group">
+                        <label for="review-text">Ваш отзыв *</label>
+                        <textarea id="review-text" rows="4" required></textarea>
+                    </div>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" required>
+                            <span class="checkbox-text">Согласие на обработку <a href="politik.html" target="_blank" style="color: #D4A55C; text-decoration: underline;">персональных данных</a></span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить отзыв</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подключение JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

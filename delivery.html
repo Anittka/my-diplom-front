@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Доставка и оплата | АГРОМАРКЕТ ТОРШЕНКО</title>
+    
+    <!-- Микроразметка для страницы -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "Доставка и оплата",
+        "description": "Информация о способах доставки и оплаты в компании АГРОМАРКЕТ ТОРШЕНКО",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "АГРОМАРКЕТ ТОРШЕНКО",
+            "telephone": "+7 (908) 188-11-11",
+            "email": "info@agromarkettorshenko.ru",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Аксай",
+                "addressRegion": "Ростовская область",
+                "streetAddress": "ул. Ленина, 48",
+                "addressCountry": "RU"
+            }
+        }
+    }
+    </script>
+
+    <!-- Подключение шрифтов -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Подключение общих стилей -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Верхняя панель -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="city-selector">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Аксай, Ростовская область</span>
+            </div>
+            <div class="top-links">
+                <a href="about.html">О компании</a>
+                <a href="delivery.html">Доставка и оплата</a>
+                <a href="contacts.html">Контакты</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">АГРОМАРКЕТ<br>ТОРШЕНКО</a>
+                <span>Запчасти для комбайнов с 2014 года</span>
+            </div>
+
+            <div class="header-search">
+                <form class="search-form" action="catalog.html">
+                    <input type="text" placeholder="Введите артикул или название...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+
+            <div class="header-actions">
+                <a href="tel:+79081881111" class="header-phone">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>8 (908) 188-11-11</span>
+                </a>
+                <button class="btn-call" onclick="openCallModal()">Заказать звонок</button>
+                <div class="burger" id="burgerBtn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Навигация -->
+    <div class="nav-bar">
+        <div class="container">
+            <nav class="nav-menu">
+                <a href="index.html">Главная</a>
+                <a href="catalog.html">Каталог</a>
+                <a href="articles.html">Полезные советы</a>
+                <a href="about.html">О компании</a>
+                <a href="delivery.html" class="active">Доставка</a>
+                <a href="contacts.html">Контакты</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Мобильное меню -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="articles.html">Полезные советы</a>
+        <a href="about.html">О компании</a>
+        <a href="delivery.html">Доставка</a>
+        <a href="contacts.html">Контакты</a>
+    </div>
+
+    <main>
+        <div class="container">
+            <!-- Хлебные крошки -->
+            <div class="breadcrumbs">
+                <a href="index.html">Главная</a> <span class="separator">›</span> <span class="current">Доставка и оплата</span>
+            </div>
+
+            <!-- Заголовок -->
+            <h1 class="page-title">Доставка и оплата</h1>
+
+            <!-- Вводный текст -->
+            <div class="intro-text">
+                <p>Мы стараемся сделать процесс получения заказа максимально удобным для вас. Вы можете выбрать любой способ доставки и оплаты из представленных ниже.</p>
+            </div>
+        </div>
+
+        <!-- Способы доставки -->
+        <section class="delivery-methods-section">
+            <div class="container">
+                <h2 class="section-title">Способы доставки</h2>
+                <div class="delivery-methods-grid">
+                    
+                    <!-- Самовывоз -->
+                    <div class="delivery-method-card">
+                        <div class="method-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <h3 class="method-title">Самовывоз</h3>
+                        <div class="method-desc">
+                            Вы можете забрать заказ самостоятельно с нашего склада в городе Аксай. Предварительно согласуйте наличие и время визита.
+                        </div>
+                        <div class="method-details">
+                            <p><i class="fas fa-map-marker-alt"></i> г. Аксай, ул. Ленина, 48</p>
+                            <p><i class="fas fa-clock"></i> Пн–Сб: 10:00–19:00</p>
+                            <p><i class="fas fa-ruble-sign"></i> Бесплатно</p>
+                            <p><i class="fas fa-check-circle"></i> Можно осмотреть товар перед оплатой</p>
+                        </div>
+                    </div>
+
+                    <!-- Транспортная компания -->
+                    <div class="delivery-method-card">
+                        <div class="method-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h3 class="method-title">Транспортная компания</h3>
+                        <div class="method-desc">
+                            Отправляем любой удобной для вас транспортной компанией. Работаем с Деловыми Линиями, ПЭК, КИТ, Байкал-Сервис и другими.
+                        </div>
+                        <div class="method-details">
+                            <p><i class="fas fa-clock"></i> Сроки: 3–7 дней (в зависимости от региона)</p>
+                            <p><i class="fas fa-ruble-sign"></i> От 500 ₽ (по тарифам ТК)</p>
+                            <p><i class="fas fa-check-circle"></i> Отправка в день заказа</p>
+                            <p><i class="fas fa-tag"></i> Страхование груза включено</p>
+                        </div>
+                    </div>
+
+                    <!-- Почта России -->
+                    <div class="delivery-method-card">
+                        <div class="method-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 class="method-title">Почта России</h3>
+                        <div class="method-desc">
+                            Отправляем заказы почтой в любой населенный пункт России. Подходит для небольших и средних заказов.
+                        </div>
+                        <div class="method-details">
+                            <p><i class="fas fa-clock"></i> Сроки: 5–14 дней</p>
+                            <p><i class="fas fa-ruble-sign"></i> От 350 ₽ (зависит от веса)</p>
+                            <p><i class="fas fa-box-open"></i> Посылка 1 класса</p>
+                            <p><i class="fas fa-barcode"></i> Трек-номер для отслеживания</p>
+                        </div>
+                    </div>
+
+                    <!-- Курьерская доставка -->
+                    <div class="delivery-method-card">
+                        <div class="method-icon">
+                            <i class="fas fa-bicycle"></i>
+                        </div>
+                        <h3 class="method-title">Курьерская доставка</h3>
+                        <div class="method-desc">
+                            Доставка курьером до двери по Аксаю и ближайшим населенным пунктам Ростовской области.
+                        </div>
+                        <div class="method-details">
+                            <p><i class="fas fa-clock"></i> Сроки: 1–2 дня</p>
+                            <p><i class="fas fa-ruble-sign"></i> 300–500 ₽ (в зависимости от расстояния)</p>
+                            <p><i class="fas fa-check-circle"></i> Оплата при получении</p>
+                            <p><i class="fas fa-map-marked-alt"></i> Доставка до двери</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Способы оплаты -->
+        <section class="payment-methods-section">
+            <div class="container">
+                <h2 class="section-title">Способы оплаты</h2>
+                <div class="payment-methods-grid">
+                    
+                    <!-- Наличный расчет -->
+                    <div class="payment-method-card">
+                        <div class="payment-header">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <h3>Наличный расчет</h3>
+                        </div>
+                        <div class="payment-desc">
+                            Оплата наличными при самовывозе со склада. Вы можете осмотреть товар перед оплатой.
+                        </div>
+                        <span class="payment-note">Только при самовывозе</span>
+                    </div>
+
+                    <!-- Безналичный расчет для юрлиц -->
+                    <div class="payment-method-card">
+                        <div class="payment-header">
+                            <i class="fas fa-credit-card"></i>
+                            <h3>Безналичный расчет</h3>
+                        </div>
+                        <div class="payment-desc">
+                            Оплата по счету для юридических лиц и индивидуальных предпринимателей. Предоставляем все закрывающие документы.
+                        </div>
+                        <span class="payment-note">С НДС / без НДС</span>
+                    </div>
+
+                    <!-- Перевод на карту -->
+                    <div class="payment-method-card">
+                        <div class="payment-header">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h3>Перевод на карту</h3>
+                        </div>
+                        <div class="payment-desc">
+                            Оплата переводом на карту Сбербанка или Тинькофф для физических лиц. Реквизиты предоставит менеджер после согласования заказа.
+                        </div>
+                        <span class="payment-note">Для физ. лиц</span>
+                    </div>
+
+                    <!-- Оплата по счету для физлиц -->
+                    <div class="payment-method-card">
+                        <div class="payment-header">
+                            <i class="fas fa-university"></i>
+                            <h3>Оплата по счету</h3>
+                        </div>
+                        <div class="payment-desc">
+                            Выставление счета на оплату для физических лиц через любой банк. Подходит для безналичной оплаты без комиссии.
+                        </div>
+                        <span class="payment-note">Через отделение банка</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Важное сообщение -->
+        <section class="important-info-section">
+            <div class="container">
+                <div class="important-info-card">
+                    <h3>Важно!</h3>
+                    <p>Наш сайт — это «интернет-витрина». Перед оформлением заказа обязательно уточняйте наличие и сроки изготовления интересующих позиций по телефону.</p>
+                    <div class="info-phone">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+79081881111">8 (908) 188-11-11</a>
+                    </div>
+                    <p class="note">Звоните с 10:00 до 19:00, ответим на все вопросы</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Частые вопросы о доставке и оплате -->
+        <section class="delivery-faq-section">
+            <div class="container">
+                <h2 class="section-title">Частые вопросы о доставке и оплате</h2>
+                <div class="faq-grid">
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" data-faq-id="faq1">
+                            Как узнать стоимость доставки до моего города?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer" id="faq1">
+                            Стоимость доставки зависит от веса заказа и удаленности вашего региона. Вы можете рассчитать ее на сайте транспортной компании или уточнить у нашего менеджера при оформлении заказа. Мы подберем наиболее выгодный вариант.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" data-faq-id="faq2">
+                            Можно ли заказать доставку в другой регион?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer" id="faq2">
+                            Да, мы отправляем заказы во все регионы России через транспортные компании и Почту России. Работаем со всеми крупными городами: Москва, Санкт-Петербург, Краснодар, Новосибирск, Екатеринбург и другие.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" data-faq-id="faq3">
+                            Какие документы вы предоставляете для юридических лиц?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer" id="faq3">
+                            Мы предоставляем счет на оплату, товарную накладную (ТОРГ-12) и счет-фактуру (при работе с НДС). Все документы выдаются при отгрузке товара или отправляются электронно. Работаем с НДС и без НДС.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" data-faq-id="faq4">
+                            Можно ли вернуть товар?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer" id="faq4">
+                            Возврат товара возможен в соответствии с законодательством РФ. Пожалуйста, сохраняйте товарный вид и упаковку. Для уточнения деталей свяжитесь с нашим менеджером. Обратите внимание, что некоторые категории запчастей обмену и возврату не подлежат.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" data-faq-id="faq5">
+                            Как быстро вы отправляете заказ после оплаты?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer" id="faq5">
+                            Отправляем заказы в день поступления оплаты или на следующий рабочий день. После отправки мы предоставляем трек-номер для отслеживания. Вы всегда можете узнать статус заказа по телефону.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" data-faq-id="faq6">
+                            Работаете ли вы с наложенным платежом?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer" id="faq6">
+                            Да, возможна отправка наложенным платежом через транспортные компании и Почту России. В этом случае вы оплачиваете заказ при получении. Уточните эту возможность у менеджера при оформлении, так как для некоторых позиций требуется предоплата.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Карта проезда -->
+        <section class="delivery-map-section">
+            <div class="container">
+                <h2 class="section-title">Схема проезда</h2>
+                <div class="map-container">
+                    <iframe src="https://yandex.ru/map-widget/v1/?ll=39.874674%2C47.267858&z=17&pt=39.874674%2C47.267858%2Cpm2rdm&l=map" 
+                            allowfullscreen="true" title="Карта проезда">
+                    </iframe>
+                </div>
+                <div class="map-hours">
+                    <p>
+                        <i class="fas fa-clock"></i>
+                        Пн–Пт: 10:00–19:00 | Сб: 10:00–19:00 | Вс: выходной
+                    </p>
+                </div>
+                <div class="map-address">
+                    <p><i class="fas fa-map-marker-alt"></i> г. Аксай, ул. Ленина, 48 (вход со двора)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Баннер с телефоном -->
+        <section class="delivery-phone-banner">
+            <div class="container">
+                <div class="phone-banner-card">
+                    <h3>Остались вопросы о доставке?</h3>
+                    <p>Позвоните нам — наши специалисты помогут выбрать оптимальный способ!</p>
+                    <a href="tel:+79081881111" class="big-phone">
+                        <i class="fas fa-phone-alt"></i> 8 (908) 188-11-11
+                    </a>
+                    <p class="note">Звоните с 10:00 до 19:00, ответим на все вопросы</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <a href="index.html">АГРОМАРКЕТ<br>ТОРШЕНКО</a>
+                    </div>
+                    <p>Запчасти для комбайнов с 2014 года</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="VK"><i class="fab fa-vk"></i></a>
+                        <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <div class="footer-credits">
+                        Иконки от <a href="https://fontawesome.com" target="_blank" rel="noopener">Font Awesome</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Навигация</h4>
+                    <a href="index.html">Главная</a>
+                    <a href="catalog.html">Каталог</a>
+                    <a href="articles.html">Полезные советы</a>
+                    <a href="about.html">О компании</a>
+                    <a href="delivery.html">Доставка</a>
+                    <a href="contacts.html">Контакты</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <a href="delivery.html">Доставка и оплата</a>
+                    <a href="politik.html">Политика конфиденциальности</a>
+                    <a href="sitemap.html">Карта сайта</a>
+                </div>
+                <div class="footer-col footer-contacts">
+                    <h4>Контакты</h4>
+                    <a href="tel:+79081881111" class="footer-phone">
+                        <i class="fas fa-phone-alt"></i> 8 (908) 188-11-11
+                    </a>
+                    <p><i class="fas fa-envelope"></i> info@agromarkettorshenko.ru</p>
+                    <p><i class="fas fa-map-marker-alt"></i> г. Аксай, ул. Ленина, 48</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 ООО «АГРОМАРКЕТТОРШЕНКО». Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Плавающая кнопка телефона -->
+    <div class="float-phone">
+        <a href="tel:+79081881111" aria-label="Позвонить"><i class="fas fa-phone-alt"></i></a>
+    </div>
+
+    <!-- Кнопка наверх -->
+    <div class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+   <!-- АГРО-БОТ -->
+<div class="bot-widget" id="botWidget">
+    <div class="bot-button" onclick="toggleBot(event)">
+        <i class="fas fa-robot"></i>
+    </div>
+    <div class="bot-box" id="botBox">
+        <div class="bot-header">
+            <div class="bot-header-info">
+                <i class="fas fa-robot"></i>
+                <div>
+                    <h4>Агро-бот</h4>
+                    <p>Онлайн 24/7</p>
+                </div>
+            </div>
+            <button onclick="closeBot()">✕</button>
+        </div>
+        <div class="bot-messages" id="botMessages">
+            <div class="message bot-message">
+                🌾 Здравствуйте! Я агро-бот компании АГРОМАРКЕТ ТОРШЕНКО.<br><br>
+                📞 По вопросам цен и наличия лучше сразу звонить: <strong>8 (908) 188-11-11</strong><br><br>
+                Что я умею:<br>
+                • <strong>наличие</strong> — проверить запчасть по артикулу<br>
+                • <strong>цена</strong> — узнать стоимость<br>
+                • <strong>подбор</strong> — помочь подобрать аналог<br>
+                • <strong>заявка</strong> — оставить заявку на звонок<br>
+                • <strong>каталог</strong> — ссылка на каталог<br>
+                • <strong>адрес</strong> — узнать адрес<br><br>
+                Напишите нужную команду или задайте вопрос!
+            </div>
+        </div>
+        <div class="bot-questions">
+            <button onclick="botAnswer('наличие')"><i class="fas fa-search"></i> Наличие</button>
+            <button onclick="botAnswer('цена')"><i class="fas fa-ruble-sign"></i> Цена</button>
+            <button onclick="botAnswer('подбор')"><i class="fas fa-cog"></i> Подбор</button>
+            <button onclick="botAnswer('заявка')"><i class="fas fa-phone"></i> Заявка</button>
+            <button onclick="botAnswer('каталог')"><i class="fas fa-list"></i> Каталог</button>
+            <button onclick="botAnswer('адрес')"><i class="fas fa-map-marker-alt"></i> Адрес</button>
+        </div>
+        <div class="bot-input">
+            <input type="text" id="botInput" placeholder="Напишите артикул или вопрос...">
+            <button onclick="sendBotMessage()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+        <div class="bot-footer">
+            <span>📞 Лучше позвонить: 8 (908) 188-11-11</span>
+        </div>
+    </div>
+</div>
+
+    <!-- Модальные окна -->
+    <div class="modal-overlay" id="callModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>Заказать звонок</h3>
+                <div class="modal-close" onclick="closeModal('callModal')">✕</div>
+            </div>
+            <div class="modal-body">
+                <form id="callForm">
+                    <div class="form-group">
+                        <label for="call-name">Ваше имя</label>
+                        <input type="text" id="call-name" placeholder="Как к вам обращаться">
+                    </div>
+                    <div class="form-group">
+                        <label for="call-phone">Телефон *</label>
+                        <input type="tel" id="call-phone" placeholder="+7 (___) ___-__-__" required>
+                    </div>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" required>
+                            <span class="checkbox-text">Согласие на обработку данных</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Заказать звонок</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="reviewModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>Оставить отзыв</h3>
+                <div class="modal-close" onclick="closeModal('reviewModal')">✕</div>
+            </div>
+            <div class="modal-body">
+                <form id="reviewForm">
+                    <div class="form-group">
+                        <label for="review-name">Ваше имя *</label>
+                        <input type="text" id="review-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="review-phone">Телефон *</label>
+                        <input type="tel" id="review-phone" placeholder="+7 (___) ___-__-__" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Оценка</label>
+                        <div class="rating-input">
+                            <span onclick="setRating(1)">★</span>
+                            <span onclick="setRating(2)">★</span>
+                            <span onclick="setRating(3)">★</span>
+                            <span onclick="setRating(4)">★</span>
+                            <span onclick="setRating(5)">★</span>
+                        </div>
+                        <input type="hidden" id="review-rating" value="5">
+                    </div>
+                    <div class="form-group">
+                        <label for="review-text">Ваш отзыв *</label>
+                        <textarea id="review-text" rows="4" required></textarea>
+                    </div>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" required>
+                            <span class="checkbox-text">Согласие на обработку данных</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить отзыв</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подключение JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

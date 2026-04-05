@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О компании | АГРОМАРКЕТ ТОРШЕНКО</title>
+    
+    <!-- Микроразметка для страницы -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "О компании АГРОМАРКЕТ ТОРШЕНКО",
+        "description": "Информация о компании АГРОМАРКЕТ ТОРШЕНКО - поставщике запчастей для комбайнов",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "АГРОМАРКЕТ ТОРШЕНКО",
+            "description": "Запчасти для зерноуборочных и кормоуборочных комбайнов Дон, Вектор, Торум, Акрос, Бюлер",
+            "telephone": "+7 (908) 188-11-11",
+            "email": "info@agromarkettorshenko.ru",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Аксай",
+                "addressRegion": "Ростовская область",
+                "streetAddress": "ул. Ленина, 48",
+                "addressCountry": "RU"
+            },
+            "foundingDate": "2014",
+            "numberOfEmployees": "5",
+            "areaServed": "Россия"
+        }
+    }
+    </script>
+
+    <!-- Подключение шрифтов -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Подключение общих стилей -->
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* ===== ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ СТРАНИЦЫ "О КОМПАНИИ" ===== */
+        
+        /* 1. Блок "О компании" - без фото справа, только фон */
+        .about-company-section {
+            position: relative;
+            background: linear-gradient(135deg, var(--white) 0%, var(--wheat-soft) 100%);
+            overflow: hidden;
+        }
+        
+        .about-company-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('../images/truck4.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            opacity: 0.30;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .about-company-section .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Убираем старый блок с фото */
+        .about-grid {
+            display: block;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .about-image {
+            display: none;
+        }
+        
+        /* 2. Анимация при скролле */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* 3. Кнопки по центру */
+        .about-cta {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+        
+        /* 4. Улучшенные карточки команды */
+        .team-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .team-card .team-photo {
+            transition: transform 0.5s ease;
+        }
+        
+        .team-card:hover .team-photo {
+            transform: scale(1.05);
+        }
+        
+        .team-photo i {
+            font-size: 3rem;
+            color: var(--wheat);
+        }
+        
+        /* 5. Улучшенные карточки сертификатов */
+        .certificate-card {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            background: linear-gradient(135deg, var(--white) 0%, var(--wheat-soft) 100%);
+            overflow: hidden;
+        }
+        
+        .certificate-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .certificate-card .certificate-icon {
+            transition: transform 0.3s ease;
+            font-size: 3rem;
+            color: var(--wheat);
+            margin-bottom: 20px;
+        }
+        
+        .certificate-card:hover .certificate-icon {
+            transform: scale(1.1);
+        }
+        
+        /* 6. Галерея фото склада */
+        .gallery-section {
+            padding: 60px 0;
+            background: var(--bg-light);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            cursor: pointer;
+            aspect-ratio: 1 / 0.8;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-item .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            padding: 20px;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        /* 7. Стили для модального окна фото */
+        .photo-modal .modal-container {
+            max-width: 90vw;
+            max-height: 90vh;
+            background: transparent;
+            box-shadow: none;
+        }
+        
+        .photo-modal .modal-body {
+            padding: 0;
+            background: transparent;
+        }
+        
+        .photo-modal img {
+            width: 100%;
+            height: auto;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: var(--radius-lg);
+        }
+        
+        /* 8. Улучшенный блок брендов */
+        .brand-showcase-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .brand-showcase-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(230,200,124,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .brand-showcase-card:hover::after {
+            left: 100%;
+        }
+        
+        /* 9. Контент блока "О компании" - центрируем текст */
+        .about-content {
+            text-align: center;
+        }
+        
+        .about-content h2 {
+            text-align: center;
+        }
+        
+        .about-content h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* 10. Адаптив для галереи */
+        @media (max-width: 1024px) {
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Верхняя панель -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="city-selector">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Аксай, Ростовская область</span>
+            </div>
+            <div class="top-links">
+                <a href="about.html">О компании</a>
+                <a href="delivery.html">Доставка и оплата</a>
+                <a href="contacts.html">Контакты</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">АГРОМАРКЕТ<br>ТОРШЕНКО</a>
+                <span>Запчасти для комбайнов с 2014 года</span>
+            </div>
+
+            <div class="header-search">
+                <form class="search-form" action="catalog.html">
+                    <input type="text" placeholder="Введите артикул или название...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+
+            <div class="header-actions">
+                <a href="tel:+79081881111" class="header-phone">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>8 (908) 188-11-11</span>
+                </a>
+                <button class="btn-call" onclick="openCallModal()">Заказать звонок</button>
+                <div class="burger" id="burgerBtn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Навигация -->
+    <div class="nav-bar">
+        <div class="container">
+            <nav class="nav-menu">
+                <a href="index.html">Главная</a>
+                <a href="catalog.html">Каталог</a>
+                <a href="articles.html">Полезные советы</a>
+                <a href="about.html" class="active">О компании</a>
+                <a href="delivery.html">Доставка</a>
+                <a href="contacts.html">Контакты</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Мобильное меню -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="articles.html">Полезные советы</a>
+        <a href="about.html">О компании</a>
+        <a href="delivery.html">Доставка</a>
+        <a href="contacts.html">Контакты</a>
+    </div>
+
+    <main>
+        <div class="container">
+            <!-- Хлебные крошки -->
+            <div class="breadcrumbs">
+                <a href="index.html">Главная</a> <span class="separator">›</span> <span class="current">О компании</span>
+            </div>
+
+            <!-- Заголовок -->
+            <h1 class="page-title">О компании АГРОМАРКЕТ ТОРШЕНКО</h1>
+        </div>
+
+        <!-- Блок "О компании" с фоновым изображением -->
+        <section class="about-company-section">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-content animate-on-scroll">
+                        <h2>Ваш надежный партнер в мире запчастей</h2>
+                        <p>ООО «АГРОМАРКЕТТОРШЕНКО» — ваш надежный партнер в мире сельскохозяйственной техники. Мы специализируемся на поставках запасных частей для зерноуборочных и кормоуборочных комбайнов, а также для тракторов Buhler (Бюлер).</p>
+                        
+                        <p>Наш сайт — это «интернет-витрина», где представлена вся доступная для заказа номенклатура. При оформлении заказа необходимо уточнить наличие и сроки изготовления интересующих позиций. Мы всегда готовы помочь с подбором запчастей, даже если их нет в нашем каталоге.</p>
+                        
+                        <p>Компания работает на рынке уже более 10 лет. За это время мы заслужили доверие сотен клиентов — от небольших фермерских хозяйств до крупных сельскохозяйственных предприятий. Вся наша продукция соответствует ГОСТам и сопровождается необходимой документацией.</p>
+                        
+                        <p>Мы находимся в городе Аксай Ростовской области и готовы предложить как самовывоз, так и доставку транспортными компаниями в любой регион России.</p>
+                        
+                        <div class="about-cta">
+                            <a href="catalog.html" class="btn btn-primary">Перейти в каталог</a>
+                            <button class="btn btn-outline" onclick="openCallModal()">Заказать звонок</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Цифры и факты -->
+        <section class="stats-section">
+            <div class="container">
+                <h2 class="section-title">Цифры и факты</h2>
+                <div class="stats-grid">
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">лет на рынке</div>
+                        <div class="stat-desc">с 2014 года</div>
+                    </div>
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-number">5 000+</div>
+                        <div class="stat-label">товаров</div>
+                        <div class="stat-desc">в наличии и под заказ</div>
+                    </div>
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-number">1 000+</div>
+                        <div class="stat-label">клиентов</div>
+                        <div class="stat-desc">по всей России</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Наши преимущества -->
+        <section class="features-section">
+            <div class="container">
+                <h2 class="section-title">Почему выбирают нас</h2>
+                <div class="features-grid">
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon">
+                            <i class="fas fa-boxes"></i>
+                        </div>
+                        <h3>Широкий ассортимент</h3>
+                        <p>Более 5000 наименований запчастей для комбайнов Дон, Вектор, Торум, Акрос и тракторов Бюлер</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3>Качество ГОСТ</h3>
+                        <p>Вся продукция соответствует государственным стандартам и имеет сертификаты</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h3>Доставка по РФ</h3>
+                        <p>Отправляем любой транспортной компанией или почтой, возможен самовывоз</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Консультация</h3>
+                        <p>Поможем подобрать аналог, проверим совместимость, ответим на вопросы</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Бренды техники -->
+        <section class="brands-showcase-section">
+            <div class="container">
+                <h2 class="section-title">Техника, для которой мы поставляем запчасти</h2>
+                <div class="brands-showcase-grid">
+                    <div class="brand-showcase-card animate-on-scroll">
+                        <div class="brand-showcase-icon">
+                            <i class="fas fa-tractor"></i>
+                        </div>
+                        <span class="brand-showcase-name">ДОН</span>
+                        <span class="brand-showcase-models">1500 • 1200 • 680</span>
+                    </div>
+                    <div class="brand-showcase-card animate-on-scroll">
+                        <div class="brand-showcase-icon">
+                            <i class="fas fa-tractor"></i>
+                        </div>
+                        <span class="brand-showcase-name">ВЕКТОР</span>
+                        <span class="brand-showcase-models">410 • 420 • 450</span>
+                    </div>
+                    <div class="brand-showcase-card animate-on-scroll">
+                        <div class="brand-showcase-icon">
+                            <i class="fas fa-tractor"></i>
+                        </div>
+                        <span class="brand-showcase-name">ТОРУМ</span>
+                        <span class="brand-showcase-models">740 • 750 • 780</span>
+                    </div>
+                    <div class="brand-showcase-card animate-on-scroll">
+                        <div class="brand-showcase-icon">
+                            <i class="fas fa-tractor"></i>
+                        </div>
+                        <span class="brand-showcase-name">АКРОС</span>
+                        <span class="brand-showcase-models">530 • 540 • 550</span>
+                    </div>
+                    <div class="brand-showcase-card animate-on-scroll">
+                        <div class="brand-showcase-icon">
+                            <i class="fas fa-tractor"></i>
+                        </div>
+                        <span class="brand-showcase-name">БЮЛЕР</span>
+                        <span class="brand-showcase-models">Все модели</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Наша команда -->
+        <section class="team-section">
+            <div class="container">
+                <h2 class="section-title">Наша команда</h2>
+                <div class="team-grid">
+                    <div class="team-card animate-on-scroll">
+                        <div class="team-photo">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="team-name">Торшенко Татьяна Александровна</div>
+                        <div class="team-position">Директор</div>
+                        <div class="team-contacts">
+                            <a href="tel:+79081881111" aria-label="Позвонить директору"><i class="fas fa-phone"></i></a>
+                            <a href="mailto:info@agromarkettorshenko.ru" aria-label="Написать директору"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-card animate-on-scroll">
+                        <div class="team-photo">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="team-name">Иванов Сергей Петрович</div>
+                        <div class="team-position">Менеджер по продажам</div>
+                        <div class="team-contacts">
+                            <a href="tel:+79081234567" aria-label="Позвонить менеджеру"><i class="fas fa-phone"></i></a>
+                            <a href="mailto:manager@agromarkettorshenko.ru" aria-label="Написать менеджеру"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-card animate-on-scroll">
+                        <div class="team-photo">
+                            <i class="fas fa-user-gear"></i>
+                        </div>
+                        <div class="team-name">Петров Алексей Викторович</div>
+                        <div class="team-position">Инженер-консультант</div>
+                        <div class="team-contacts">
+                            <a href="tel:+79087654321" aria-label="Позвонить инженеру"><i class="fas fa-phone"></i></a>
+                            <a href="mailto:engineer@agromarkettorshenko.ru" aria-label="Написать инженеру"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Галерея фото склада -->
+        <section class="gallery-section">
+            <div class="container">
+                <h2 class="section-title">Фото нашего склада</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item animate-on-scroll" onclick="openPhotoModal('../images/gallery/warehouse-1.jpg')">
+                        <img src="../images/gallery/warehouse-1.jpg" alt="Склад 1" onerror="this.src='https://placehold.co/400x300/E6C87C/4A3A28?text=Склад+1'">
+                        <div class="gallery-overlay">
+                            <p>Основной склад</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item animate-on-scroll" onclick="openPhotoModal('../images/gallery/warehouse-2.jpg')">
+                        <img src="../images/gallery/warehouse-2.jpg" alt="Склад 2" onerror="this.src='https://placehold.co/400x300/E6C87C/4A3A28?text=Склад+2'">
+                        <div class="gallery-overlay">
+                            <p>Зона хранения запчастей</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item animate-on-scroll" onclick="openPhotoModal('../images/gallery/warehouse-3.jpg')">
+                        <img src="../images/gallery/warehouse-3.jpg" alt="Склад 3" onerror="this.src='https://placehold.co/400x300/E6C87C/4A3A28?text=Склад+3'">
+                        <div class="gallery-overlay">
+                            <p>Стеллажи с товаром</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item animate-on-scroll" onclick="openPhotoModal('../images/gallery/office.jpg')">
+                        <img src="../images/gallery/office.jpg" alt="Офис" onerror="this.src='https://placehold.co/400x300/E6C87C/4A3A28?text=Офис'">
+                        <div class="gallery-overlay">
+                            <p>Наш офис</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Сертификаты и лицензии -->
+        <section class="certificates-section">
+            <div class="container">
+                <h2 class="section-title">Сертификаты и лицензии</h2>
+                <div class="certificates-grid">
+                    <div class="certificate-card animate-on-scroll" onclick="openPhotoModal('../images/certificates/gost.jpg')">
+                        <div class="certificate-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="certificate-title">Сертификат ГОСТ</div>
+                        <div class="certificate-desc">Соответствие продукции стандартам качества</div>
+                    </div>
+                    <div class="certificate-card animate-on-scroll" onclick="openPhotoModal('../images/certificates/license.jpg')">
+                        <div class="certificate-icon">
+                            <i class="fas fa-file-signature"></i>
+                        </div>
+                        <div class="certificate-title">Лицензия на торговлю</div>
+                        <div class="certificate-desc">№ 12345 от 15.03.2014</div>
+                    </div>
+                    <div class="certificate-card animate-on-scroll" onclick="openPhotoModal('../images/certificates/iso.jpg')">
+                        <div class="certificate-icon">
+                            <i class="fas fa-file-contract"></i>
+                        </div>
+                        <div class="certificate-title">Сертификат ISO</div>
+                        <div class="certificate-desc">Система менеджмента качества</div>
+                    </div>
+                    <div class="certificate-card animate-on-scroll" onclick="openPhotoModal('../images/certificates/declaration.jpg')">
+                        <div class="certificate-icon">
+                            <i class="fas fa-file-lines"></i>
+                        </div>
+                        <div class="certificate-title">Декларации соответствия</div>
+                        <div class="certificate-desc">На все виды продукции</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Контактная информация -->
+        <section class="about-contacts-section">
+            <div class="container">
+                <h2 class="section-title">Контактная информация</h2>
+                <div class="about-contacts-grid">
+                    <div class="about-contact-card animate-on-scroll">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Адрес</h3>
+                        <p>г. Аксай, ул. Ленина, 48</p>
+                        <p class="text-light">Ростовская область, 346720</p>
+                    </div>
+                    <div class="about-contact-card animate-on-scroll">
+                        <i class="fas fa-clock"></i>
+                        <h3>Режим работы</h3>
+                        <p>Пн–Сб: 10:00 – 19:00</p>
+                        <p class="text-light">Вс: выходной</p>
+                    </div>
+                    <div class="about-contact-card animate-on-scroll">
+                        <i class="fas fa-phone-alt"></i>
+                        <h3>Телефон</h3>
+                        <a href="tel:+79081881111">8 (908) 188-11-11</a>
+                        <a href="tel:+79081234567">8 (908) 123-45-67</a>
+                        <p class="text-light">Директор: Торшенко Т.А.</p>
+                    </div>
+                </div>
+                <div class="about-contacts-cta">
+                    <a href="contacts.html" class="btn btn-primary">Все контакты</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Баннер с телефоном -->
+        <section class="about-phone-banner">
+            <div class="container">
+                <div class="phone-banner-card animate-on-scroll">
+                    <h3>Остались вопросы о компании?</h3>
+                    <p>Позвоните нам — с радостью ответим!</p>
+                    <a href="tel:+79081881111" class="big-phone">
+                        <i class="fas fa-phone-alt"></i> 8 (908) 188-11-11
+                    </a>
+                    <p class="note">Звоните с 10:00 до 19:00, ответим на все вопросы</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <a href="index.html">АГРОМАРКЕТ<br>ТОРШЕНКО</a>
+                    </div>
+                    <p>Запчасти для комбайнов с 2014 года</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="VK"><i class="fab fa-vk"></i></a>
+                        <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <div class="footer-credits">
+                        Иконки от <a href="https://fontawesome.com" target="_blank" rel="noopener">Font Awesome</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Навигация</h4>
+                    <a href="index.html">Главная</a>
+                    <a href="catalog.html">Каталог</a>
+                    <a href="articles.html">Полезные советы</a>
+                    <a href="about.html">О компании</a>
+                    <a href="delivery.html">Доставка</a>
+                    <a href="contacts.html">Контакты</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <a href="delivery.html">Доставка и оплата</a>
+                    <a href="politik.html">Политика конфиденциальности</a>
+                    <a href="sitemap.html">Карта сайта</a>
+                </div>
+                <div class="footer-col footer-contacts">
+                    <h4>Контакты</h4>
+                    <a href="tel:+79081881111" class="footer-phone">
+                        <i class="fas fa-phone-alt"></i> 8 (908) 188-11-11
+                    </a>
+                    <p><i class="fas fa-envelope"></i> info@agromarkettorshenko.ru</p>
+                    <p><i class="fas fa-map-marker-alt"></i> г. Аксай, ул. Ленина, 48</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 ООО «АГРОМАРКЕТТОРШЕНКО». Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Плавающая кнопка телефона -->
+    <div class="float-phone">
+        <a href="tel:+79081881111" aria-label="Позвонить"><i class="fas fa-phone-alt"></i></a>
+    </div>
+
+    <!-- Кнопка наверх -->
+    <div class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+       <!-- АГРО-БОТ -->
+    <div class="bot-widget" id="botWidget">
+        <div class="bot-button" onclick="toggleBot(event)">
+            <i class="fas fa-robot"></i>
+        </div>
+        <div class="bot-box" id="botBox">
+            <div class="bot-header">
+                <div class="bot-header-info">
+                    <i class="fas fa-robot"></i>
+                    <div>
+                        <h4>Агро-бот</h4>
+                        <p>Онлайн 24/7</p>
+                    </div>
+                </div>
+                <button onclick="closeBot()">✕</button>
+            </div>
+            <div class="bot-messages" id="botMessages">
+                <div class="message bot-message">
+                    🌾 Здравствуйте! Я агро-бот компании АГРОМАРКЕТ ТОРШЕНКО.<br><br>
+                    📞 По вопросам цен и наличия лучше сразу звонить: <strong>8 (908) 188-11-11</strong><br><br>
+                    Что я умею:<br>
+                    • <strong>наличие</strong> — проверить запчасть по артикулу<br>
+                    • <strong>цена</strong> — узнать стоимость<br>
+                    • <strong>подбор</strong> — помочь подобрать аналог<br>
+                    • <strong>заявка</strong> — оставить заявку на звонок<br>
+                    • <strong>каталог</strong> — ссылка на каталог<br>
+                    • <strong>адрес</strong> — узнать адрес<br><br>
+                    Напишите нужную команду или задайте вопрос!
+                </div>
+            </div>
+            <div class="bot-questions">
+                <button onclick="botAnswer('наличие')"><i class="fas fa-search"></i> Наличие</button>
+                <button onclick="botAnswer('цена')"><i class="fas fa-ruble-sign"></i> Цена</button>
+                <button onclick="botAnswer('подбор')"><i class="fas fa-cog"></i> Подбор</button>
+                <button onclick="botAnswer('заявка')"><i class="fas fa-phone"></i> Заявка</button>
+                <button onclick="botAnswer('каталог')"><i class="fas fa-list"></i> Каталог</button>
+                <button onclick="botAnswer('адрес')"><i class="fas fa-map-marker-alt"></i> Адрес</button>
+            </div>
+            <div class="bot-input">
+                <input type="text" id="botInput" placeholder="Напишите артикул или вопрос...">
+                <button onclick="sendBotMessage()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+            <div class="bot-footer">
+                <span>📞 Лучше позвонить: 8 (908) 188-11-11</span>
+            </div>
+        </div>
+    </div>
+    <!-- Модальные окна -->
+    <div class="modal-overlay" id="callModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>Заказать звонок</h3>
+                <div class="modal-close" onclick="closeModal('callModal')">✕</div>
+            </div>
+            <div class="modal-body">
+                <form id="callForm">
+                    <div class="form-group">
+                        <label for="call-name">Ваше имя *</label>
+                        <input type="text" id="call-name" placeholder="Иван Петрович" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="call-phone">Телефон *</label>
+                        <input type="tel" id="call-phone" placeholder="+7 (___) ___-__-__" required>
+                    </div>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" required>
+                            <span class="checkbox-text">Согласие на обработку <a href="politik.html" target="_blank">персональных данных</a></span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Заказать звонок</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="photoModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>Просмотр фото</h3>
+                <div class="modal-close" onclick="closeModal('photoModal')">✕</div>
+            </div>
+            <div class="modal-body" style="text-align: center;">
+                <img id="photoModalImg" src="" alt="Фото">
+            </div>
+        </div>
+    </div>
+
+    <!-- Подключение JavaScript -->
+    <script src="script.js"></script>
+    <script>
+        // Анимация при скролле
+        function checkScrollAnimation() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight - 100;
+                if (elementPosition < screenPosition) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+        
+        // Открытие модального окна с фото
+        function openPhotoModal(imgSrc) {
+            const modal = document.getElementById('photoModal');
+            const modalImg = document.getElementById('photoModalImg');
+            if (modalImg) modalImg.src = imgSrc;
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        
+        // Инициализация анимации
+        document.addEventListener('DOMContentLoaded', function() {
+            checkScrollAnimation();
+            window.addEventListener('scroll', checkScrollAnimation);
+            
+            // Добавляем классы для анимации
+            document.querySelectorAll('.stat-card, .feature-card, .brand-showcase-card, .team-card, .gallery-item, .about-contact-card, .certificate-card, .phone-banner-card, .about-content').forEach(el => {
+                el.classList.add('animate-on-scroll');
+            });
+        });
+    </script>
+</body>
+</html>

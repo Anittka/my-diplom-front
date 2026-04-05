@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог запчастей | АГРОМАРКЕТ ТОРШЕНКО</title>
+    
+    <!-- Микроразметка для каталога -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Каталог запчастей",
+        "description": "Каталог запасных частей для комбайнов Дон, Вектор, Торум, Акрос, Бюлер",
+        "mainEntity": {
+            "@type": "ItemList",
+            "numberOfItems": "11",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "url": "product.html?id=1"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "url": "product.html?id=2"
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- Подключение шрифтов -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Подключение общих стилей -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Верхняя панель -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="city-selector">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Аксай, Ростовская область</span>
+            </div>
+            <div class="top-links">
+                <a href="about.html">О компании</a>
+                <a href="delivery.html">Доставка и оплата</a>
+                <a href="contacts.html">Контакты</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">АГРОМАРКЕТ<br>ТОРШЕНКО</a>
+                <span>Запчасти для комбайнов с 2014 года</span>
+            </div>
+
+            <div class="header-search">
+                <form class="search-form" action="catalog.html">
+                    <input type="text" placeholder="Введите артикул или название...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+
+            <div class="header-actions">
+                <a href="tel:+79081881111" class="header-phone">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>8 (908) 188-11-11</span>
+                </a>
+                <button class="btn-call" onclick="openCallModal()">Заказать звонок</button>
+                <div class="burger" id="burgerBtn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Навигация -->
+    <div class="nav-bar">
+        <div class="container">
+            <nav class="nav-menu">
+                <a href="index.html">Главная</a>
+                <a href="catalog.html" class="active">Каталог</a>
+                <a href="articles.html">Полезные советы</a>
+                <a href="about.html">О компании</a>
+                <a href="delivery.html">Доставка</a>
+                <a href="contacts.html">Контакты</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Мобильное меню -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="articles.html">Полезные советы</a>
+        <a href="about.html">О компании</a>
+        <a href="delivery.html">Доставка</a>
+        <a href="contacts.html">Контакты</a>
+    </div>
+
+    <main>
+        <div class="container">
+            <!-- Хлебные крошки -->
+            <div class="breadcrumbs">
+                <a href="index.html">Главная</a> <span class="separator">›</span> <span class="current">Каталог запчастей</span>
+            </div>
+
+            <!-- Заголовок -->
+            <h1 class="page-title">Каталог запчастей</h1>
+
+            <!-- Панель фильтров -->
+            <div class="catalog-toolbar">
+                <div class="filter-chips">
+                    <a href="#" class="filter-chip active" data-filter="all">Все</a>
+                    <a href="#" class="filter-chip" data-filter="жгуты">Жгуты</a>
+                    <a href="#" class="filter-chip" data-filter="гидравлика">Гидравлика</a>
+                    <a href="#" class="filter-chip" data-filter="двигатель">Двигатель</a>
+                    <a href="#" class="filter-chip" data-filter="трансмиссия">Трансмиссия</a>
+                    <a href="#" class="filter-chip" data-filter="подшипники">Подшипники</a>
+                    <a href="#" class="filter-chip" data-filter="электрика">Электрика</a>
+                    <a href="#" class="filter-chip" data-filter="крепёж">Крепёж</a>
+                    <a href="#" class="filter-chip" data-filter="привод">Привод</a>
+                    <a href="#" class="filter-chip" data-filter="ротор">Ротор</a>
+                </div>
+                <div class="sort-controls">
+    <span class="sort-label">Сортировка:</span>
+    <select class="sort-select" id="sortSelect">
+        <option value="default">По умолчанию</option>
+        <option value="name">По названию (А-Я)</option>
+        <option value="name-desc">По названию (Я-А)</option>
+        <option value="article">По артикулу</option>
+    </select>
+</div>
+            </div>
+
+            <!-- Результаты поиска -->
+            <div class="search-results">
+                Найдено: <span class="count" id="productsCount">11</span> запчастей
+            </div>
+
+            <!-- Сетка товаров с атрибутами data-category для фильтрации -->
+            <div class="products-grid" id="productsGrid">
+                
+                <!-- Товар 1: Жгут верхнего решета - 3 фото - категория "жгуты" -->
+                <div class="product-card" data-product-id="1" data-category="жгуты">
+                    <div class="product-gallery">
+                        <div class="gallery-container" id="gallery-1">
+                            <div class="gallery-track">
+                                <div class="gallery-slide"><img src="../products/jgut-verh-1.jpg" alt="Жгут верхнего решета вид 1"></div>
+                                <div class="gallery-slide"><img src="../products/jgut-verh-2.jpg" alt="Жгут верхнего решета вид 2"></div>
+                                <div class="gallery-slide"><img src="../products/jgut-verh-3.jpg" alt="Жгут верхнего решета вид 3"></div>
+                            </div>
+                        </div>
+                        <button class="gallery-nav prev" onclick="slideGallery(-1, 1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="gallery-nav next" onclick="slideGallery(1, 1)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="gallery-dots">
+                            <span class="dot active" onclick="goToSlide(0, 1)"></span>
+                            <span class="dot" onclick="goToSlide(1, 1)"></span>
+                            <span class="dot" onclick="goToSlide(2, 1)"></span>
+                        </div>
+                        <div class="gallery-counter">3 фото</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Жгуты / Решета</div>
+                        <a href="product.html?id=1" class="product-title">152.10.28.570A Жгут верхнего решета</a>
+                        <div class="product-article">152.10.28.570A</div>
+                        <div class="product-footer">
+                            <span class="product-price"><i class="fas fa-phone-alt"></i> Цена по телефону</span>
+                            <span class="product-status">В наличии</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Товар 2: Жгут нижнего решета - 3 фото - категория "жгуты" -->
+                <div class="product-card" data-product-id="2" data-category="жгуты">
+                    <div class="product-gallery">
+                        <div class="gallery-container" id="gallery-2">
+                            <div class="gallery-track">
+                                <div class="gallery-slide"><img src="../products/jgut-niz-1.jpg" alt="Жгут нижнего решета вид 1"></div>
+                                <div class="gallery-slide"><img src="../products/jgut-niz-2.jpg" alt="Жгут нижнего решета вид 2"></div>
+                                <div class="gallery-slide"><img src="../products/jgut-niz-3.jpg" alt="Жгут нижнего решета вид 3"></div>
+                            </div>
+                        </div>
+                        <button class="gallery-nav prev" onclick="slideGallery(-1, 2)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="gallery-nav next" onclick="slideGallery(1, 2)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="gallery-dots">
+                            <span class="dot active" onclick="goToSlide(0, 2)"></span>
+                            <span class="dot" onclick="goToSlide(1, 2)"></span>
+                            <span class="dot" onclick="goToSlide(2, 2)"></span>
+                        </div>
+                        <div class="gallery-counter">3 фото</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Жгуты / Решета</div>
+                        <a href="product.html?id=2" class="product-title">152.10.28.580 Жгут нижнего решета</a>
+                        <div class="product-article">152.10.28.580</div>
+                        <div class="product-footer">
+                            <span class="product-price"><i class="fas fa-phone-alt"></i> Цена по телефону</span>
+                            <span class="product-status">В наличии</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Товар 3: Головка привода - 5 фото - категория "привод" -->
+                <div class="product-card" data-product-id="3" data-category="привод">
+                    <div class="product-gallery">
+                        <div class="gallery-container" id="gallery-3">
+                            <div class="gallery-track">
+                                <div class="gallery-slide"><img src="../products/golovka-1.jpg" alt="Головка привода вид 1"></div>
+                                <div class="gallery-slide"><img src="../products/golovka-2.jpg" alt="Головка привода вид 2"></div>
+                                <div class="gallery-slide"><img src="../products/golovka-3.jpg" alt="Головка привода вид 3"></div>
+                                <div class="gallery-slide"><img src="../products/golovka-4.jpg" alt="Головка привода вид 4"></div>
+                                <div class="gallery-slide"><img src="../products/golovka-5.jpg" alt="Головка привода вид 5"></div>
+                            </div>
+                        </div>
+                        <button class="gallery-nav prev" onclick="slideGallery(-1, 3)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="gallery-nav next" onclick="slideGallery(1, 3)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="gallery-dots">
+                            <span class="dot active" onclick="goToSlide(0, 3)"></span>
+                            <span class="dot" onclick="goToSlide(1, 3)"></span>
+                            <span class="dot" onclick="goToSlide(2, 3)"></span>
+                            <span class="dot" onclick="goToSlide(3, 3)"></span>
+                            <span class="dot" onclick="goToSlide(4, 3)"></span>
+                        </div>
+                        <div class="gallery-counter">5 фото</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Привод / Редукторы</div>
+                        <a href="product.html?id=3" class="product-title">02602.02 (15956) Головка привода 27 мм мет.вкладыш АНАЛОГ</a>
+                        <div class="product-article">02602.02 / 15956</div>
+                        <div class="product-footer">
+                            <span class="product-price"><i class="fas fa-phone-alt"></i> Цена по телефону</span>
+                            <span class="product-status">В наличии</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Товар 4: Блок гидроаккумуляторов - 2 фото - категория "гидравлика" -->
+                <div class="product-card" data-product-id="4" data-category="гидравлика">
+                    <div class="product-gallery">
+                        <div class="gallery-container" id="gallery-4">
+                            <div class="gallery-track">
+                                <div class="gallery-slide"><img src="../products/gidroakkum-1.jpg" alt="Блок гидроаккумуляторов вид 1"></div>
+                                <div class="gallery-slide"><img src="../products/gidroakkum-2.jpg" alt="Блок гидроаккумуляторов вид 2"></div>
+                            </div>
+                        </div>
+                        <button class="gallery-nav prev" onclick="slideGallery(-1, 4)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="gallery-nav next" onclick="slideGallery(1, 4)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="gallery-dots">
+                            <span class="dot active" onclick="goToSlide(0, 4)"></span>
+                            <span class="dot" onclick="goToSlide(1, 4)"></span>
+                        </div>
+                        <div class="gallery-counter">2 фото</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Гидравлика</div>
+                        <a href="product.html?id=4" class="product-title">Блок гидроаккумуляторов 3877965</a>
+                        <div class="product-article">3877965</div>
+                        <div class="product-footer">
+                            <span class="product-price"><i class="fas fa-phone-alt"></i> Цена по телефону</span>
+                            <span class="product-status">В наличии</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Товар 5: Болт крепления колеса - 2 фото - категория "крепёж" -->
+                <div class="product-card" data-product-id="5" data-category="крепёж">
+                    <div class="product-gallery">
+                        <div class="gallery-container" id="gallery-5">
+                            <div class="gallery-track">
+                                <div class="gallery-slide"><img src="../products/bolt-1.jpg" alt="Болт крепления колеса вид 1"></div>
+                                <div class="gallery-slide"><img src="../products/bolt-2.jpg" alt="Болт крепления колеса вид 2"></div>
+                            </div>
+                        </div>
+                        <button class="gallery-nav prev" onclick="slideGallery(-1, 5)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="gallery-nav next" onclick="slideGallery(1, 5)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="gallery-dots">
+                            <span class="dot active" onclick="goToSlide(0, 5)"></span>
+                            <span class="dot" onclick="goToSlide(1, 5)"></span>
+                        </div>
+                        <div class="gallery-counter">2 фото</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Крепеж / Ходовая</div>
+                        <a href="product.html?id=5" class="product-title">Болт М22×1,5х75 крепления колеса к бортовому редуктору (Торум, РСМ-161) 181-02-02-040-1</a>
+                        <div class="product-article">181-02-02-040-1</div>
+                        <div class="product-footer">
+                            <span class="product-price"><i class="fas fa-phone-alt"></i> Цена по телефону</span>
+                            <span class="product-status">В наличии</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Товар 6: Датчик давления масла - 4 фото - категория "электрика" -->
+                <div class="product-card" data-product-id="6" data-category="электрика">
+                    <div class="product-gallery">
+                        <div class="gallery-container" id="gallery-6">
+                            <div class="gallery-track">
+                                <div class="gallery-slide"><img src="../products/datchik-1.jpg" alt="Датчик давления масла вид 1"></div>
+                                <div class="gallery-slide"><img src="../products/datchik-2.jpg" alt="Датчик давления масла вид 2"></div>
+                                <div class="gallery-slide"><img src="../products/datchik-3.jpg" alt="Датчик давления масла вид 3"></div>
+                                <div class="gallery-slide"><img src="../products/datchik-4.jpg" alt="Датчик давления масла вид 4"></div>
+                            </div>
+                        </div>
+                        <button class="gallery-nav prev" onclick="slideGallery(-1, 6)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="gallery-nav next" onclick="slideGallery(1, 6)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="gallery-dots">
+                            <span class="dot active" onclick="goToSlide(0, 6)"></span>
+                            <span class="dot" onclick="goToSlide(1, 6)"></span>
+                            <span class="dot" onclick="goToSlide(2, 6)"></span>
+                            <span class="dot" onclick="goToSlide(3, 6)"></span>
+                        </div>
+                        <div class="gallery-counter">4 фото</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Датчики / Электрика</div>
+                        <a href="product.html?id=6" class="product-title">Датчик давления масла Cummins 4921517 (4087992, 4087991, 4921744)</a>
+                        <div class="product-article">4921517</div>
+                        <div class="product-footer">
+                            <span class="product-price"><i class="fas fa-phone-alt"></i> Цена по телефону</span>
+                            <span class="product-status">В наличии</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Товар 7: Муфта шлицевая - 4 фото - категория "трансмиссия" -->
+                <div class="product-card" data-product-id="7" data-category="трансмиссия">
+                    <div class="product-gallery">
+                        <div class="gallery-container" id="gallery-7">
+                            <div class="gallery-track">
+                                <div class="gallery-slide"><img src="../products/mufta-1.jpg" alt="Муфта шлицевая вид 1"></div>
+                                <div class="gallery-slide"><img src="../products/mufta-2.jpg" alt="Муфта шлицевая вид 2"></div>
+                                <div class="gallery-slide"><img src="../products/mufta-3.jpg" alt="Муфта шлицевая вид 3"></div>
+                                <div class="gallery-slide"><img src="../products/mufta-4.jpg" alt="Муфта шлицевая вид 4"></div>
+                            </div>
+                        </div>
+                        <button class="gallery-nav prev" onclick="slideGallery(-1, 7)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="gallery-nav next" onclick="slideGallery(1, 7)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="gallery-dots">
+                            <span class="dot active" onclick="goToSlide(0, 7)"></span>
+                            <span class="dot" onclick="goToSlide(1, 7)"></span>
+                            <span class="dot" onclick="goToSlide(2, 7)"></span>
+                            <span class="dot" onclick="goToSlide(3, 7)"></span>
+                        </div>
+                        <div class="gallery-counter">4 фото</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Трансмиссия</div>
+                        <a href="product.html?id=7" class="product-title">Муфта шлиц. (2=22) соед. полуосей с борт. редуктором и КПП (Торум, РСМ-161, мост HS)</a>
+                        <div class="product-article">2=22</div>
+                        <div class="product-footer">
+                            <span class="product-price"><i class="fas fa-phone-alt"></i> Цена по телефону</span>
+                            <span class="product-status">В наличии</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Товар 8: Насос SNP2NN - 5 фото - категория "гидравлика" -->
+                <div class="product-card" data-product-id="8" data-category="гидравлика">
+                    <div class="product-gallery">
+                        <div class="gallery-container" id="gallery-8">
+                            <div class="gallery-track">
+                                <div class="gallery-slide"><img src="../products/nasos-1.jpg" alt="Насос SNP2NN вид 1"></div>
+                                <div class="gallery-slide"><img src="../products/nasos-2.jpg" alt="Насос SNP2NN вид 2"></div>
+                                <div class="gallery-slide"><img src="../products/nasos-3.jpg" alt="Насос SNP2NN вид 3"></div>
+                                <div class="gallery-slide"><img src="../products/nasos-4.jpg" alt="Насос SNP2NN вид 4"></div>
+                                <div class="gallery-slide"><img src="../products/nasos-5.jpg" alt="Насос SNP2NN вид 5"></div>
+                            </div>
+                        </div>
+                        <button class="gallery-nav prev" onclick="slideGallery(-1, 8)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="gallery-nav next" onclick="slideGallery(1, 8)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="gallery-dots">
+                            <span class="dot active" onclick="goToSlide(0, 8)"></span>
+                            <span class="dot" onclick="goToSlide(1, 8)"></span>
+                            <span class="dot" onclick="goToSlide(2, 8)"></span>
+                            <span class="dot" onclick="goToSlide(3, 8)"></span>
+                            <span class="dot" onclick="goToSlide(4, 8)"></span>
+                        </div>
+                        <div class="gallery-counter">5 фото</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Насосы / Гидравлика</div>
+                        <a href="product.html?id=8" class="product-title">Насос SNP2NN_014RN06SAP1F5F4NNN</a>
+                        <div class="product-article">SNP2NN_014RN06SAP1F5F4NNN</div>
+                        <div class="product-footer">
+                            <span class="product-price"><i class="fas fa-phone-alt"></i> Цена по телефону</span>
+                            <span class="product-status">В наличии</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Товар 9: Термостат Cummins - 2 фото - категория "двигатель" -->
+                <div class="product-card" data-product-id="9" data-category="двигатель">
+                    <div class="product-gallery">
+                        <div class="gallery-container" id="gallery-9">
+                            <div class="gallery-track">
+                                <div class="gallery-slide"><img src="../products/termostat-1.jpg" alt="Термостат вид 1"></div>
+                                <div class="gallery-slide"><img src="../products/termostat-2.jpg" alt="Термостат вид 2"></div>
+                            </div>
+                        </div>
+                        <button class="gallery-nav prev" onclick="slideGallery(-1, 9)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="gallery-nav next" onclick="slideGallery(1, 9)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="gallery-dots">
+                            <span class="dot active" onclick="goToSlide(0, 9)"></span>
+                            <span class="dot" onclick="goToSlide(1, 9)"></span>
+                        </div>
+                        <div class="gallery-counter">2 фото</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Двигатель / Охлаждение</div>
+                        <a href="product.html?id=9" class="product-title">Термостат двигателя Cummins C8.3 ISLe 5337942</a>
+                        <div class="product-article">5337942</div>
+                        <div class="product-footer">
+                            <span class="product-price"><i class="fas fa-phone-alt"></i> Цена по телефону</span>
+                            <span class="product-status">В наличии</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Товар 10: Узел подшипниковый - 5 фото - категория "подшипники" -->
+                <div class="product-card" data-product-id="10" data-category="подшипники">
+                    <div class="product-gallery">
+                        <div class="gallery-container" id="gallery-10">
+                            <div class="gallery-track">
+                                <div class="gallery-slide"><img src="../products/podshipnik-1.jpg" alt="Узел подшипниковый вид 1"></div>
+                                <div class="gallery-slide"><img src="../products/podshipnik-2.jpg" alt="Узел подшипниковый вид 2"></div>
+                                <div class="gallery-slide"><img src="../products/podshipnik-3.jpg" alt="Узел подшипниковый вид 3"></div>
+                                <div class="gallery-slide"><img src="../products/podshipnik-4.jpg" alt="Узел подшипниковый вид 4"></div>
+                                <div class="gallery-slide"><img src="../products/podshipnik-5.jpg" alt="Узел подшипниковый вид 5"></div>
+                            </div>
+                        </div>
+                        <button class="gallery-nav prev" onclick="slideGallery(-1, 10)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="gallery-nav next" onclick="slideGallery(1, 10)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="gallery-dots">
+                            <span class="dot active" onclick="goToSlide(0, 10)"></span>
+                            <span class="dot" onclick="goToSlide(1, 10)"></span>
+                            <span class="dot" onclick="goToSlide(2, 10)"></span>
+                            <span class="dot" onclick="goToSlide(3, 10)"></span>
+                            <span class="dot" onclick="goToSlide(4, 10)"></span>
+                        </div>
+                        <div class="gallery-counter">5 фото</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Подшипники / Узлы</div>
+                        <a href="product.html?id=10" class="product-title">Узел подшипниковый битера наклонной камеры UYS 208 2S</a>
+                        <div class="product-article">UYS 208 2S</div>
+                        <div class="product-footer">
+                            <span class="product-price"><i class="fas fa-phone-alt"></i> Цена по телефону</span>
+                            <span class="product-status">В наличии</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Товар 11: Флянец ротора Торум - 3 фото - категория "ротор" -->
+                <div class="product-card" data-product-id="11" data-category="ротор">
+                    <div class="product-gallery">
+                        <div class="gallery-container" id="gallery-11">
+                            <div class="gallery-track">
+                                <div class="gallery-slide"><img src="../products/flyanec-1.jpg" alt="Флянец ротора вид 1"></div>
+                                <div class="gallery-slide"><img src="../products/flyanec-2.jpg" alt="Флянец ротора вид 2"></div>
+                                <div class="gallery-slide"><img src="../products/flyanec-3.jpg" alt="Флянец ротора вид 3"></div>
+                            </div>
+                        </div>
+                        <button class="gallery-nav prev" onclick="slideGallery(-1, 11)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="gallery-nav next" onclick="slideGallery(1, 11)"><i class="fas fa-chevron-right"></i></button>
+                        <div class="gallery-dots">
+                            <span class="dot active" onclick="goToSlide(0, 11)"></span>
+                            <span class="dot" onclick="goToSlide(1, 11)"></span>
+                            <span class="dot" onclick="goToSlide(2, 11)"></span>
+                        </div>
+                        <div class="gallery-counter">3 фото</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Ротор / Молотилка</div>
+                        <a href="product.html?id=11" class="product-title">Флянец ротора Торум SNR 557824</a>
+                        <div class="product-article">SNR 557824</div>
+                        <div class="product-footer">
+                            <span class="product-price"><i class="fas fa-phone-alt"></i> Цена по телефону</span>
+                            <span class="product-status">В наличии</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Сообщение внизу каталога -->
+            <div class="catalog-footer-message">
+                <p>Не нашли нужную запчасть? Позвоните нам — поможем подобрать!</p>
+                <div class="phone-large">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:+79081881111">8 (908) 188-11-11</a>
+                </div>
+                <p class="note">*Цены и наличие уточняйте по телефону</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <a href="index.html">АГРОМАРКЕТ<br>ТОРШЕНКО</a>
+                    </div>
+                    <p>Запчасти для комбайнов с 2014 года</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="VK"><i class="fab fa-vk"></i></a>
+                        <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Навигация</h4>
+                    <a href="index.html">Главная</a>
+                    <a href="catalog.html">Каталог</a>
+                    <a href="articles.html">Полезные советы</a>
+                    <a href="about.html">О компании</a>
+                    <a href="delivery.html">Доставка</a>
+                    <a href="contacts.html">Контакты</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Информация</h4>
+                    <a href="delivery.html">Доставка и оплата</a>
+                    <a href="politik.html">Политика конфиденциальности</a>
+                    <a href="sitemap.html">Карта сайта</a>
+                </div>
+                <div class="footer-col footer-contacts">
+                    <h4>Контакты</h4>
+                    <a href="tel:+79081881111" class="footer-phone">
+                        <i class="fas fa-phone-alt"></i> 8 (908) 188-11-11
+                    </a>
+                    <p><i class="fas fa-envelope"></i> info@agromarkettorshenko.ru</p>
+                    <p><i class="fas fa-map-marker-alt"></i> г. Аксай, ул. Ленина, 48</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 ООО «АГРОМАРКЕТТОРШЕНКО». Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Плавающая кнопка телефона -->
+    <div class="float-phone">
+        <a href="tel:+79081881111" aria-label="Позвонить"><i class="fas fa-phone-alt"></i></a>
+    </div>
+
+    <!-- Кнопка наверх -->
+    <div class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- АГРО-БОТ -->
+<div class="bot-widget" id="botWidget">
+    <div class="bot-button" onclick="toggleBot(event)">
+        <i class="fas fa-robot"></i>
+    </div>
+    <div class="bot-box" id="botBox">
+        <div class="bot-header">
+            <div class="bot-header-info">
+                <i class="fas fa-robot"></i>
+                <div>
+                    <h4>Агро-бот</h4>
+                    <p>Онлайн 24/7</p>
+                </div>
+            </div>
+            <button onclick="closeBot()">✕</button>
+        </div>
+        <div class="bot-messages" id="botMessages">
+            <div class="message bot-message">
+                🌾 Здравствуйте! Я агро-бот компании АГРОМАРКЕТ ТОРШЕНКО.<br><br>
+                📞 По вопросам цен и наличия лучше сразу звонить: <strong>8 (908) 188-11-11</strong><br><br>
+                Что я умею:<br>
+                • <strong>наличие</strong> — проверить запчасть по артикулу<br>
+                • <strong>цена</strong> — узнать стоимость<br>
+                • <strong>подбор</strong> — помочь подобрать аналог<br>
+                • <strong>заявка</strong> — оставить заявку на звонок<br>
+                • <strong>каталог</strong> — ссылка на каталог<br>
+                • <strong>адрес</strong> — узнать адрес<br><br>
+                Напишите нужную команду или задайте вопрос!
+            </div>
+        </div>
+        <div class="bot-questions">
+            <button onclick="botAnswer('наличие')"><i class="fas fa-search"></i> Наличие</button>
+            <button onclick="botAnswer('цена')"><i class="fas fa-ruble-sign"></i> Цена</button>
+            <button onclick="botAnswer('подбор')"><i class="fas fa-cog"></i> Подбор</button>
+            <button onclick="botAnswer('заявка')"><i class="fas fa-phone"></i> Заявка</button>
+            <button onclick="botAnswer('каталог')"><i class="fas fa-list"></i> Каталог</button>
+            <button onclick="botAnswer('адрес')"><i class="fas fa-map-marker-alt"></i> Адрес</button>
+        </div>
+        <div class="bot-input">
+            <input type="text" id="botInput" placeholder="Напишите артикул или вопрос...">
+            <button onclick="sendBotMessage()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+        <div class="bot-footer">
+            <span>📞 Лучше позвонить: 8 (908) 188-11-11</span>
+        </div>
+    </div>
+</div>
+
+    <!-- Подключение JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
