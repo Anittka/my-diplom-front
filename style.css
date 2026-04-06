@@ -4706,3 +4706,81 @@ body.b2b-theme .gallery-counter {
     font-weight: 600;
     letter-spacing: 0.01em;
 }
+
+/* ======================================== */
+/* CROSS-PAGE UI HOTFIX (USER FEEDBACK)     */
+/* ======================================== */
+body.b2b-theme {
+    background:
+        radial-gradient(circle at 8% 6%, rgba(230, 200, 124, 0.14), transparent 34%),
+        radial-gradient(circle at 92% 14%, rgba(47, 79, 58, 0.08), transparent 33%),
+        linear-gradient(180deg, #fffdf9 0%, #f7f2e7 52%, #fffdf9 100%);
+}
+
+body.b2b-theme .header-search {
+    max-width: 560px;
+}
+
+body.b2b-theme .search-form {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 999px;
+    border: 1px solid rgba(47, 79, 58, 0.26);
+    background: #fff;
+}
+
+body.b2b-theme .search-form input {
+    border: 0;
+    border-radius: 0;
+    min-height: 44px;
+    height: 44px;
+}
+
+body.b2b-theme .search-form button {
+    width: 48px;
+    min-width: 48px;
+    border: 0;
+    border-radius: 0;
+}
+
+body.b2b-theme .checkbox-label {
+    align-items: flex-start !important;
+    gap: 10px !important;
+}
+
+body.b2b-theme .checkbox-label input[type="checkbox"] {
+    width: 18px !important;
+    height: 18px !important;
+    margin-top: 3px !important;
+}
+
+body.b2b-theme .checkbox-text {
+    font-size: 0.88rem;
+    line-height: 1.4;
+}
+
+body.b2b-theme .contact-preference {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+body.b2b-theme .contact-preference .radio-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+}
+
+body.b2b-theme .about-contacts-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+body.b2b-theme .about-contacts-cta .btn {
+    min-width: 220px;
+}

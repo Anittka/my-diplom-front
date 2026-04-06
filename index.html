@@ -499,7 +499,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('../images/truck4.jpg');
+            background-image: url('truck1.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -2260,7 +2260,36 @@
             justify-content: center;
         }
 
+        body.b2b-theme .header-search {
+            max-width: 560px;
+        }
+
+        body.b2b-theme .search-form {
+            display: flex;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 999px;
+            border: 1px solid rgba(47, 79, 58, 0.26);
+            background: #fff;
+        }
+
+        body.b2b-theme .search-form input {
+            min-height: 44px;
+            height: 44px;
+            border: 0;
+            border-radius: 0;
+            padding: 0 16px;
+        }
+
+        body.b2b-theme .search-form button {
+            width: 48px;
+            min-width: 48px;
+            border-radius: 0;
+            border: 0;
+        }
+
         body.b2b-theme .assortment-section,
+        body.b2b-theme .dealers-section,
         body.b2b-theme .advantages-section,
         body.b2b-theme .reviews-section,
         body.b2b-theme .help-feedback-section,
@@ -2270,6 +2299,7 @@
         }
 
         body.b2b-theme .assortment-card,
+        body.b2b-theme .dealer-card,
         body.b2b-theme .advantage-card,
         body.b2b-theme .review-card,
         body.b2b-theme .feedback-form-short,
@@ -2296,6 +2326,23 @@
 
         body.b2b-theme .help-feedback-buttons {
             justify-content: center;
+        }
+
+        body.b2b-theme .checkbox-label {
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        body.b2b-theme .checkbox-label input[type="checkbox"] {
+            width: 18px !important;
+            height: 18px !important;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        body.b2b-theme .checkbox-text {
+            font-size: 0.88rem;
+            line-height: 1.4;
         }
 
         body.b2b-theme .bot-widget {
