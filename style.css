@@ -4250,3 +4250,97 @@ body.b2b-theme {
 @media (max-width: 768px) {
     .b2b-theme .product-gallery { height: 210px; }
 }
+/* ===== QUICK FIX PACK (VISIBLE CHANGES) ===== */
+body.b2b-theme {
+  background:
+    radial-gradient(circle at 8% 8%, rgba(230,200,124,.14), transparent 34%),
+    radial-gradient(circle at 92% 14%, rgba(47,79,58,.08), transparent 33%),
+    linear-gradient(180deg,#fffdf9 0%,#f7f2e7 52%,#fffdf9 100%) !important;
+}
+
+/* Главная: гармония блоков */
+body.b2b-theme .assortment-section,
+body.b2b-theme .dealers-section,
+body.b2b-theme .advantages-section,
+body.b2b-theme .reviews-section,
+body.b2b-theme .help-feedback-section,
+body.b2b-theme .articles-preview-section {
+  background: linear-gradient(180deg, rgba(255,255,255,.92) 0%, rgba(250,246,238,.95) 100%) !important;
+}
+body.b2b-theme .assortment-card,
+body.b2b-theme .dealer-card,
+body.b2b-theme .advantage-card,
+body.b2b-theme .review-card,
+body.b2b-theme .feedback-form-short,
+body.b2b-theme .article-preview-card {
+  border: 1px solid rgba(47,79,58,.18) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 10px 22px rgba(45,48,56,.10) !important;
+}
+
+/* Поиск в шапке */
+body.b2b-theme .header-search { max-width: 560px !important; }
+body.b2b-theme .search-form {
+  display: flex !important;
+  width: 100% !important;
+  overflow: hidden !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(47,79,58,.26) !important;
+  background: #fff !important;
+}
+body.b2b-theme .search-form input {
+  border: 0 !important;
+  border-radius: 0 !important;
+  min-height: 44px !important;
+  height: 44px !important;
+}
+body.b2b-theme .search-form button {
+  width: 48px !important;
+  min-width: 48px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* Бот слева */
+body.b2b-theme .bot-widget { left: 20px !important; bottom: 20px !important; }
+body.b2b-theme .bot-box {
+  left: 0 !important;
+  bottom: 82px !important;
+  max-height: calc(100vh - 120px) !important;
+  overflow: hidden !important;
+  border-radius: 14px !important;
+}
+
+/* Чекбоксы и кнопки */
+body.b2b-theme .checkbox-label { align-items: flex-start !important; gap: 10px !important; }
+body.b2b-theme .checkbox-label input[type="checkbox"] {
+  width: 18px !important;
+  height: 18px !important;
+  margin-top: 3px !important;
+}
+body.b2b-theme .checkbox-text { font-size: .88rem !important; line-height: 1.4 !important; }
+
+body.b2b-theme .contact-preference { display: flex !important; flex-wrap: wrap !important; gap: 10px !important; }
+body.b2b-theme .contact-preference .radio-label {
+  padding: 6px 10px !important;
+  font-size: .9rem !important;
+  border-radius: 8px !important;
+}
+
+/* О компании: "Все контакты" */
+body.b2b-theme .about-contacts-cta {
+  display: flex !important;
+  justify-content: center !important;
+  margin-top: 24px !important;
+}
+body.b2b-theme .about-contacts-cta .btn { min-width: 220px !important; }
+
+/* Фон hero, если путь сломан */
+body.b2b-theme .hero-bg-image { background-image: url('truck1.jpg') !important; }
+
+@media (max-width: 850px) {
+  body.b2b-theme .bot-box {
+    width: min(92vw, 340px) !important;
+    bottom: 74px !important;
+  }
+}
