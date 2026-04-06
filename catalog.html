@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Каталог запчастей | АГРОМАРКЕТ ТОРШЕНКО</title>
-    
+
     <!-- Микроразметка для каталога -->
     <script type="application/ld+json">
     {
@@ -35,14 +35,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    
+
     <!-- Font Awesome для иконок -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+
     <!-- Подключение общих стилей -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="b2b-theme">
     <!-- Верхняя панель -->
     <div class="top-bar">
         <div class="container">
@@ -112,13 +112,15 @@
 
     <main>
         <div class="container">
-            <!-- Хлебные крошки -->
-            <div class="breadcrumbs">
-                <a href="index.html">Главная</a> <span class="separator">›</span> <span class="current">Каталог запчастей</span>
-            </div>
+            <div class="page-intro-card">
+                <!-- Хлебные крошки -->
+                <div class="breadcrumbs">
+                    <a href="index.html">Главная</a> <span class="separator">›</span> <span class="current">Каталог запчастей</span>
+                </div>
 
-            <!-- Заголовок -->
-            <h1 class="page-title">Каталог запчастей</h1>
+                <!-- Заголовок -->
+                <h1 class="page-title">Каталог запчастей</h1>
+            </div>
 
             <!-- Панель фильтров -->
             <div class="catalog-toolbar">
@@ -152,15 +154,15 @@
 
             <!-- Сетка товаров с атрибутами data-category для фильтрации -->
             <div class="products-grid" id="productsGrid">
-                
+
                 <!-- Товар 1: Жгут верхнего решета - 3 фото - категория "жгуты" -->
                 <div class="product-card" data-product-id="1" data-category="жгуты">
                     <div class="product-gallery">
                         <div class="gallery-container" id="gallery-1">
                             <div class="gallery-track">
-                                <div class="gallery-slide"><img src="../products/jgut-verh-1.jpg" alt="Жгут верхнего решета вид 1"></div>
-                                <div class="gallery-slide"><img src="../products/jgut-verh-2.jpg" alt="Жгут верхнего решета вид 2"></div>
-                                <div class="gallery-slide"><img src="../products/jgut-verh-3.jpg" alt="Жгут верхнего решета вид 3"></div>
+                                <div class="gallery-slide"><img src="jgut-verh-1.jpg" alt="Жгут верхнего решета вид 1"></div>
+                                <div class="gallery-slide"><img src="jgut-verh-2.jpg" alt="Жгут верхнего решета вид 2"></div>
+                                <div class="gallery-slide"><img src="jgut-verh-3.jpg" alt="Жгут верхнего решета вид 3"></div>
                             </div>
                         </div>
                         <button class="gallery-nav prev" onclick="slideGallery(-1, 1)"><i class="fas fa-chevron-left"></i></button>
@@ -188,9 +190,9 @@
                     <div class="product-gallery">
                         <div class="gallery-container" id="gallery-2">
                             <div class="gallery-track">
-                                <div class="gallery-slide"><img src="../products/jgut-niz-1.jpg" alt="Жгут нижнего решета вид 1"></div>
-                                <div class="gallery-slide"><img src="../products/jgut-niz-2.jpg" alt="Жгут нижнего решета вид 2"></div>
-                                <div class="gallery-slide"><img src="../products/jgut-niz-3.jpg" alt="Жгут нижнего решета вид 3"></div>
+                                <div class="gallery-slide"><img src="jgut-niz-1.jpg" alt="Жгут нижнего решета вид 1"></div>
+                                <div class="gallery-slide"><img src="jgut-niz-2.jpg" alt="Жгут нижнего решета вид 2"></div>
+                                <div class="gallery-slide"><img src="jgut-niz-3.jpg" alt="Жгут нижнего решета вид 3"></div>
                             </div>
                         </div>
                         <button class="gallery-nav prev" onclick="slideGallery(-1, 2)"><i class="fas fa-chevron-left"></i></button>
@@ -218,11 +220,11 @@
                     <div class="product-gallery">
                         <div class="gallery-container" id="gallery-3">
                             <div class="gallery-track">
-                                <div class="gallery-slide"><img src="../products/golovka-1.jpg" alt="Головка привода вид 1"></div>
-                                <div class="gallery-slide"><img src="../products/golovka-2.jpg" alt="Головка привода вид 2"></div>
-                                <div class="gallery-slide"><img src="../products/golovka-3.jpg" alt="Головка привода вид 3"></div>
-                                <div class="gallery-slide"><img src="../products/golovka-4.jpg" alt="Головка привода вид 4"></div>
-                                <div class="gallery-slide"><img src="../products/golovka-5.jpg" alt="Головка привода вид 5"></div>
+                                <div class="gallery-slide"><img src="golovka-1.jpg" alt="Головка привода вид 1"></div>
+                                <div class="gallery-slide"><img src="golovka-2.jpg" alt="Головка привода вид 2"></div>
+                                <div class="gallery-slide"><img src="golovka-3.jpg" alt="Головка привода вид 3"></div>
+                                <div class="gallery-slide"><img src="golovka-4.jpg" alt="Головка привода вид 4"></div>
+                                <div class="gallery-slide"><img src="golovka-5.jpg" alt="Головка привода вид 5"></div>
                             </div>
                         </div>
                         <button class="gallery-nav prev" onclick="slideGallery(-1, 3)"><i class="fas fa-chevron-left"></i></button>
@@ -252,8 +254,8 @@
                     <div class="product-gallery">
                         <div class="gallery-container" id="gallery-4">
                             <div class="gallery-track">
-                                <div class="gallery-slide"><img src="../products/gidroakkum-1.jpg" alt="Блок гидроаккумуляторов вид 1"></div>
-                                <div class="gallery-slide"><img src="../products/gidroakkum-2.jpg" alt="Блок гидроаккумуляторов вид 2"></div>
+                                <div class="gallery-slide"><img src="gidroakkum-1.jpg" alt="Блок гидроаккумуляторов вид 1"></div>
+                                <div class="gallery-slide"><img src="gidroakkum-2.jpg" alt="Блок гидроаккумуляторов вид 2"></div>
                             </div>
                         </div>
                         <button class="gallery-nav prev" onclick="slideGallery(-1, 4)"><i class="fas fa-chevron-left"></i></button>
@@ -280,8 +282,8 @@
                     <div class="product-gallery">
                         <div class="gallery-container" id="gallery-5">
                             <div class="gallery-track">
-                                <div class="gallery-slide"><img src="../products/bolt-1.jpg" alt="Болт крепления колеса вид 1"></div>
-                                <div class="gallery-slide"><img src="../products/bolt-2.jpg" alt="Болт крепления колеса вид 2"></div>
+                                <div class="gallery-slide"><img src="bolt-1.jpg" alt="Болт крепления колеса вид 1"></div>
+                                <div class="gallery-slide"><img src="bolt-2.jpg" alt="Болт крепления колеса вид 2"></div>
                             </div>
                         </div>
                         <button class="gallery-nav prev" onclick="slideGallery(-1, 5)"><i class="fas fa-chevron-left"></i></button>
@@ -308,10 +310,10 @@
                     <div class="product-gallery">
                         <div class="gallery-container" id="gallery-6">
                             <div class="gallery-track">
-                                <div class="gallery-slide"><img src="../products/datchik-1.jpg" alt="Датчик давления масла вид 1"></div>
-                                <div class="gallery-slide"><img src="../products/datchik-2.jpg" alt="Датчик давления масла вид 2"></div>
-                                <div class="gallery-slide"><img src="../products/datchik-3.jpg" alt="Датчик давления масла вид 3"></div>
-                                <div class="gallery-slide"><img src="../products/datchik-4.jpg" alt="Датчик давления масла вид 4"></div>
+                                <div class="gallery-slide"><img src="datchik-1.jpg" alt="Датчик давления масла вид 1"></div>
+                                <div class="gallery-slide"><img src="datchik-2.jpg" alt="Датчик давления масла вид 2"></div>
+                                <div class="gallery-slide"><img src="datchik-3.jpg" alt="Датчик давления масла вид 3"></div>
+                                <div class="gallery-slide"><img src="datchik-4.jpg" alt="Датчик давления масла вид 4"></div>
                             </div>
                         </div>
                         <button class="gallery-nav prev" onclick="slideGallery(-1, 6)"><i class="fas fa-chevron-left"></i></button>
@@ -340,10 +342,10 @@
                     <div class="product-gallery">
                         <div class="gallery-container" id="gallery-7">
                             <div class="gallery-track">
-                                <div class="gallery-slide"><img src="../products/mufta-1.jpg" alt="Муфта шлицевая вид 1"></div>
-                                <div class="gallery-slide"><img src="../products/mufta-2.jpg" alt="Муфта шлицевая вид 2"></div>
-                                <div class="gallery-slide"><img src="../products/mufta-3.jpg" alt="Муфта шлицевая вид 3"></div>
-                                <div class="gallery-slide"><img src="../products/mufta-4.jpg" alt="Муфта шлицевая вид 4"></div>
+                                <div class="gallery-slide"><img src="mufta-1.jpg" alt="Муфта шлицевая вид 1"></div>
+                                <div class="gallery-slide"><img src="mufta-2.jpg" alt="Муфта шлицевая вид 2"></div>
+                                <div class="gallery-slide"><img src="mufta-3.jpg" alt="Муфта шлицевая вид 3"></div>
+                                <div class="gallery-slide"><img src="mufta-4.jpg" alt="Муфта шлицевая вид 4"></div>
                             </div>
                         </div>
                         <button class="gallery-nav prev" onclick="slideGallery(-1, 7)"><i class="fas fa-chevron-left"></i></button>
@@ -372,11 +374,11 @@
                     <div class="product-gallery">
                         <div class="gallery-container" id="gallery-8">
                             <div class="gallery-track">
-                                <div class="gallery-slide"><img src="../products/nasos-1.jpg" alt="Насос SNP2NN вид 1"></div>
-                                <div class="gallery-slide"><img src="../products/nasos-2.jpg" alt="Насос SNP2NN вид 2"></div>
-                                <div class="gallery-slide"><img src="../products/nasos-3.jpg" alt="Насос SNP2NN вид 3"></div>
-                                <div class="gallery-slide"><img src="../products/nasos-4.jpg" alt="Насос SNP2NN вид 4"></div>
-                                <div class="gallery-slide"><img src="../products/nasos-5.jpg" alt="Насос SNP2NN вид 5"></div>
+                                <div class="gallery-slide"><img src="nasos-1.jpg" alt="Насос SNP2NN вид 1"></div>
+                                <div class="gallery-slide"><img src="nasos-2.jpg" alt="Насос SNP2NN вид 2"></div>
+                                <div class="gallery-slide"><img src="nasos-3.jpg" alt="Насос SNP2NN вид 3"></div>
+                                <div class="gallery-slide"><img src="nasos-4.jpg" alt="Насос SNP2NN вид 4"></div>
+                                <div class="gallery-slide"><img src="nasos-5.jpg" alt="Насос SNP2NN вид 5"></div>
                             </div>
                         </div>
                         <button class="gallery-nav prev" onclick="slideGallery(-1, 8)"><i class="fas fa-chevron-left"></i></button>
@@ -406,8 +408,8 @@
                     <div class="product-gallery">
                         <div class="gallery-container" id="gallery-9">
                             <div class="gallery-track">
-                                <div class="gallery-slide"><img src="../products/termostat-1.jpg" alt="Термостат вид 1"></div>
-                                <div class="gallery-slide"><img src="../products/termostat-2.jpg" alt="Термостат вид 2"></div>
+                                <div class="gallery-slide"><img src="termostat-1.jpg" alt="Термостат вид 1"></div>
+                                <div class="gallery-slide"><img src="termostat-2.jpg" alt="Термостат вид 2"></div>
                             </div>
                         </div>
                         <button class="gallery-nav prev" onclick="slideGallery(-1, 9)"><i class="fas fa-chevron-left"></i></button>
@@ -434,11 +436,11 @@
                     <div class="product-gallery">
                         <div class="gallery-container" id="gallery-10">
                             <div class="gallery-track">
-                                <div class="gallery-slide"><img src="../products/podshipnik-1.jpg" alt="Узел подшипниковый вид 1"></div>
-                                <div class="gallery-slide"><img src="../products/podshipnik-2.jpg" alt="Узел подшипниковый вид 2"></div>
-                                <div class="gallery-slide"><img src="../products/podshipnik-3.jpg" alt="Узел подшипниковый вид 3"></div>
-                                <div class="gallery-slide"><img src="../products/podshipnik-4.jpg" alt="Узел подшипниковый вид 4"></div>
-                                <div class="gallery-slide"><img src="../products/podshipnik-5.jpg" alt="Узел подшипниковый вид 5"></div>
+                                <div class="gallery-slide"><img src="podshipnik-1.jpg" alt="Узел подшипниковый вид 1"></div>
+                                <div class="gallery-slide"><img src="podshipnik-2.jpg" alt="Узел подшипниковый вид 2"></div>
+                                <div class="gallery-slide"><img src="podshipnik-3.jpg" alt="Узел подшипниковый вид 3"></div>
+                                <div class="gallery-slide"><img src="podshipnik-4.jpg" alt="Узел подшипниковый вид 4"></div>
+                                <div class="gallery-slide"><img src="podshipnik-5.jpg" alt="Узел подшипниковый вид 5"></div>
                             </div>
                         </div>
                         <button class="gallery-nav prev" onclick="slideGallery(-1, 10)"><i class="fas fa-chevron-left"></i></button>
@@ -468,9 +470,9 @@
                     <div class="product-gallery">
                         <div class="gallery-container" id="gallery-11">
                             <div class="gallery-track">
-                                <div class="gallery-slide"><img src="../products/flyanec-1.jpg" alt="Флянец ротора вид 1"></div>
-                                <div class="gallery-slide"><img src="../products/flyanec-2.jpg" alt="Флянец ротора вид 2"></div>
-                                <div class="gallery-slide"><img src="../products/flyanec-3.jpg" alt="Флянец ротора вид 3"></div>
+                                <div class="gallery-slide"><img src="flyanec-1.jpg" alt="Флянец ротора вид 1"></div>
+                                <div class="gallery-slide"><img src="flyanec-2.jpg" alt="Флянец ротора вид 2"></div>
+                                <div class="gallery-slide"><img src="flyanec-3.jpg" alt="Флянец ротора вид 3"></div>
                             </div>
                         </div>
                         <button class="gallery-nav prev" onclick="slideGallery(-1, 11)"><i class="fas fa-chevron-left"></i></button>

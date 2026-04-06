@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>О компании | АГРОМАРКЕТ ТОРШЕНКО</title>
-    
+
     <!-- Микроразметка для страницы -->
     <script type="application/ld+json">
     {
@@ -36,23 +36,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    
+
     <!-- Font Awesome для иконок -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+
     <!-- Подключение общих стилей -->
     <link rel="stylesheet" href="style.css">
-    
+
     <style>
         /* ===== ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ СТРАНИЦЫ "О КОМПАНИИ" ===== */
-        
+
         /* 1. Блок "О компании" - без фото справа, только фон */
         .about-company-section {
             position: relative;
             background: linear-gradient(135deg, var(--white) 0%, var(--wheat-soft) 100%);
             overflow: hidden;
         }
-        
+
         .about-company-section::before {
             content: '';
             position: absolute;
@@ -68,35 +68,35 @@
             pointer-events: none;
             z-index: 0;
         }
-        
+
         .about-company-section .container {
             position: relative;
             z-index: 1;
         }
-        
+
         /* Убираем старый блок с фото */
         .about-grid {
             display: block;
             max-width: 900px;
             margin: 0 auto;
         }
-        
+
         .about-image {
             display: none;
         }
-        
+
         /* 2. Анимация при скролле */
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
-        
+
         .animate-on-scroll.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         /* 3. Кнопки по центру */
         .about-cta {
             display: flex;
@@ -104,26 +104,26 @@
             margin-top: 30px;
             justify-content: center;
         }
-        
+
         /* 4. Улучшенные карточки команды */
         .team-card {
             position: relative;
             overflow: hidden;
         }
-        
+
         .team-card .team-photo {
             transition: transform 0.5s ease;
         }
-        
+
         .team-card:hover .team-photo {
             transform: scale(1.05);
         }
-        
+
         .team-photo i {
             font-size: 3rem;
             color: var(--wheat);
         }
-        
+
         /* 5. Улучшенные карточки сертификатов */
         .certificate-card {
             cursor: pointer;
@@ -132,35 +132,35 @@
             background: linear-gradient(135deg, var(--white) 0%, var(--wheat-soft) 100%);
             overflow: hidden;
         }
-        
+
         .certificate-card:hover {
             transform: translateY(-5px) scale(1.02);
             box-shadow: var(--shadow-hover);
         }
-        
+
         .certificate-card .certificate-icon {
             transition: transform 0.3s ease;
             font-size: 3rem;
             color: var(--wheat);
             margin-bottom: 20px;
         }
-        
+
         .certificate-card:hover .certificate-icon {
             transform: scale(1.1);
         }
-        
+
         /* 6. Галерея фото склада */
         .gallery-section {
             padding: 60px 0;
             background: var(--bg-light);
         }
-        
+
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
         }
-        
+
         .gallery-item {
             position: relative;
             border-radius: var(--radius-lg);
@@ -168,18 +168,18 @@
             cursor: pointer;
             aspect-ratio: 1 / 0.8;
         }
-        
+
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
-        
+
         .gallery-item:hover img {
             transform: scale(1.1);
         }
-        
+
         .gallery-item .gallery-overlay {
             position: absolute;
             bottom: 0;
@@ -191,11 +191,11 @@
             transform: translateY(100%);
             transition: transform 0.3s ease;
         }
-        
+
         .gallery-item:hover .gallery-overlay {
             transform: translateY(0);
         }
-        
+
         /* 7. Стили для модального окна фото */
         .photo-modal .modal-container {
             max-width: 90vw;
@@ -203,12 +203,12 @@
             background: transparent;
             box-shadow: none;
         }
-        
+
         .photo-modal .modal-body {
             padding: 0;
             background: transparent;
         }
-        
+
         .photo-modal img {
             width: 100%;
             height: auto;
@@ -216,13 +216,13 @@
             object-fit: contain;
             border-radius: var(--radius-lg);
         }
-        
+
         /* 8. Улучшенный блок брендов */
         .brand-showcase-card {
             position: relative;
             overflow: hidden;
         }
-        
+
         .brand-showcase-card::after {
             content: '';
             position: absolute;
@@ -233,38 +233,38 @@
             background: linear-gradient(90deg, transparent, rgba(230,200,124,0.2), transparent);
             transition: left 0.5s ease;
         }
-        
+
         .brand-showcase-card:hover::after {
             left: 100%;
         }
-        
+
         /* 9. Контент блока "О компании" - центрируем текст */
         .about-content {
             text-align: center;
         }
-        
+
         .about-content h2 {
             text-align: center;
         }
-        
+
         .about-content h2:after {
             left: 50%;
             transform: translateX(-50%);
         }
-        
+
         /* 10. Адаптив для галереи */
         @media (max-width: 1024px) {
             .gallery-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
-        
+
         @media (max-width: 768px) {
             .gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-        
+
         @media (max-width: 480px) {
             .gallery-grid {
                 grid-template-columns: 1fr;
@@ -272,7 +272,7 @@
         }
     </style>
 </head>
-<body>
+<body class="b2b-theme">
     <!-- Верхняя панель -->
     <div class="top-bar">
         <div class="container">
@@ -342,13 +342,15 @@
 
     <main>
         <div class="container">
-            <!-- Хлебные крошки -->
-            <div class="breadcrumbs">
-                <a href="index.html">Главная</a> <span class="separator">›</span> <span class="current">О компании</span>
-            </div>
+            <div class="page-intro-card">
+                <!-- Хлебные крошки -->
+                <div class="breadcrumbs">
+                    <a href="index.html">Главная</a> <span class="separator">›</span> <span class="current">О компании</span>
+                </div>
 
-            <!-- Заголовок -->
-            <h1 class="page-title">О компании АГРОМАРКЕТ ТОРШЕНКО</h1>
+                <!-- Заголовок -->
+                <h1 class="page-title">О компании АГРОМАРКЕТ ТОРШЕНКО</h1>
+            </div>
         </div>
 
         <!-- Блок "О компании" с фоновым изображением -->
@@ -358,13 +360,13 @@
                     <div class="about-content animate-on-scroll">
                         <h2>Ваш надежный партнер в мире запчастей</h2>
                         <p>ООО «АГРОМАРКЕТТОРШЕНКО» — ваш надежный партнер в мире сельскохозяйственной техники. Мы специализируемся на поставках запасных частей для зерноуборочных и кормоуборочных комбайнов, а также для тракторов Buhler (Бюлер).</p>
-                        
+
                         <p>Наш сайт — это «интернет-витрина», где представлена вся доступная для заказа номенклатура. При оформлении заказа необходимо уточнить наличие и сроки изготовления интересующих позиций. Мы всегда готовы помочь с подбором запчастей, даже если их нет в нашем каталоге.</p>
-                        
+
                         <p>Компания работает на рынке уже более 10 лет. За это время мы заслужили доверие сотен клиентов — от небольших фермерских хозяйств до крупных сельскохозяйственных предприятий. Вся наша продукция соответствует ГОСТам и сопровождается необходимой документацией.</p>
-                        
+
                         <p>Мы находимся в городе Аксай Ростовской области и готовы предложить как самовывоз, так и доставку транспортными компаниями в любой регион России.</p>
-                        
+
                         <div class="about-cta">
                             <a href="catalog.html" class="btn btn-primary">Перейти в каталог</a>
                             <button class="btn btn-outline" onclick="openCallModal()">Заказать звонок</button>
@@ -797,7 +799,7 @@
                 }
             });
         }
-        
+
         // Открытие модального окна с фото
         function openPhotoModal(imgSrc) {
             const modal = document.getElementById('photoModal');
@@ -808,12 +810,12 @@
                 document.body.style.overflow = 'hidden';
             }
         }
-        
+
         // Инициализация анимации
         document.addEventListener('DOMContentLoaded', function() {
             checkScrollAnimation();
             window.addEventListener('scroll', checkScrollAnimation);
-            
+
             // Добавляем классы для анимации
             document.querySelectorAll('.stat-card, .feature-card, .brand-showcase-card, .team-card, .gallery-item, .about-contact-card, .certificate-card, .phone-banner-card, .about-content').forEach(el => {
                 el.classList.add('animate-on-scroll');

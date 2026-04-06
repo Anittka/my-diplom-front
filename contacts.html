@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Контакты | АГРОМАРКЕТ ТОРШЕНКО</title>
-    
+
     <!-- Микроразметка для страницы -->
     <script type="application/ld+json">
     {
@@ -60,14 +60,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    
+
     <!-- Font Awesome для иконок -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+
     <!-- Подключение общих стилей -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="b2b-theme">
     <!-- Верхняя панель -->
     <div class="top-bar">
         <div class="container">
@@ -137,20 +137,22 @@
 
     <main>
         <div class="container">
-            <!-- Хлебные крошки -->
-            <div class="breadcrumbs">
-                <a href="index.html">Главная</a> <span class="separator">›</span> <span class="current">Контакты</span>
-            </div>
+            <div class="page-intro-card">
+                <!-- Хлебные крошки -->
+                <div class="breadcrumbs">
+                    <a href="index.html">Главная</a> <span class="separator">›</span> <span class="current">Контакты</span>
+                </div>
 
-            <!-- Заголовок -->
-            <h1 class="page-title">Контакты</h1>
+                <!-- Заголовок -->
+                <h1 class="page-title">Контакты</h1>
+            </div>
         </div>
 
         <!-- Контактная информация -->
         <section class="contacts-info-section">
             <div class="container">
                 <div class="contacts-info-grid">
-                    
+
                     <!-- Адрес -->
                     <div class="contact-info-card" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
                         <div class="contact-icon">
@@ -193,7 +195,7 @@
                         <a href="mailto:info@agromarkettorshenko.ru" class="contact-email">info@agromarkettorshenko.ru</a>
                         <a href="mailto:sale@agromarkettorshenko.ru" class="contact-email">sale@agromarkettorshenko.ru</a>
                         <a href="mailto:engineer@agromarkettorshenko.ru" class="contact-email">engineer@agromarkettorshenko.ru</a>
-                        
+
                         <h4 class="social-title">Мы в соцсетях</h4>
                         <div class="contact-social-links">
                             <a href="https://vk.com/agromarkettorshenko" target="_blank" aria-label="ВКонтакте"><i class="fab fa-vk"></i></a>
@@ -210,7 +212,7 @@
             <div class="container">
                 <h2 class="section-title">Схема проезда</h2>
                 <div class="map-container">
-                    <iframe src="https://yandex.ru/map-widget/v1/?ll=39.874674%2C47.267858&z=17&pt=39.874674%2C47.267858%2Cpm2rdm&l=map" 
+                    <iframe src="https://yandex.ru/map-widget/v1/?ll=39.874674%2C47.267858&z=17&pt=39.874674%2C47.267858%2Cpm2rdm&l=map"
                             allowfullscreen="true" title="Карта проезда">
                     </iframe>
                 </div>
@@ -243,17 +245,17 @@
                                 <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
                             </div>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="email">Электронная почта</label>
                             <input type="email" id="email" name="email" placeholder="example@mail.ru">
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="message">Сообщение *</label>
                             <textarea id="message" name="message" placeholder="Опишите ваш вопрос или укажите артикул запчасти..." required></textarea>
                         </div>
-                        
+
                         <div class="form-group">
                             <label>Удобный способ связи</label>
                             <div class="contact-preference">
@@ -268,7 +270,7 @@
                                 </label>
                             </div>
                         </div>
-                        
+
                         <div class="checkbox-group">
                             <label class="checkbox-label">
                                 <input type="checkbox" name="agreement" required>
@@ -277,7 +279,7 @@
                                 </span>
                             </label>
                         </div>
-                        
+
                         <div class="form-submit">
                             <button type="submit" class="btn btn-primary">Отправить сообщение</button>
                         </div>
