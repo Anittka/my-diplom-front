@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% load static %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>О компании | {{ site_settings.company_name|default:'АГРОМАРКЕТ ТОРШЕНКО' }}</title>
+  <meta name="description" content="О компании {{ site_settings.company_name|default:'АГРОМАРКЕТ ТОРШЕНКО' }}: опыт работы, принципы подбора деталей, формат взаимодействия и основные направления поставки." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#5a4636" />
+  <link rel="canonical" href="https://agromarkettorshenko.ru/about/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:site_name" content="{{ site_settings.company_name|default:'АГРОМАРКЕТ ТОРШЕНКО' }}" />
+  <meta property="og:title" content="О компании | {{ site_settings.company_name|default:'АГРОМАРКЕТ ТОРШЕНКО' }}" />
+  <meta property="og:description" content="Информация о компании, принципах работы и подборе запчастей для сельхозтехники." />
+  <meta property="og:url" content="https://agromarkettorshenko.ru/about/" />
+  <meta property="og:image" content="https://agromarkettorshenko.ru/images/og/og-about.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="О компании | {{ site_settings.company_name|default:'АГРОМАРКЕТ ТОРШЕНКО' }}" />
+  <meta name="twitter:description" content="Информация о компании, принципах работы и подборе запчастей для сельхозтехники." />
+  <meta name="twitter:image" content="https://agromarkettorshenko.ru/images/og/og-about.jpg" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "{{ site_settings.company_name|default:'АГРОМАРКЕТ ТОРШЕНКО' }}",
+    "url": "https://agromarkettorshenko.ru/",
+    "telephone": "{{ site_settings.phone_link|default:'+79081881111' }}",
+    "email": "{{ site_settings.email|default:'info@agromarkettorshenko.ru' }}",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Аксай",
+      "addressRegion": "Ростовская область",
+      "streetAddress": "{{ site_settings.address|default:'ул. Ленина, 48' }}",
+      "addressCountry": "RU"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  {% if site_settings.favicon %}
+    <link rel="icon" href="{{ site_settings.favicon.url }}">
+  {% endif %}
+
+  <link rel="stylesheet" href="{% static 'siteapp/css/main.css' %}" />
+</head>
+
+<body data-page="/about/">
+  <a class="skip-link" href="#main-content">Перейти к содержанию</a>
+
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <div class="topbar__group">
+        <span><i class="fa-solid fa-location-dot"></i> {{ site_settings.address|default:'Аксай, Ростовская область' }}</span>
+        <span><i class="fa-solid fa-clock"></i> {{ site_settings.work_time|default:'Пн–Сб: 08:00–18:00' }}</span>
+      </div>
+
+      <div class="topbar__group">
+        <a href="{% url 'about' %}">О компании</a>
+        <a href="{% url 'delivery' %}">Доставка</a>
+        <a href="{% url 'contacts' %}">Контакты</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="header" id="siteHeader">
+    <div class="header__top">
+      <div class="container header__top-inner">
+        <a href="{% url 'index' %}" class="logo" aria-label="{{ site_settings.company_name|default:'АГРОМАРКЕТ ТОРШЕНКО' }} — на главную">
+          {% if site_settings.logo_image %}
+            <img class="logo__image" src="{{ site_settings.logo_image.url }}" alt="{{ site_settings.company_name|default:'АГРОМАРКЕТ ТОРШЕНКО' }}">
+          {% endif %}
+          <span class="logo__title">{{ site_settings.company_name|default:'АГРОМАРКЕТ ТОРШЕНКО' }}</span>
+          <span class="logo__subtitle">{{ site_settings.subtitle|default:'Запчасти для сельхозтехники с 2014 года' }}</span>
+        </a>
+
+        <form class="header-search" role="search" aria-label="Поиск по сайту">
+          <label class="sr-only" for="siteSearch">Поиск по сайту</label>
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <input id="siteSearch" type="search" placeholder="Поиск по сайту..." autocomplete="off" />
+        </form>
+
+        <div class="header-actions">
+          <a href="tel:{{ site_settings.phone_link|default:'+79081881111' }}" class="header-phone">
+            <i class="fa-solid fa-phone"></i>
+            <span>{{ site_settings.phone|default:'8 (908) 188-11-11' }}</span>
+          </a>
+
+          <button class="btn btn--primary" type="button" data-open-modal="callbackModal" data-request-type="callback" data-modal-title="Заказать звонок">
+            Заказать звонок
+          </button>
+
+          <button class="mobile-toggle" id="mobileToggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Открыть меню">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <nav class="header__nav container" aria-label="Основная навигация">
+      <ul class="nav-list">
+        <li><a href="{% url 'index' %}">Главная</a></li>
+        <li><a href="{% url 'catalog' %}">Каталог</a></li>
+        <li><a href="{% url 'articles' %}">Полезные советы</a></li>
+        <li><a class="is-active" href="{% url 'about' %}">О компании</a></li>
+        <li><a href="{% url 'delivery' %}">Доставка</a></li>
+        <li><a href="{% url 'contacts' %}">Контакты</a></li>
+      </ul>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu" hidden>
+      <div class="container mobile-menu__inner">
+        <a href="{% url 'index' %}">Главная</a>
+        <a href="{% url 'catalog' %}">Каталог</a>
+        <a href="{% url 'articles' %}">Полезные советы</a>
+        <a href="{% url 'about' %}">О компании</a>
+        <a href="{% url 'delivery' %}">Доставка</a>
+        <a href="{% url 'contacts' %}">Контакты</a>
+        <button class="btn btn--primary" type="button" data-open-modal="callbackModal" data-request-type="callback" data-modal-title="Заказать звонок">
+          Заказать звонок
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero page-hero--about">
+      <div class="container">
+        <div class="breadcrumbs">
+          <a href="{% url 'index' %}">Главная</a>
+          <span class="separator">/</span>
+          <span>О компании</span>
+        </div>
+
+        <div class="section-head">
+          <div>
+            <h1 class="section-title">
+              {{ site_settings.about_title|default:'Надёжный поставщик запчастей и комплектующих для сельхозтехники' }}
+            </h1>
+            <p class="section-text">
+              {{ site_settings.company_name|default:'АГРОМАРКЕТ ТОРШЕНКО' }} помогает хозяйствам, сервисным центрам и частным клиентам быстро подобрать нужные детали, согласовать наличие и организовать поставку по удобной схеме.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-hero-grid">
+          <article class="about-hero-card about-hero-card--accent">
+            <span>10+ лет</span>
+            <p>практического опыта в подборе и поставке запчастей для техники сезонной эксплуатации.</p>
+          </article>
+
+          <article class="about-hero-card">
+            <span>Подбор по запросу</span>
+            <p>Работаем по артикулу, фото детали, модели техники и параметрам узла.</p>
+          </article>
+
+          <article class="about-hero-card">
+            <span>Поставка по России</span>
+            <p>Согласовываем удобный формат выдачи, самовывоза или отгрузки транспортной компанией.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="container about-story-grid">
+        <article class="about-story-card">
+          <h2 class="section-title">Компания, ориентированная на рабочий результат</h2>
+
+          <p>
+            {{ site_settings.about_text|default:'Наша работа строится вокруг реальной задачи клиента: подобрать нужную деталь, проверить совместимость, уточнить наличие и помочь быстро перейти к поставке.' }}
+          </p>
+
+          <p>
+            Мы не перегружаем клиента сложными сценариями. Если известен артикул — быстро найдём позицию. Если артикула нет — подберём по фото, образцу, модели техники или описанию узла.
+          </p>
+
+          <div class="stack-actions">
+            <button class="btn btn--primary" type="button" data-open-modal="callbackModal" data-request-type="selection" data-modal-title="Подобрать деталь">
+              Подобрать деталь
+            </button>
+            <a class="btn btn--outline" href="{% url 'catalog' %}">
+              Перейти в каталог
+            </a>
+          </div>
+        </article>
+
+        <article class="about-story-card about-story-card--outline">
+          <h2>Чем занимаемся</h2>
+
+          <ul class="feature-list">
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Подбор комплектующих для комбайнов, тракторов и другой сельхозтехники.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Консультации по совместимости, наличию, срокам и вариантам получения.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Работа с ходовыми позициями: фильтры, ремни, подшипники, гидравлика, электрика, расходники.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Подготовка заказов к выдаче, самовывозу и отправке по России.</span>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--darkband about-advantages-band">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <div>
+            <h2 class="section-title">Почему с нами удобно работать</h2>
+          </div>
+        </div>
+
+        <div class="serious-advantages-grid">
+          <article class="serious-advantage-card">
+            <div class="serious-advantage-card__icon">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3>Проверка совместимости</h3>
+            <p>Перед оформлением запроса уточняем параметры техники, артикул, назначение детали и условия эксплуатации.</p>
+          </article>
+
+          <article class="serious-advantage-card">
+            <div class="serious-advantage-card__icon">
+              <i class="fa-solid fa-user-gear"></i>
+            </div>
+            <h3>Живая консультация</h3>
+            <p>По каждому запросу можно связаться с менеджером и уточнить детали без сложной онлайн-корзины.</p>
+          </article>
+
+          <article class="serious-advantage-card">
+            <div class="serious-advantage-card__icon">
+              <i class="fa-solid fa-truck-fast"></i>
+            </div>
+            <h3>Удобная логистика</h3>
+            <p>Согласовываем самовывоз или отправку транспортной компанией под ваш график и регион.</p>
+          </article>
+
+          <article class="serious-advantage-card">
+            <div class="serious-advantage-card__icon">
+              <i class="fa-solid fa-boxes-stacked"></i>
+            </div>
+            <h3>Ходовые категории</h3>
+            <p>Поддерживаем востребованные направления и помогаем быстро закрывать частые сервисные задачи.</p>
+          </article>
+
+          <article class="serious-advantage-card">
+            <div class="serious-advantage-card__icon">
+              <i class="fa-solid fa-camera"></i>
+            </div>
+            <h3>Подбор по фото</h3>
+            <p>Если точного номера нет, можно отправить фотографию детали, упаковки или узла для первичного уточнения.</p>
+          </article>
+
+          <article class="serious-advantage-card">
+            <div class="serious-advantage-card__icon">
+              <i class="fa-solid fa-phone-volume"></i>
+            </div>
+            <h3>Быстрый отклик</h3>
+            <p>Запросы по наличию, подбору и условиям получения обрабатываются менеджером в рабочее время.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section team-section section--soft">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Кто отвечает за результат на каждом этапе</h2>
+                    </div>
+
+        <div class="cards cards--3 team-cards-grid">
+          <article class="card team-person-card">
+            <div class="icon">
+              <i class="fa-solid fa-user-tie"></i>
+            </div>
+            <h3>Руководитель</h3>
+            <p>Отвечает за развитие направлений, поставки, стандарты работы и качество клиентского сервиса.</p>
+          </article>
+
+          <article class="card team-person-card">
+            <div class="icon">
+              <i class="fa-solid fa-headset"></i>
+            </div>
+            <h3>Менеджер по подбору</h3>
+            <p>Принимает обращения, уточняет артикул, модель техники, параметры узла и помогает сформировать запрос.</p>
+          </article>
+
+          <article class="card team-person-card">
+            <div class="icon">
+              <i class="fa-solid fa-warehouse"></i>
+            </div>
+            <h3>Склад и отгрузка</h3>
+            <p>Проверяет комплектность, подготавливает заказ к выдаче и передаче в транспортную компанию.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-workflow-section">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <div>
+            <h2 class="section-title">От запроса до получения заказа</h2>
+          </div>
+        </div>
+
+        <div class="timeline-grid">
+          <article class="timeline-card">
+            <span>01</span>
+            <h3>Получаем запрос</h3>
+            <p>По телефону, через форму, в мессенджере или по позиции из каталога.</p>
+          </article>
+
+          <article class="timeline-card">
+            <span>02</span>
+            <h3>Уточняем задачу</h3>
+            <p>Проверяем артикул, совместимость, наличие, сроки и дополнительные условия.</p>
+          </article>
+
+          <article class="timeline-card">
+            <span>03</span>
+            <h3>Согласовываем условия</h3>
+            <p>Обсуждаем получение, оплату, самовывоз или отправку транспортной компанией.</p>
+          </article>
+
+          <article class="timeline-card">
+            <span>04</span>
+            <h3>Передаём заказ</h3>
+            <p>Готовим заказ к выдаче или отгрузке и сопровождаем клиента до завершения сделки.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft warehouse-gallery-section warehouse-gallery-section--clean">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Рабочая среда компании</h2>
+                      </div>
+        </div>
+
+       
+  <div class="warehouse-slider" aria-label="Фотографии рабочей среды">
+  <article class="warehouse-slide">
+    <img src="{% static 'siteapp/images/warehouse-stockk.jpeg' %}" alt="Складские позиции" loading="lazy">
+    <div>
+      <strong>Складские позиции</strong>
+      <span>Ходовые комплектующие и расходники.</span>
+    </div>
+  </article>
+
+  <article class="warehouse-slide">
+    <img src="{% static 'siteapp/images/warehouse-delivery.jpeg' %}" alt="Подготовка заказа" loading="lazy">
+    <div>
+      <strong>Подготовка заказа</strong>
+      <span>Проверка и сборка перед выдачей.</span>
+    </div>
+  </article>
+
+  <article class="warehouse-slide">
+    <img src="{% static 'siteapp/images/warehouse-deliveryy.jpg' %}" alt="Выдача и отправка" loading="lazy">
+    <div>
+      <strong>Выдача и отправка</strong>
+      <span>Заказы для самовывоза и доставки.</span>
+    </div>
+  </article>
+</div>
+
+    <section class="section">
+      <div class="container cta-panel cta-panel--dark cta-panel--lead">
+        <div class="cta-panel__intro">
+          <h2>Нужен подбор, прайс или консультация?</h2>
+          <p>Оставьте заявку — менеджер свяжется с вами, чтобы уточнить наличие, совместимость, срок поставки и удобный формат получения.</p>
+
+          <ul class="check-list">
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Подбор по артикулу, фото или модели техники.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Уточнение цены, наличия и сроков поставки.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Согласование самовывоза или отправки по России.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cta-panel__form compact-form-wrap">
+          <div class="compact-form-top">
+            <h3>Оставить заявку</h3>
+            <p>Укажите имя и телефон, если нужно быстро обсудить задачу.</p>
+          </div>
+
+          <form class="form form--compact js-form" data-django-model="Lead" data-submit-mode="static" method="post" enctype="multipart/form-data" action="{% url 'lead_create' %}" data-django-form="lead">
+            {% csrf_token %}
+            <input type="hidden" name="source_page" value="О компании">
+
+            <input type="text" name="name" placeholder="Ваше имя" autocomplete="name" required>
+            <input type="tel" name="phone" data-phone-mask inputmode="tel" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+            <textarea name="message" rows="4" placeholder="Например: нужен подбор деталей для комбайна"></textarea>
+
+            <label class="checkbox-label checkbox-label--light">
+              <input type="checkbox" name="privacy" required>
+              <span>
+                Я соглашаюсь на обработку персональных данных и принимаю
+                <a href="{% url 'politik' %}">политику конфиденциальности</a>.
+              </span>
+            </label>
+
+            <button class="btn btn--primary" type="submit">Отправить заявку</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq-section faq-section--light">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <div>
+            <h2 class="section-title">Вопросы о компании</h2>
+          </div>
+        </div>
+
+        <div class="faq-list">
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Можно ли обратиться без точного артикула?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Да. Для подбора можно прислать фото детали, модель техники, размеры или описание узла.</p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>С кем чаще всего работает компания?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>С фермерскими хозяйствами, сервисными организациями, агропредприятиями и частными клиентами.</p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Можно ли получить консультацию по поставке?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Да, менеджер подскажет по наличию, срокам, самовывозу и отправке транспортной компанией.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <p class="footer__title">{{ site_settings.company_name|default:'АГРОМАРКЕТ ТОРШЕНКО' }}</p>
+        <p class="footer__text">Страница о компании, подходе к работе и формате взаимодействия с клиентом.</p>
+
+        <div class="footer-socials">
+          {% if site_settings.vk_link %}
+            <a href="{{ site_settings.vk_link }}" target="_blank" rel="noopener" aria-label="VK"><i class="fa-brands fa-vk"></i></a>
+          {% endif %}
+          {% if site_settings.telegram_link %}
+            <a href="{{ site_settings.telegram_link }}" target="_blank" rel="noopener" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+          {% endif %}
+          <a href="{{ site_settings.whatsapp_link|default:'https://wa.me/79081881111' }}" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="tel:{{ site_settings.phone_link|default:'+79081881111' }}" aria-label="Телефон"><i class="fa-solid fa-phone"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h2>Разделы сайта</h2>
+        <a href="{% url 'index' %}">Главная</a>
+        <a href="{% url 'catalog' %}">Каталог</a>
+        <a href="{% url 'articles' %}">Полезные советы</a>
+        <a href="{% url 'about' %}">О компании</a>
+      </div>
+
+      <div>
+        <h2>Информация</h2>
+        <a href="{% url 'delivery' %}">Доставка</a>
+        <a href="{% url 'contacts' %}">Контакты</a>
+        <a href="{% url 'politik' %}">Политика конфиденциальности</a>
+      </div>
+
+      <div>
+        <h2>Контакты</h2>
+        <a href="tel:{{ site_settings.phone_link|default:'+79081881111' }}">{{ site_settings.phone|default:'8 (908) 188-11-11' }}</a>
+        <a href="mailto:{{ site_settings.email|default:'info@agromarkettorshenko.ru' }}">{{ site_settings.email|default:'info@agromarkettorshenko.ru' }}</a>
+        <p>{{ site_settings.address|default:'г. Аксай, ул. Ленина, 48' }}</p>
+        <p>{{ site_settings.work_time|default:'Пн–Сб: 08:00–18:00' }}</p>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <span>{{ site_settings.footer_text|default:'© 2026 АГРОМАРКЕТ ТОРШЕНКО. Все права защищены.' }}</span>
+      <span>Информация на сайте помогает быстрее перейти к подбору и связи с менеджером.</span>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" type="button" aria-label="Наверх">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    Спасибо! Заявка отправлена.
+  </div>
+
+  <div class="modal" id="callbackModal" hidden>
+    <div class="modal__overlay" data-close-modal="callbackModal"></div>
+
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="callbackModalTitle">
+      <div class="modal__header">
+        <h2 id="callbackModalTitle">Заказать звонок</h2>
+        <button class="modal__close" type="button" data-close-modal="callbackModal" aria-label="Закрыть окно">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="modal__body">
+        <p class="modal__note">Оставьте контактные данные и коротко опишите задачу. Менеджер свяжется с вами в рабочее время.</p>
+
+        <form class="form js-form" id="modalRequestForm" data-source-page="/about/" data-django-model="Lead" data-submit-mode="static" method="post" enctype="multipart/form-data" action="{% url 'lead_create' %}" data-django-form="lead">
+          {% csrf_token %}
+
+          <label class="sr-only" for="modalName">Ваше имя</label>
+          <input id="modalName" name="name" type="text" placeholder="Ваше имя" autocomplete="name" required>
+
+          <input type="hidden" id="modalSourcePage" name="source_page" value="/about/">
+
+          <label class="sr-only" for="modalPhone">Телефон</label>
+          <input id="modalPhone" name="phone" type="tel" data-phone-mask inputmode="tel" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+
+          <label class="sr-only" for="modalRequestType">Тип запроса</label>
+          <select id="modalRequestType" name="request_type">
+            <option value="callback">Обратный звонок</option>
+            <option value="price">Уточнение цены</option>
+            <option value="selection">Подбор детали</option>
+          </select>
+
+          <label class="sr-only" for="modalRequestMessage">Комментарий</label>
+          <textarea id="modalRequestMessage" name="message" rows="4" placeholder="Например: нужна консультация по подбору детали"></textarea>
+
+          <label class="checkbox-label">
+            <input type="checkbox" name="privacy" required>
+            <span>
+              Я соглашаюсь на обработку персональных данных и принимаю
+              <a href="{% url 'politik' %}">политику конфиденциальности</a>.
+            </span>
+          </label>
+
+          <button class="btn btn--primary" type="submit">Отправить заявку</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+     <script src="{% static 'siteapp/js/main.js' %}"></script>
+</body>
+</html>

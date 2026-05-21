@@ -1,0 +1,17 @@
+
+:root{
+ --primary:#1f3c2f;
+ --secondary:#f4f7f5;
+ --accent:#2f6b4f;
+}
+body{background:#eef3ef!important;}
+#header{
+ background:linear-gradient(90deg,var(--primary),var(--accent))!important;
+ color:#fff!important;
+}
+.module h2, .module caption{
+ background:var(--accent)!important;
+}
+.dashboard .module table th{
+ font-weight:700;
+}

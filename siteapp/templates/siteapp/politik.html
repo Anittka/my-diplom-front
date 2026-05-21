@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% load static %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Политика конфиденциальности | {{ site_settings.company_name|default:'АГРОМАРКЕТ ТОРШЕНКО' }}</title>
+  <meta name="description" content="Политика конфиденциальности сайта {{ site_settings.company_name|default:'АГРОМАРКЕТ ТОРШЕНКО' }}. Порядок обработки персональных данных пользователей сайта." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#5a4636" />
+  <link rel="canonical" href="https://agromarkettorshenko.ru/politika/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:site_name" content="{{ site_settings.company_name|default:'АГРОМАРКЕТ ТОРШЕНКО' }}" />
+  <meta property="og:title" content="Политика конфиденциальности | {{ site_settings.company_name|default:'АГРОМАРКЕТ ТОРШЕНКО' }}" />
+  <meta property="og:description" content="Информация об обработке персональных данных пользователей сайта." />
+  <meta property="og:url" content="https://agromarkettorshenko.ru/politika/" />
+  <meta property="og:image" content="https://agromarkettorshenko.ru/images/og/og-policy.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Политика конфиденциальности | {{ site_settings.company_name|default:'АГРОМАРКЕТ ТОРШЕНКО' }}" />
+  <meta name="twitter:description" content="Информация об обработке персональных данных пользователей сайта." />
+  <meta name="twitter:image" content="https://agromarkettorshenko.ru/images/og/og-policy.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  {% if site_settings.favicon %}
+    <link rel="icon" href="{{ site_settings.favicon.url }}">
+  {% endif %}
+
+  <link rel="stylesheet" href="{% static 'siteapp/css/main.css' %}" />
+</head>
+
+<body data-page="/politika/">
+  <a class="skip-link" href="#main-content">Перейти к содержанию</a>
+
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <div class="topbar__group">
+        <span><i class="fa-solid fa-location-dot"></i> {{ site_settings.address|default:'Аксай, Ростовская область' }}</span>
+        <span><i class="fa-solid fa-clock"></i> {{ site_settings.work_time|default:'Пн–Сб: 08:00–18:00' }}</span>
+      </div>
+
+      <div class="topbar__group">
+        <a href="{% url 'about' %}">О компании</a>
+        <a href="{% url 'delivery' %}">Доставка</a>
+        <a href="{% url 'contacts' %}">Контакты</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="header" id="siteHeader">
+    <div class="header__top">
+      <div class="container header__top-inner">
+        <a href="{% url 'index' %}" class="logo" aria-label="{{ site_settings.company_name|default:'АГРОМАРКЕТ ТОРШЕНКО' }} — на главную">
+          {% if site_settings.logo_image %}
+            <img class="logo__image" src="{{ site_settings.logo_image.url }}" alt="{{ site_settings.company_name|default:'АГРОМАРКЕТ ТОРШЕНКО' }}">
+          {% endif %}
+          <span class="logo__title">{{ site_settings.company_name|default:'АГРОМАРКЕТ ТОРШЕНКО' }}</span>
+          <span class="logo__subtitle">{{ site_settings.subtitle|default:'Запчасти для сельхозтехники с 2014 года' }}</span>
+        </a>
+
+        <form class="header-search" role="search" aria-label="Поиск по сайту">
+          <label class="sr-only" for="siteSearch">Поиск по сайту</label>
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <input id="siteSearch" type="search" placeholder="Поиск по сайту..." autocomplete="off" />
+        </form>
+
+        <div class="header-actions">
+          <a href="tel:{{ site_settings.phone_link|default:'+79081881111' }}" class="header-phone">
+            <i class="fa-solid fa-phone"></i>
+            <span>{{ site_settings.phone|default:'8 (908) 188-11-11' }}</span>
+          </a>
+
+          <button class="btn btn--primary" type="button" data-open-modal="callbackModal" data-request-type="callback" data-modal-title="Заказать звонок">
+            Заказать звонок
+          </button>
+
+          <button class="mobile-toggle" id="mobileToggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Открыть меню">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <nav class="header__nav container" aria-label="Основная навигация">
+      <ul class="nav-list">
+        <li><a href="{% url 'index' %}">Главная</a></li>
+        <li><a href="{% url 'catalog' %}">Каталог</a></li>
+        <li><a href="{% url 'articles' %}">Полезные советы</a></li>
+        <li><a href="{% url 'about' %}">О компании</a></li>
+        <li><a href="{% url 'delivery' %}">Доставка</a></li>
+        <li><a href="{% url 'contacts' %}">Контакты</a></li>
+      </ul>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu" hidden>
+      <div class="container mobile-menu__inner">
+        <a href="{% url 'index' %}">Главная</a>
+        <a href="{% url 'catalog' %}">Каталог</a>
+        <a href="{% url 'articles' %}">Полезные советы</a>
+        <a href="{% url 'about' %}">О компании</a>
+        <a href="{% url 'delivery' %}">Доставка</a>
+        <a href="{% url 'contacts' %}">Контакты</a>
+
+        <button class="btn btn--primary" type="button" data-open-modal="callbackModal" data-request-type="callback" data-modal-title="Заказать звонок">
+          Заказать звонок
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero page-hero--policy">
+      <div class="container">
+        <div class="breadcrumbs">
+          <a href="{% url 'index' %}">Главная</a>
+          <span class="separator">/</span>
+          <span>Политика конфиденциальности</span>
+        </div>
+
+        <div class="section-head">
+          <div>
+            <h1 class="section-title">Политика конфиденциальности</h1>
+            <p class="section-text">
+              Документ определяет порядок обработки персональных данных пользователей, которые направляют обращения через формы на сайте {{ site_settings.company_name|default:'АГРОМАРКЕТ ТОРШЕНКО' }}.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft policy-document-section">
+      <div class="container policy-layout">
+        <aside class="policy-aside">
+          <div class="policy-aside__card">
+            <h2>Кратко</h2>
+
+            <ul class="policy-aside__list">
+              <li>какие данные собираются;</li>
+              <li>для чего они используются;</li>
+              <li>как защищаются;</li>
+              <li>как отозвать согласие.</li>
+            </ul>
+          </div>
+
+          <div class="policy-aside__card">
+            <h2>Контакты</h2>
+
+            <p>
+              <strong>Телефон:</strong><br>
+              <a href="tel:{{ site_settings.phone_link|default:'+79081881111' }}">
+                {{ site_settings.phone|default:'8 (908) 188-11-11' }}
+              </a>
+            </p>
+
+            <p>
+              <strong>Email:</strong><br>
+              <a href="mailto:{{ site_settings.email|default:'info@agromarkettorshenko.ru' }}">
+                {{ site_settings.email|default:'info@agromarkettorshenko.ru' }}
+              </a>
+            </p>
+
+            <p class="policy-date">Дата актуализации: 2026 год</p>
+          </div>
+        </aside>
+
+        <article class="policy-card policy-card--strict">
+          <section>
+            <h2>1. Общие положения</h2>
+            <p>
+              Настоящая политика конфиденциальности определяет порядок обработки и защиты персональных данных, получаемых от пользователей сайта.
+            </p>
+            <p>
+              Использование сайта и отправка обращения через формы обратной связи означает согласие пользователя с условиями настоящего документа.
+            </p>
+          </section>
+
+          <section>
+            <h2>2. Перечень обрабатываемых данных</h2>
+            <p>При использовании сайта могут обрабатываться следующие данные:</p>
+            <ul>
+              <li>имя пользователя;</li>
+              <li>номер телефона;</li>
+              <li>адрес электронной почты при его указании;</li>
+              <li>содержание сообщения, заявки или комментария;</li>
+              <li>файл или изображение, если пользователь добровольно прикрепляет его к заявке;</li>
+              <li>иные сведения, добровольно переданные пользователем.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>3. Цели обработки персональных данных</h2>
+            <p>Персональные данные используются для следующих целей:</p>
+            <ul>
+              <li>обработка входящих обращений и обратная связь с пользователем;</li>
+              <li>подбор товара, консультация и уточнение информации по заявке;</li>
+              <li>информирование о наличии, сроках поставки, порядке получения и оплате;</li>
+              <li>исполнение обязательств, возникающих из обращения пользователя;</li>
+              <li>улучшение качества обработки заявок и клиентского сервиса.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>4. Условия и порядок обработки</h2>
+            <p>
+              Обработка персональных данных осуществляется законно и добросовестно, только в объёме, необходимом для достижения заявленных целей.
+            </p>
+            <p>
+              Персональные данные предоставляются пользователем добровольно. Оператор принимает необходимые организационные и технические меры для их защиты.
+            </p>
+          </section>
+
+          <section>
+            <h2>5. Передача третьим лицам</h2>
+            <p>
+              Персональные данные не передаются третьим лицам, за исключением случаев, предусмотренных законодательством Российской Федерации, либо когда такая передача необходима для исполнения обращения пользователя.
+            </p>
+            <p>
+              Например, отдельные данные могут потребоваться для согласования доставки, оформления документов или связи с пользователем по его заявке.
+            </p>
+          </section>
+
+          <section>
+            <h2>6. Хранение и защита данных</h2>
+            <p>
+              Срок хранения персональных данных определяется целями обработки, требованиями законодательства и необходимостью работы с обращением пользователя.
+            </p>
+            <p>
+              Компания принимает разумные меры для защиты данных от неправомерного доступа, изменения, раскрытия или уничтожения.
+            </p>
+          </section>
+
+          <section>
+            <h2>7. Права пользователя</h2>
+            <p>Пользователь имеет право:</p>
+            <ul>
+              <li>получать сведения об обработке своих персональных данных;</li>
+              <li>требовать уточнения, ограничения обработки или удаления данных;</li>
+              <li>отозвать согласие на обработку персональных данных;</li>
+              <li>обратиться по контактам сайта для разъяснения вопросов, связанных с обработкой данных.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>8. Использование файлов cookie</h2>
+            <p>
+              Сайт может использовать технические cookie-файлы, необходимые для корректной работы страниц, форм и сервисных сценариев.
+            </p>
+            <p>
+              Такие файлы не используются для целей, не связанных с функционированием сайта, если иное отдельно не указано пользователю.
+            </p>
+          </section>
+
+          <section>
+            <h2>9. Формы обратной связи</h2>
+            <p>
+              При отправке формы обратной связи пользователь самостоятельно вводит контактные данные и текст обращения. Эти сведения используются для связи с пользователем и обработки его запроса.
+            </p>
+            <p>
+              Если пользователь прикрепляет файл, изображение или фото детали, такой материал используется только для уточнения запроса, подбора позиции или консультации.
+            </p>
+          </section>
+
+          <section>
+            <h2>10. Изменение политики</h2>
+            <p>
+              Администрация сайта вправе актуализировать настоящую политику. Действующая редакция всегда публикуется на этой странице.
+            </p>
+          </section>
+        </article>
+      </div>
+    </section>
+
+    <section class="section faq-section faq-section--light">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <div>
+            <h2 class="section-title">Вопросы по обработке данных</h2>
+          </div>
+        </div>
+
+        <div class="faq-list">
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Какие данные передаются через формы на сайте?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Обычно это имя, телефон, email, текст обращения и файл, если пользователь сам прикрепляет его к заявке.</p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Можно ли отозвать согласие?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Да. Для этого достаточно связаться с компанией по телефону или email, указанным в разделе «Контакты».</p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Зачем сайту нужна политика конфиденциальности?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Она объясняет, какие данные обрабатываются, для чего они используются и как обеспечивается их защита.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <p class="footer__title">{{ site_settings.company_name|default:'АГРОМАРКЕТ ТОРШЕНКО' }}</p>
+        <p class="footer__text">Страница с правовой информацией и условиями обработки персональных данных пользователей сайта.</p>
+
+        <div class="footer-socials">
+          {% if site_settings.vk_link %}
+            <a href="{{ site_settings.vk_link }}" target="_blank" rel="noopener" aria-label="VK"><i class="fa-brands fa-vk"></i></a>
+          {% endif %}
+          {% if site_settings.telegram_link %}
+            <a href="{{ site_settings.telegram_link }}" target="_blank" rel="noopener" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+          {% endif %}
+          <a href="{{ site_settings.whatsapp_link|default:'https://wa.me/79081881111' }}" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="tel:{{ site_settings.phone_link|default:'+79081881111' }}" aria-label="Телефон"><i class="fa-solid fa-phone"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h2>Разделы сайта</h2>
+        <a href="{% url 'index' %}">Главная</a>
+        <a href="{% url 'catalog' %}">Каталог</a>
+        <a href="{% url 'articles' %}">Полезные советы</a>
+        <a href="{% url 'about' %}">О компании</a>
+      </div>
+
+      <div>
+        <h2>Информация</h2>
+        <a href="{% url 'delivery' %}">Доставка</a>
+        <a href="{% url 'contacts' %}">Контакты</a>
+        <a href="{% url 'politik' %}">Политика конфиденциальности</a>
+      </div>
+
+      <div>
+        <h2>Контакты</h2>
+        <a href="tel:{{ site_settings.phone_link|default:'+79081881111' }}">{{ site_settings.phone|default:'8 (908) 188-11-11' }}</a>
+        <a href="mailto:{{ site_settings.email|default:'info@agromarkettorshenko.ru' }}">{{ site_settings.email|default:'info@agromarkettorshenko.ru' }}</a>
+        <p>{{ site_settings.address|default:'г. Аксай, ул. Ленина, 48' }}</p>
+        <p>{{ site_settings.work_time|default:'Пн–Сб: 08:00–18:00' }}</p>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <span>{{ site_settings.footer_text|default:'© 2026 АГРОМАРКЕТ ТОРШЕНКО. Все права защищены.' }}</span>
+      <span>Материалы на сайте носят информационный характер.</span>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" type="button" aria-label="Наверх">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    Спасибо! Заявка отправлена.
+  </div>
+
+  <div class="modal" id="callbackModal" hidden>
+    <div class="modal__overlay" data-close-modal="callbackModal"></div>
+
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="callbackModalTitle">
+      <div class="modal__header">
+        <h2 id="callbackModalTitle">Заказать звонок</h2>
+        <button class="modal__close" type="button" data-close-modal="callbackModal" aria-label="Закрыть окно">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="modal__body">
+        <p class="modal__note">Оставьте контактные данные и коротко опишите запрос. Менеджер свяжется с вами в рабочее время.</p>
+
+        <form class="form js-form" id="modalRequestForm" data-source-page="/politika/" data-django-model="Lead" data-submit-mode="static" method="post" enctype="multipart/form-data" action="{% url 'lead_create' %}" data-django-form="lead">
+          {% csrf_token %}
+
+          <label class="sr-only" for="modalName">Ваше имя</label>
+          <input id="modalName" name="name" type="text" placeholder="Ваше имя" autocomplete="name" required>
+
+          <input type="hidden" id="modalSourcePage" name="source_page" value="/politika/">
+
+          <label class="sr-only" for="modalPhone">Телефон</label>
+          <input id="modalPhone" name="phone" type="tel" data-phone-mask inputmode="tel" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+
+          <label class="sr-only" for="modalRequestType">Тип запроса</label>
+          <select id="modalRequestType" name="request_type">
+            <option value="callback">Обратный звонок</option>
+            <option value="price">Уточнение цены</option>
+            <option value="selection">Подбор детали</option>
+          </select>
+
+          <label class="sr-only" for="modalRequestMessage">Комментарий</label>
+          <textarea id="modalRequestMessage" name="message" rows="4" placeholder="Например: нужна консультация по товару"></textarea>
+
+          <label class="checkbox-label">
+            <input type="checkbox" name="privacy" required>
+            <span>
+              Я соглашаюсь на обработку персональных данных и принимаю
+              <a href="{% url 'politik' %}">политику конфиденциальности</a>.
+            </span>
+          </label>
+
+          <button class="btn btn--primary" type="submit">Отправить заявку</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+ 
+   
+
+  <script src="{% static 'siteapp/js/main.js' %}"></script>
+</body>
+</html>
