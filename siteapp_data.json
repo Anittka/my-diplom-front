@@ -1,0 +1,972 @@
+[
+{
+  "model": "siteapp.category",
+  "pk": 1,
+  "fields": {
+    "name": "Жгуты",
+    "slug": "zhguty",
+    "description": "Электрика, жгуты, разъёмы и элементы подключения для сельхозтехники.",
+    "image": "",
+    "is_active": true,
+    "order": 1
+  }
+},
+{
+  "model": "siteapp.category",
+  "pk": 2,
+  "fields": {
+    "name": "Ремни",
+    "slug": "remni",
+    "description": "Приводные ремни, шкивы и сопутствующие элементы для обслуживания техники.",
+    "image": "",
+    "is_active": true,
+    "order": 2
+  }
+},
+{
+  "model": "siteapp.category",
+  "pk": 3,
+  "fields": {
+    "name": "Фильтры",
+    "slug": "filtry",
+    "description": "Фильтры, датчики и элементы планового обслуживания.",
+    "image": "",
+    "is_active": true,
+    "order": 3
+  }
+},
+{
+  "model": "siteapp.category",
+  "pk": 4,
+  "fields": {
+    "name": "Подшипники",
+    "slug": "podshipniki",
+    "description": "Подшипниковые узлы, корпусные подшипники и комплектующие.",
+    "image": "",
+    "is_active": true,
+    "order": 4
+  }
+},
+{
+  "model": "siteapp.category",
+  "pk": 5,
+  "fields": {
+    "name": "Гидравлика",
+    "slug": "gidravlika",
+    "description": "Насосы, фланцы, муфты, гидроаккумуляторы и другие гидроэлементы.",
+    "image": "",
+    "is_active": true,
+    "order": 5
+  }
+},
+{
+  "model": "siteapp.category",
+  "pk": 6,
+  "fields": {
+    "name": "Жатка",
+    "slug": "zhatka",
+    "description": "",
+    "image": "",
+    "is_active": true,
+    "order": 0
+  }
+},
+{
+  "model": "siteapp.product",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "title": "Жгут верхнего решета",
+    "slug": "jgut-verhnego-resheta",
+    "article": "152.10.28.570A",
+    "description": "Позиция каталога. Название, артикул, фото и статус можно изменить в админ-панели.",
+    "availability": "В наличии",
+    "price_note": "Цена по телефону",
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-05-02T08:53:36.535Z"
+  }
+},
+{
+  "model": "siteapp.product",
+  "pk": 2,
+  "fields": {
+    "category": 1,
+    "title": "Жгут нижнего решета",
+    "slug": "jgut-nizhnego-resheta",
+    "article": "152.10.28.580",
+    "description": "Позиция каталога. Название, артикул, фото и статус можно изменить в админ-панели.",
+    "availability": "В наличии",
+    "price_note": "Цена по телефону",
+    "is_featured": false,
+    "is_active": true,
+    "created_at": "2026-05-02T08:53:36.719Z"
+  }
+},
+{
+  "model": "siteapp.product",
+  "pk": 3,
+  "fields": {
+    "category": 5,
+    "title": "Блок гидроаккумулятора",
+    "slug": "gidroakkumulyator",
+    "article": "GA-120",
+    "description": "Позиция каталога. Название, артикул, фото и статус можно изменить в админ-панели.",
+    "availability": "В наличии",
+    "price_note": "Цена по телефону",
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-05-02T08:53:36.926Z"
+  }
+},
+{
+  "model": "siteapp.product",
+  "pk": 4,
+  "fields": {
+    "category": 5,
+    "title": "Фланец гидравлический",
+    "slug": "flanec-gidravlicheskiy",
+    "article": "FL-300",
+    "description": "Позиция каталога. Название, артикул, фото и статус можно изменить в админ-панели.",
+    "availability": "В наличии",
+    "price_note": "Цена по телефону",
+    "is_featured": false,
+    "is_active": true,
+    "created_at": "2026-05-02T08:53:37.075Z"
+  }
+},
+{
+  "model": "siteapp.product",
+  "pk": 5,
+  "fields": {
+    "category": 5,
+    "title": "Насос гидравлический",
+    "slug": "nasos-gidravlicheskiy",
+    "article": "NS-204",
+    "description": "Позиция каталога. Название, артикул, фото и статус можно изменить в админ-панели.",
+    "availability": "В наличии",
+    "price_note": "Цена по телефону",
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-05-02T08:53:37.315Z"
+  }
+},
+{
+  "model": "siteapp.product",
+  "pk": 6,
+  "fields": {
+    "category": 4,
+    "title": "Тандем насосов",
+    "slug": "tandem",
+    "article": "POD-208",
+    "description": "Позиция каталога. Название, артикул, фото и статус можно изменить в админ-панели.",
+    "availability": "В наличии",
+    "price_note": "Цена по телефону",
+    "is_featured": false,
+    "is_active": true,
+    "created_at": "2026-05-02T08:53:37.525Z"
+  }
+},
+{
+  "model": "siteapp.product",
+  "pk": 7,
+  "fields": {
+    "category": 5,
+    "title": "Муфта соединительная",
+    "slug": "mufta-soedinitelnaya",
+    "article": "MF-400",
+    "description": "Позиция каталога. Название, артикул, фото и статус можно изменить в админ-панели.",
+    "availability": "В наличии",
+    "price_note": "Цена по телефону",
+    "is_featured": true,
+    "is_active": true,
+    "created_at": "2026-05-02T08:53:37.647Z"
+  }
+},
+{
+  "model": "siteapp.product",
+  "pk": 9,
+  "fields": {
+    "category": 3,
+    "title": "Датчик системы контроля",
+    "slug": "datchik-sistemy-kontrolya",
+    "article": "DCH-01",
+    "description": "Позиция каталога. Название, артикул, фото и статус можно изменить в админ-панели.",
+    "availability": "В наличии",
+    "price_note": "Цена по телефону",
+    "is_featured": false,
+    "is_active": true,
+    "created_at": "2026-05-02T08:53:37.894Z"
+  }
+},
+{
+  "model": "siteapp.product",
+  "pk": 10,
+  "fields": {
+    "category": 2,
+    "title": "Крепёжный болт",
+    "slug": "krepezhnyy-bolt",
+    "article": "BLT-01",
+    "description": "Позиция каталога. Название, артикул, фото и статус можно изменить в админ-панели.",
+    "availability": "В наличии",
+    "price_note": "Цена по телефону",
+    "is_featured": false,
+    "is_active": true,
+    "created_at": "2026-05-02T08:53:37.991Z"
+  }
+},
+{
+  "model": "siteapp.product",
+  "pk": 11,
+  "fields": {
+    "category": 3,
+    "title": "Термостат",
+    "slug": "termostat",
+    "article": "TRM-01",
+    "description": "Позиция каталога. Название, артикул, фото и статус можно изменить в админ-панели.",
+    "availability": "В наличии",
+    "price_note": "Цена по телефону",
+    "is_featured": false,
+    "is_active": true,
+    "created_at": "2026-05-02T08:53:38.120Z"
+  }
+},
+{
+  "model": "siteapp.product",
+  "pk": 12,
+  "fields": {
+    "category": 4,
+    "title": "Подшипниковый узел",
+    "slug": "podshipnik-yzel",
+    "article": "POD-208",
+    "description": "Позиция каталога. Название, артикул, фото и статус можно изменить в админ-панели.",
+    "availability": "В наличии",
+    "price_note": "Цена по телефону",
+    "is_featured": false,
+    "is_active": true,
+    "created_at": "2026-05-02T08:53:38.201Z"
+  }
+},
+{
+  "model": "siteapp.product",
+  "pk": 13,
+  "fields": {
+    "category": 6,
+    "title": "Головка привода 27мм мет.вкладыш АНАЛОГ",
+    "slug": "golovka-privoda-27mm-metvkladysh-analog",
+    "article": "02602.(15956)",
+    "description": "",
+    "availability": "В наличии",
+    "price_note": "Цена по телефону",
+    "is_featured": false,
+    "is_active": true,
+    "created_at": "2026-05-02T18:02:07.023Z"
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 1,
+  "fields": {
+    "product": 1,
+    "image": "products/jgut-verh-1_96rkiPQ.jpg",
+    "alt": "Жгут верхнего решета",
+    "order": 0
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 2,
+  "fields": {
+    "product": 1,
+    "image": "products/jgut-verh-2_TPznCWg.jpg",
+    "alt": "Жгут верхнего решета",
+    "order": 1
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 3,
+  "fields": {
+    "product": 1,
+    "image": "products/jgut-verh-3_vMfTqP4.jpg",
+    "alt": "Жгут верхнего решета",
+    "order": 2
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 4,
+  "fields": {
+    "product": 2,
+    "image": "products/jgut-niz-1_7WjuIPf.jpg",
+    "alt": "Жгут нижнего решета",
+    "order": 0
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 5,
+  "fields": {
+    "product": 2,
+    "image": "products/jgut-niz-2_GzZa7wV.jpg",
+    "alt": "Жгут нижнего решета",
+    "order": 1
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 6,
+  "fields": {
+    "product": 2,
+    "image": "products/jgut-niz-3_BkvnqXc.jpg",
+    "alt": "Жгут нижнего решета",
+    "order": 2
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 7,
+  "fields": {
+    "product": 3,
+    "image": "products/gidroakkum-1_mRB4c50.jpg",
+    "alt": "Гидроаккумулятор",
+    "order": 0
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 8,
+  "fields": {
+    "product": 3,
+    "image": "products/gidroakkum-2_hPHTYHP.jpg",
+    "alt": "Гидроаккумулятор",
+    "order": 1
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 9,
+  "fields": {
+    "product": 4,
+    "image": "products/flyanec-1_eHJnUmu.jpg",
+    "alt": "Фланец гидравлический",
+    "order": 0
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 10,
+  "fields": {
+    "product": 4,
+    "image": "products/flyanec-2_12ayopx.jpg",
+    "alt": "Фланец гидравлический",
+    "order": 1
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 11,
+  "fields": {
+    "product": 4,
+    "image": "products/flyanec-3_BJ17mZl.jpg",
+    "alt": "Фланец гидравлический",
+    "order": 2
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 12,
+  "fields": {
+    "product": 5,
+    "image": "products/nasos-1_N1OUm2h.jpg",
+    "alt": "Насос гидравлический",
+    "order": 0
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 13,
+  "fields": {
+    "product": 5,
+    "image": "products/nasos-2_7Q9KKPQ.jpg",
+    "alt": "Насос гидравлический",
+    "order": 1
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 14,
+  "fields": {
+    "product": 5,
+    "image": "products/nasos-3_VNb5ajl.jpg",
+    "alt": "Насос гидравлический",
+    "order": 2
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 15,
+  "fields": {
+    "product": 5,
+    "image": "products/nasos-4_xtJGH9Q.jpg",
+    "alt": "Насос гидравлический",
+    "order": 3
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 16,
+  "fields": {
+    "product": 5,
+    "image": "products/nasos-5_YIzgEXC.jpg",
+    "alt": "Насос гидравлический",
+    "order": 4
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 17,
+  "fields": {
+    "product": 6,
+    "image": "products/Frame_29.png",
+    "alt": "Тандем насосов",
+    "order": 0
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 18,
+  "fields": {
+    "product": 6,
+    "image": "products/Frame_30.png",
+    "alt": "Тандем насосов",
+    "order": 1
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 19,
+  "fields": {
+    "product": 6,
+    "image": "products/Frame_31.png",
+    "alt": "Тандем насосов",
+    "order": 2
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 20,
+  "fields": {
+    "product": 7,
+    "image": "products/mufta-1_DQEVVJG.jpg",
+    "alt": "Муфта соединительная",
+    "order": 0
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 21,
+  "fields": {
+    "product": 7,
+    "image": "products/mufta-2_MARY2l6.jpg",
+    "alt": "Муфта соединительная",
+    "order": 1
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 24,
+  "fields": {
+    "product": 9,
+    "image": "products/datchik-1_058MDCh.jpg",
+    "alt": "Датчик системы контроля",
+    "order": 0
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 25,
+  "fields": {
+    "product": 9,
+    "image": "products/datchik-2_DAeUxx7.jpg",
+    "alt": "Датчик системы контроля",
+    "order": 1
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 26,
+  "fields": {
+    "product": 10,
+    "image": "products/bolt-1_jqme540.jpg",
+    "alt": "Крепёжный болт",
+    "order": 0
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 27,
+  "fields": {
+    "product": 10,
+    "image": "products/bolt-2_uDFZNQ4.jpg",
+    "alt": "Крепёжный болт",
+    "order": 1
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 28,
+  "fields": {
+    "product": 11,
+    "image": "products/termostat-1_grc2nLY.jpg",
+    "alt": "Термостат",
+    "order": 0
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 29,
+  "fields": {
+    "product": 11,
+    "image": "products/termostat-2_XtW5SEs.jpg",
+    "alt": "Термостат",
+    "order": 1
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 30,
+  "fields": {
+    "product": 12,
+    "image": "products/podshipnik-1_TXqIJYR.jpg",
+    "alt": "Подшипник корпусной",
+    "order": 0
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 31,
+  "fields": {
+    "product": 12,
+    "image": "products/podshipnik-2_cvPhBWw.jpg",
+    "alt": "Подшипник корпусной",
+    "order": 1
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 32,
+  "fields": {
+    "product": 9,
+    "image": "products/datchik-3_pxoZl0f.jpg",
+    "alt": "Датчик системы контроля",
+    "order": 2
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 33,
+  "fields": {
+    "product": 9,
+    "image": "products/datchik-4_g6RtMLv.jpg",
+    "alt": "Датчик системы контроля",
+    "order": 3
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 34,
+  "fields": {
+    "product": 7,
+    "image": "products/mufta-3_DMgGqo3.jpg",
+    "alt": "Муфта соединительная",
+    "order": 2
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 35,
+  "fields": {
+    "product": 7,
+    "image": "products/mufta-4_huwlUAD.jpg",
+    "alt": "Муфта соединительная",
+    "order": 3
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 36,
+  "fields": {
+    "product": 12,
+    "image": "products/podshipnik-3_u89fkGp.jpg",
+    "alt": "",
+    "order": 2
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 37,
+  "fields": {
+    "product": 12,
+    "image": "products/podshipnik-4_Guh7fXL.jpg",
+    "alt": "",
+    "order": 3
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 38,
+  "fields": {
+    "product": 12,
+    "image": "products/podshipnik-5_T8jb5A8.jpg",
+    "alt": "",
+    "order": 4
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 39,
+  "fields": {
+    "product": 13,
+    "image": "products/golovka-1_AkMS5lt.jpg",
+    "alt": "Головка привода",
+    "order": 0
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 40,
+  "fields": {
+    "product": 13,
+    "image": "products/golovka-2_QOKS21f.jpg",
+    "alt": "Головка привода",
+    "order": 1
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 41,
+  "fields": {
+    "product": 13,
+    "image": "products/golovka-3_W3ip06p.jpg",
+    "alt": "Головка привода",
+    "order": 2
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 42,
+  "fields": {
+    "product": 13,
+    "image": "products/golovka-4_24plxp4.jpg",
+    "alt": "Головка привода",
+    "order": 3
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 43,
+  "fields": {
+    "product": 13,
+    "image": "products/golovka-5_a9nLLL6.jpg",
+    "alt": "Головка привода",
+    "order": 4
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 44,
+  "fields": {
+    "product": 6,
+    "image": "products/Frame_32.png",
+    "alt": "Тандем насосов",
+    "order": 3
+  }
+},
+{
+  "model": "siteapp.productimage",
+  "pk": 45,
+  "fields": {
+    "product": 6,
+    "image": "products/Frame_33.png",
+    "alt": "Тандем насосов",
+    "order": 4
+  }
+},
+{
+  "model": "siteapp.lead",
+  "pk": 1,
+  "fields": {
+    "name": "Алексей",
+    "phone": "8 (900) 000-00-00",
+    "email": "",
+    "message": "Нужен подбор подшипника по фото",
+    "request_type": "selection",
+    "source_page": "seed_demo",
+    "status": "new",
+    "priority": "normal",
+    "manager_comment": "",
+    "privacy_accepted": false,
+    "attachment": "",
+    "created_at": "2026-05-02T08:53:38.494Z",
+    "updated_at": "2026-05-02T08:53:38.494Z"
+  }
+},
+{
+  "model": "siteapp.lead",
+  "pk": 2,
+  "fields": {
+    "name": "Игорь",
+    "phone": "8 (900) 111-22-33",
+    "email": "",
+    "message": "Уточнить цену на жгут верхнего решета",
+    "request_type": "price",
+    "source_page": "seed_demo",
+    "status": "in_work",
+    "priority": "normal",
+    "manager_comment": "",
+    "privacy_accepted": false,
+    "attachment": "",
+    "created_at": "2026-05-02T08:53:38.543Z",
+    "updated_at": "2026-05-02T08:53:38.543Z"
+  }
+},
+{
+  "model": "siteapp.lead",
+  "pk": 3,
+  "fields": {
+    "name": "Сергей",
+    "phone": "8 (900) 222-33-44",
+    "email": "",
+    "message": "Интересует доставка транспортной компанией",
+    "request_type": "delivery",
+    "source_page": "seed_demo",
+    "status": "done",
+    "priority": "normal",
+    "manager_comment": "",
+    "privacy_accepted": false,
+    "attachment": "",
+    "created_at": "2026-05-02T08:53:38.560Z",
+    "updated_at": "2026-05-02T08:53:38.560Z"
+  }
+},
+{
+  "model": "siteapp.lead",
+  "pk": 4,
+  "fields": {
+    "name": "Марина",
+    "phone": "8 (900) 333-44-55",
+    "email": "",
+    "message": "Перезвоните по заказу",
+    "request_type": "callback",
+    "source_page": "seed_demo",
+    "status": "new",
+    "priority": "normal",
+    "manager_comment": "",
+    "privacy_accepted": false,
+    "attachment": "",
+    "created_at": "2026-05-02T08:53:38.577Z",
+    "updated_at": "2026-05-02T08:53:38.577Z"
+  }
+},
+{
+  "model": "siteapp.lead",
+  "pk": 5,
+  "fields": {
+    "name": "Павел",
+    "phone": "8 (900) 444-55-66",
+    "email": "",
+    "message": "Насос гидравлический, наличие и срок",
+    "request_type": "product",
+    "source_page": "seed_demo",
+    "status": "done",
+    "priority": "normal",
+    "manager_comment": "",
+    "privacy_accepted": false,
+    "attachment": "",
+    "created_at": "2026-05-02T08:53:38.594Z",
+    "updated_at": "2026-05-02T08:53:38.595Z"
+  }
+},
+{
+  "model": "siteapp.lead",
+  "pk": 6,
+  "fields": {
+    "name": "Петрова Анна Николаева",
+    "phone": "+7 (900) 136-80-19",
+    "email": "anna.petrova007@outlook.com",
+    "message": "нужна вот такая",
+    "request_type": "general",
+    "source_page": "Главная страница",
+    "status": "new",
+    "priority": "normal",
+    "manager_comment": "",
+    "privacy_accepted": true,
+    "attachment": "lead_attachments/flyanec-1.jpg",
+    "created_at": "2026-05-02T17:05:18.213Z",
+    "updated_at": "2026-05-02T17:05:18.213Z"
+  }
+},
+{
+  "model": "siteapp.lead",
+  "pk": 7,
+  "fields": {
+    "name": "Петрова Анна Николаева",
+    "phone": "+7 (900) 136-80-19",
+    "email": "",
+    "message": "такая",
+    "request_type": "price",
+    "source_page": "index",
+    "status": "new",
+    "priority": "normal",
+    "manager_comment": "",
+    "privacy_accepted": true,
+    "attachment": "lead_attachments/datchik-4.jpg",
+    "created_at": "2026-05-02T17:05:44.274Z",
+    "updated_at": "2026-05-02T17:05:44.274Z"
+  }
+},
+{
+  "model": "siteapp.article",
+  "pk": 1,
+  "fields": {
+    "title": "Как выбрать масло для гидросистемы комбайна",
+    "slug": "kak-vybrat-maslo-dlya-gidrosistemy-kombayna",
+    "tag": "Гидросистема",
+    "short_text": "На что обратить внимание при выборе масла для гидросистемы сельхозтехники.",
+    "text": "Выбор масла начинается не с бренда, а с требований производителя техники, вязкости и условий работы. Перед заменой важно учитывать сезонность, рабочую температуру и состояние самой гидросистемы. Если техника работает в тяжёлых условиях, интервал обслуживания лучше уточнять заранее. В заявке менеджеру полезно указать модель техники, тип узла и текущую жидкость.",
+    "image": "",
+    "is_active": true,
+    "created_at": "2026-05-02T08:53:38.282Z"
+  }
+},
+{
+  "model": "siteapp.article",
+  "pk": 2,
+  "fields": {
+    "title": "Признаки износа подшипников перед сезоном",
+    "slug": "priznaki-iznosa-podshipnikov-pered-sezonom",
+    "tag": "Диагностика",
+    "short_text": "Шум, нагрев, люфт и вибрация — признаки, которые нельзя игнорировать.",
+    "text": "Повышенный шум, нагрев, люфт и вибрация — первые сигналы, которые нельзя откладывать до поломки. Перед сезоном лучше проверить рабочие узлы, состояние смазки, герметичность и посадочные места. При подборе подшипника важно знать размер, тип крепления, нагрузку и модель техники.",
+    "image": "articles/статья.подшипники.png",
+    "is_active": true,
+    "created_at": "2026-05-02T08:53:38.298Z"
+  }
+},
+{
+  "model": "siteapp.article",
+  "pk": 3,
+  "fields": {
+    "title": "Как подготовить комбайн к хранению",
+    "slug": "kak-podgotovit-kombayn-k-hraneniyu",
+    "tag": "Межсезонье",
+    "short_text": "Что проверить после сезона, чтобы весной не столкнуться с простоями.",
+    "text": "Перед хранением технику очищают, осматривают основные узлы и фиксируют позиции, которые лучше заменить заранее. Особое внимание уделяют ремням, фильтрам, подшипникам, гидравлическим соединениям и электрике. Такой подход помогает не переносить ремонт на начало сезона.",
+    "image": "",
+    "is_active": true,
+    "created_at": "2026-05-02T08:53:38.311Z"
+  }
+},
+{
+  "model": "siteapp.article",
+  "pk": 4,
+  "fields": {
+    "title": "Как подобрать ремень по размеру и маркировке",
+    "slug": "kak-podobrat-remen-po-razmeru-i-markirovke",
+    "tag": "Ремни",
+    "short_text": "Короткий ориентир по маркировке, длине, профилю и условиям работы ремня.",
+    "text": "Для подбора ремня желательно указать маркировку, ширину, профиль, длину и узел, где он установлен. Если маркировка стерта, помогает фото старого ремня и модель техники. Важно учитывать не только размер, но и условия работы: нагрузку, температуру, влажность и состояние шкивов.",
+    "image": "articles/статья.ремень.png",
+    "is_active": true,
+    "created_at": "2026-05-02T08:53:38.325Z"
+  }
+},
+{
+  "model": "siteapp.article",
+  "pk": 5,
+  "fields": {
+    "title": "Как правильно отправить заявку на подбор детали",
+    "slug": "kak-sformulirovat-zayavku-na-podbor-detali",
+    "tag": "Подбор",
+    "short_text": "Какие данные помогают менеджеру быстрее подобрать нужную позицию.",
+    "text": "Чтобы менеджер быстрее подобрал деталь, укажите артикул, модель техники, фото узла, размеры и описание задачи. Если нужна срочная поставка, сразу напишите желаемый срок и город получения. Чем точнее исходные данные, тем меньше риск ошибки при подборе.",
+    "image": "",
+    "is_active": true,
+    "created_at": "2026-05-02T08:53:38.463Z"
+  }
+},
+{
+  "model": "siteapp.article",
+  "pk": 6,
+  "fields": {
+    "title": "Что проверить в гидравлике перед началом работы",
+    "slug": "chto-proverit-v-gidravlike-pered-rabotoy",
+    "tag": "Гидравлика",
+    "short_text": "Базовая проверка гидросистемы перед сезонной нагрузкой.",
+    "text": "Перед началом активной работы стоит проверить уровень жидкости, состояние шлангов, соединений, фланцев, насосов и гидроаккумуляторов. Следы подтекания, рывки в работе и посторонний шум лучше не игнорировать. При подборе гидравлической детали полезны фото, параметры и модель техники.",
+    "image": "",
+    "is_active": true,
+    "created_at": "2026-05-02T08:53:38.478Z"
+  }
+},
+{
+  "model": "siteapp.sitesettings",
+  "pk": 1,
+  "fields": {
+    "company_name": "АГРОМАРКЕТ ТОРШЕНКО",
+    "subtitle": "Запчасти для сельхозтехники с 2014 года",
+    "logo_image": "",
+    "favicon": "site/фон_UXza2j3.png",
+    "og_image": "site/фон_ZWqk50s.png",
+    "hero_background": "",
+    "hero_card_image": "",
+    "metric_positions_image": "",
+    "metric_experience_image": "",
+    "metric_response_image": "",
+    "metric_delivery_image": "",
+    "category_combines_image": "site/home/комбайны.png",
+    "category_tractors_image": "site/home/тракторы.png",
+    "category_popular_image": "site/home/ходовыепозиции.png",
+    "article_filters_image": "",
+    "article_bearings_image": "",
+    "article_belt_image": "",
+    "phone": "8 (908) 188-11-11",
+    "phone_link": "+79081881111",
+    "manager_phone": "8 (908) 123-45-67",
+    "manager_phone_link": "+79081234567",
+    "email": "info@agromarkettorshenko.ru",
+    "address": "г. Аксай, ул. Ленина, 48",
+    "extra_address": "Ростовская область, Аксайский район, рабочая выдача по согласованию",
+    "legal_address": "Ростовская область, г. Аксай",
+    "work_time": "Пн–Сб: 08:00–18:00",
+    "whatsapp_link": "https://wa.me/79081881111",
+    "telegram_link": "",
+    "vk_link": "",
+    "inn": "Указывается в договорных докум",
+    "kpp": "Указывается при наличии",
+    "ogrn": "Указывается в договорных докум",
+    "hero_title": "Запчасти для комбайнов, тракторов и сельхозтехники",
+    "hero_text": "Помогаем быстро подобрать ходовые позиции, уточнить наличие и согласовать поставку без лишней переписки.",
+    "home_note": "Если нужна консультация по подбору, отправьте заявку — менеджер свяжется с вами в рабочее время.",
+    "metric_positions": "5000+",
+    "metric_experience": "10+ лет",
+    "metric_response": "15 минут",
+    "metric_delivery": "По РФ",
+    "footer_text": "© 2026 АГРОМАРКЕТ ТОРШЕНКО. Все права защищены.",
+    "footer_subnote": "Подбор и поставка запчастей для сельхозтехники: каталог, заявка, доставка и контакты в одном рабочем маршруте.",
+    "seo_description": "Запчасти для сельхозтехники, подбор деталей, консультация и поставка по Ростовской области и России.",
+    "about_title": "Подбор и поставка запчастей для сельхозтехники с опорой на реальную рабочую задачу",
+    "about_text": "АГРОМАРКЕТ ТОРШЕНКО занимается подбором и поставкой запчастей для сельхозтехники. В работе важен не просто каталог, а понимание того, что именно нужно клиенту: артикул, совместимость, модель техники, срок поставки и удобный формат получения.",
+    "about_warehouse_note": "Работа строится вокруг реальных запросов клиентов: подбор по артикулу, фото, модели техники и согласование поставки.",
+    "about_warehouse_image": "",
+    "contacts_title": "Как связаться с компанией",
+    "contacts_text": "Для срочных вопросов удобнее сразу позвонить. Для плановых обращений, подбора и уточнения условий можно оставить заявку через сайт.",
+    "delivery_title": "Как согласовывается получение и отправка заказа",
+    "delivery_text": "После подтверждения позиции менеджер согласовывает наличие, сроки, самовывоз или транспортную компанию.",
+    "articles_title": "Материалы по подбору, обслуживанию и сезонной подготовке техники",
+    "articles_text": "Практические советы, которые помогают быстрее сформулировать запрос и избежать типовых ошибок при подборе деталей.",
+    "is_active": true
+  }
+}
+]

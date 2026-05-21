@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% load static %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Спасибо за заявку — {{ site_settings.company_name|default:'АГРОМАРКЕТ ТОРШЕНКО' }}</title>
+  <meta name="description" content="Заявка отправлена. Менеджер свяжется с вами в рабочее время." />
+  <meta name="robots" content="noindex,follow" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  {% if site_settings.favicon %}
+    <link rel="icon" href="{{ site_settings.favicon.url }}">
+  {% endif %}
+
+  <link rel="stylesheet" href="{% static 'siteapp/css/main.css' %}" />
+</head>
+
+<body data-page="thanks">
+  <main class="thanks-page">
+    <section class="section">
+      <div class="container">
+        <div class="thanks-card">
+          <div class="thanks-card__icon">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+
+          <h1>Спасибо! Заявка отправлена</h1>
+
+          <p>
+            Мы получили ваше обращение. Менеджер свяжется с вами в рабочее время,
+            уточнит детали и поможет с подбором.
+          </p>
+
+          <div class="thanks-card__actions">
+            <a class="btn btn--primary" href="{% url 'index' %}">На главную</a>
+            <a class="btn btn--outline" href="{% url 'catalog' %}">Вернуться в каталог</a>
+          </div>
+
+          <div class="thanks-card__contacts">
+            <span>Срочный вопрос?</span>
+            <a href="tel:{{ site_settings.phone_link|default:'+79081881111' }}">
+              {{ site_settings.phone|default:'8 (908) 188-11-11' }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

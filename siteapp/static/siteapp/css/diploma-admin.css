@@ -1,0 +1,4 @@
+body.login, body{font-family:Inter,Arial,sans-serif;}
+#header{background:#1f2937!important;}
+.module h2, .module caption{background:#243447!important;}
+.dashboard-card{border-radius:18px;box-shadow:0 10px 25px rgba(0,0,0,.08);}

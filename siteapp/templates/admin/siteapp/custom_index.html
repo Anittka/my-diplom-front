@@ -1,0 +1,555 @@
+{% extends "admin/base_site.html" %}
+{% load admin_stats %}
+ 
+{% block extrastyle %}
+{{ block.super }}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+ 
+  #content { max-width: 1460px; font-family: 'IBM Plex Sans', sans-serif; }
+ 
+  /* ═══ ОБЩАЯ СЕТКА ═══ */
+  .admin-shell {
+    display: grid;
+    grid-template-columns: minmax(320px, 380px) minmax(0, 1fr);
+    gap: 20px;
+    align-items: start;
+    margin-top: 20px;
+  }
+ 
+  /* ═══ ЛЕВАЯ КОЛОНКА ═══ */
+  .panel {
+    background: #fff;
+    border: 1px solid #dce8de;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(13,35,24,.07);
+    overflow: hidden;
+  }
+ 
+  /* Hero-шапка панели */
+  .panel__head {
+    padding: 28px 26px;
+    background: linear-gradient(150deg, #0d2318 0%, #1a3d2b 100%);
+    position: relative;
+    overflow: hidden;
+  }
+ 
+  .panel__head::after {
+    content: '🌾';
+    position: absolute;
+    right: -8px;
+    bottom: -18px;
+    font-size: 90px;
+    opacity: .07;
+    pointer-events: none;
+  }
+ 
+  .label {
+    display: inline-flex;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.16);
+    color: #a8c5b5;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+ 
+  .panel h2 {
+    margin: 0 0 8px;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+ 
+  .panel__head p {
+    margin: 0;
+    color: #7fb09a;
+    line-height: 1.55;
+    font-size: 13px;
+  }
+ 
+  /* Счётчики */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    padding: 16px 18px 8px;
+    background: #f8faf8;
+    border-bottom: 1px solid #dce8de;
+  }
+ 
+  .stat {
+    padding: 14px;
+    border: 1px solid #dce8de;
+    border-radius: 14px;
+    background: #fff;
+    transition: box-shadow .15s;
+  }
+ 
+  .stat:hover { box-shadow: 0 4px 14px rgba(13,35,24,.08); }
+ 
+  .stat strong {
+    display: block;
+    font-size: 32px;
+    color: #0d1a26;
+    line-height: 1;
+    margin-bottom: 6px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+ 
+  .stat span {
+    display: block;
+    color: #64748b;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+  }
+ 
+  .stat--warn strong { color: #d97706; }
+  .stat--ok   strong { color: #16a34a; }
+ 
+  /* Тело панели */
+  .panel__body { padding: 16px 18px 20px; }
+ 
+  .section + .section {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #e8f0e9;
+  }
+ 
+  .section h3 {
+    margin: 0 0 10px;
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+ 
+  /* Быстрые ссылки */
+  .quick { display: grid; gap: 7px; }
+ 
+  .quick a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 14px;
+    border: 1px solid #dce8de;
+    border-radius: 12px;
+    text-decoration: none;
+    background: #fff;
+    color: #1f2937 !important;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background .12s, border-color .12s, transform .12s;
+  }
+ 
+  .quick a:hover {
+    background: #f0fdf4;
+    border-color: #a8d5b8;
+    transform: translateX(2px);
+    text-decoration: none;
+  }
+ 
+  .quick a span { color: #94a3b8; font-size: 16px; transition: transform .12s; }
+  .quick a:hover span { transform: translateX(3px); color: #16a34a; }
+ 
+  /* Последние заявки */
+  .lead-mini { margin: 0; padding: 0; list-style: none; display: grid; gap: 7px; }
+ 
+  .lead-mini li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #dce8de;
+    border-radius: 12px;
+    padding: 10px 12px;
+    background: #f8faf8;
+    transition: background .12s;
+  }
+ 
+  .lead-mini li:hover { background: #f0fdf4; }
+ 
+  .lead-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0d2318, #16a34a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+ 
+  .lead-info { flex: 1; min-width: 0; }
+ 
+  .lead-mini strong {
+    display: block;
+    color: #0d1a26;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 2px;
+  }
+ 
+  .lead-mini span {
+    color: #64748b;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+ 
+  /* ═══ ПРАВАЯ ЧАСТЬ ═══ */
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 16px;
+  }
+ 
+  .work-card {
+    background: #fff;
+    border: 1px solid #dce8de;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(13,35,24,.07);
+    overflow: hidden;
+  }
+ 
+  .work-card__head {
+    padding: 20px 24px;
+    border-bottom: 1px solid #dce8de;
+    background: linear-gradient(180deg, #fafcfa 0%, #f4f8f4 100%);
+  }
+ 
+  .work-card h2 {
+    margin: 0 0 4px;
+    color: #0d1a26;
+    font-size: 17px;
+    font-weight: 700;
+  }
+ 
+  .work-card p {
+    margin: 0;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+ 
+  /* Карточки разделов */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 18px;
+  }
+ 
+  .admin-card {
+    border: 1px solid #dce8de;
+    border-radius: 16px;
+    padding: 18px;
+    background: #f8faf8;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow .15s, transform .15s, background .15s;
+  }
+ 
+  .admin-card:hover {
+    background: #fff;
+    box-shadow: 0 6px 22px rgba(13,35,24,.09);
+    transform: translateY(-2px);
+  }
+ 
+  .admin-card__icon { font-size: 24px; margin-bottom: 10px; line-height: 1; }
+ 
+  .admin-card h3 {
+    margin: 0 0 6px;
+    color: #0d1a26;
+    font-size: 15px;
+    font-weight: 700;
+  }
+ 
+  .admin-card p {
+    margin: 0 0 14px;
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.5;
+    flex: 1;
+  }
+ 
+  .card-actions { display: flex; flex-wrap: wrap; gap: 7px; margin-top: auto; }
+ 
+  .card-actions a {
+    display: inline-flex;
+    align-items: center;
+    height: 34px;
+    padding: 0 12px;
+    border-radius: 8px;
+    border: 1px solid #d0ddd1;
+    background: #fff;
+    text-decoration: none;
+    color: #0d1a26 !important;
+    font-weight: 700;
+    font-size: 12px;
+    transition: background .12s, border-color .12s;
+  }
+ 
+  .card-actions a:hover {
+    background: #f0fdf4;
+    border-color: #a8d5b8;
+    text-decoration: none;
+  }
+ 
+  .card-actions a:first-child {
+    background: #0d2318;
+    border-color: #0d2318;
+    color: #fff !important;
+  }
+ 
+  .card-actions a:first-child:hover {
+    background: #1a3d2b;
+    border-color: #1a3d2b;
+  }
+ 
+  /* Карточка статистики — особая */
+  .admin-card--stats {
+    background: linear-gradient(145deg, #0d2318, #1a3d2b);
+    border-color: transparent;
+  }
+ 
+  .admin-card--stats:hover { background: linear-gradient(145deg, #1a3d2b, #0d2318); }
+ 
+  .admin-card--stats h3 { color: #fff; }
+  .admin-card--stats p  { color: #7fb09a; }
+ 
+  .admin-card--stats .card-actions a {
+    background: rgba(255,255,255,.12);
+    border-color: rgba(255,255,255,.2);
+    color: #fff !important;
+  }
+ 
+  .admin-card--stats .card-actions a:hover {
+    background: rgba(255,255,255,.22);
+  }
+ 
+  /* Служебный блок */
+  .service-block { padding: 18px; }
+ 
+  .service-list { display: grid; gap: 7px; }
+ 
+  .service-list a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 14px;
+    border: 1px solid #dce8de;
+    border-radius: 12px;
+    background: #f8faf8;
+    color: #0d1a26 !important;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background .12s, border-color .12s, transform .12s;
+  }
+ 
+  .service-list a:hover {
+    background: #f0fdf4;
+    border-color: #a8d5b8;
+    transform: translateX(2px);
+    text-decoration: none;
+  }
+ 
+  .service-list a span { color: #94a3b8; font-size: 16px; }
+ 
+  /* ═══ АДАПТИВ ═══ */
+  @media (max-width: 1200px) {
+    .admin-shell  { grid-template-columns: 1fr; }
+    .main-grid    { grid-template-columns: 1fr; }
+  }
+ 
+  @media (max-width: 700px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .cards { grid-template-columns: 1fr; }
+  }
+</style>
+{% endblock %}
+ 
+{% block content %}
+{% get_admin_stats as stats %}
+<div class="admin-shell">
+ 
+  {# ═══ ЛЕВАЯ ПАНЕЛЬ ═══ #}
+  <aside class="panel">
+ 
+    <div class="panel__head">
+      <span class="label">🌿 Панель сайта</span>
+      <h2>Управление и статистика</h2>
+      <p>Основные рабочие данные: заявки, товары, контент и настройки сайта.</p>
+    </div>
+ 
+    <div class="stats">
+      <div class="stat {% if stats.new_leads > 0 %}stat--warn{% endif %}">
+        <strong>{{ stats.new_leads }}</strong>
+        <span>Новых заявок</span>
+      </div>
+      <div class="stat">
+        <strong>{{ stats.total_leads }}</strong>
+        <span>Заявок всего</span>
+      </div>
+      <div class="stat">
+        <strong>{{ stats.week_leads }}</strong>
+        <span>За 7 дней</span>
+      </div>
+      <div class="stat stat--ok">
+        <strong>{{ stats.active_products }}</strong>
+        <span>Активных товаров</span>
+      </div>
+      <div class="stat {% if stats.products_without_images > 0 %}stat--warn{% endif %}">
+        <strong>{{ stats.products_without_images }}</strong>
+        <span>Без фото</span>
+      </div>
+      <div class="stat">
+        <strong>{{ stats.active_articles }}</strong>
+        <span>Статей</span>
+      </div>
+    </div>
+ 
+    <div class="panel__body">
+      <div class="section">
+        <h3>Быстрый переход</h3>
+        <div class="quick">
+          <a href="{% url 'admin:siteapp_lead_changelist' %}">📋 Все заявки <span>›</span></a>
+          {% if stats.new_leads > 0 %}
+          <a href="{% url 'admin:siteapp_lead_changelist' %}?status__exact=new" style="border-color:#fde68a; background:#fffbeb;">🔔 Новые заявки <span>›</span></a>
+          {% endif %}
+          <a href="{% url 'admin:siteapp_product_changelist' %}">📦 Каталог товаров <span>›</span></a>
+          <a href="{% url 'admin:siteapp_sitesettings_changelist' %}">⚙️ Настройки сайта <span>›</span></a>
+          <a href="/admin/dashboard/">📊 Dashboard и аналитика <span>›</span></a>
+        </div>
+      </div>
+ 
+      <div class="section">
+        <h3>Последние заявки</h3>
+        <ul class="lead-mini">
+          {% for lead in stats.latest_leads %}
+            <li>
+              <div class="lead-avatar">{{ lead.name|first|upper }}</div>
+              <div class="lead-info">
+                <strong>
+                  <a href="{% url 'admin:siteapp_lead_change' lead.pk %}" style="color:inherit; text-decoration:none;">
+                    {{ lead.name|default:'Без имени' }}
+                  </a>
+                </strong>
+                <span>{{ lead.phone }} · {{ lead.get_status_display }}</span>
+              </div>
+            </li>
+          {% empty %}
+            <li style="border:none; background:none; padding:8px 0;">
+              <span>Заявок пока нет.</span>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+ 
+  </aside>
+ 
+  {# ═══ ПРАВАЯ ЧАСТЬ ═══ #}
+  <section class="main-grid">
+ 
+    <div class="work-card">
+      <div class="work-card__head">
+        <h2>Рабочие разделы</h2>
+        <p>Заявки, каталог, статьи и настройки сайта.</p>
+      </div>
+      <div class="cards">
+        <article class="admin-card">
+          <div class="admin-card__icon">📋</div>
+          <h3>Заявки</h3>
+          <p>Обращения клиентов, статусы, комментарии и вложения.</p>
+          <div class="card-actions">
+            <a href="{% url 'admin:siteapp_lead_changelist' %}">Открыть</a>
+            <a href="{% url 'admin:siteapp_lead_add' %}">Добавить</a>
+          </div>
+        </article>
+        <article class="admin-card">
+          <div class="admin-card__icon">📦</div>
+          <h3>Товары</h3>
+          <p>Каталог позиций, фото, артикулы и выгрузка.</p>
+          <div class="card-actions">
+            <a href="{% url 'admin:siteapp_product_changelist' %}">Открыть</a>
+            <a href="{% url 'admin:siteapp_product_add' %}">Добавить</a>
+          </div>
+        </article>
+        <article class="admin-card">
+          <div class="admin-card__icon">🗂️</div>
+          <h3>Категории</h3>
+          <p>Основные группы товаров на странице каталога.</p>
+          <div class="card-actions">
+            <a href="{% url 'admin:siteapp_category_changelist' %}">Открыть</a>
+            <a href="{% url 'admin:siteapp_category_add' %}">Добавить</a>
+          </div>
+        </article>
+        <article class="admin-card">
+          <div class="admin-card__icon">📰</div>
+          <h3>Статьи</h3>
+          <p>Полезные материалы для клиентов и SEO-раздела.</p>
+          <div class="card-actions">
+            <a href="{% url 'admin:siteapp_article_changelist' %}">Открыть</a>
+            <a href="{% url 'admin:siteapp_article_add' %}">Добавить</a>
+          </div>
+        </article>
+        <article class="admin-card">
+          <div class="admin-card__icon">⚙️</div>
+          <h3>Настройки сайта</h3>
+          <p>Контакты, тексты, логотип, favicon, SEO и подвал.</p>
+          <div class="card-actions">
+            <a href="{% url 'admin:siteapp_sitesettings_changelist' %}">Открыть</a>
+          </div>
+        </article>
+        <article class="admin-card admin-card--stats">
+          <div class="admin-card__icon">📊</div>
+          <h3>Статистика</h3>
+          <p>Сводка по заявкам, товарам и активности.</p>
+          <div class="card-actions">
+            <a href="/admin/dashboard/">Открыть</a>
+          </div>
+        </article>
+      </div>
+    </div>
+ 
+    <div class="work-card">
+      <div class="work-card__head">
+        <h2>Служебное</h2>
+        <p>Доступ, группы и история изменений.</p>
+      </div>
+      <div class="service-block">
+        <div class="service-list">
+          <a href="{% url 'admin:auth_user_changelist' %}">👤 Пользователи <span>›</span></a>
+          <a href="{% url 'admin:auth_group_changelist' %}">🔒 Группы прав <span>›</span></a>
+          <a href="{% url 'admin:siteapp_leadstatushistory_changelist' %}">🕐 История статусов <span>›</span></a>
+        </div>
+      </div>
+    </div>
+ 
+  </section>
+ 
+</div>
+{% endblock %}
+ 

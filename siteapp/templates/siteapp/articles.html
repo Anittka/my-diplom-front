@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% load static %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Полезные материалы | {{ site_settings.company_name|default:'АГРОМАРКЕТ ТОРШЕНКО' }}</title>
+  <meta name="description" content="Полезные материалы по подбору запчастей, обслуживанию сельхозтехники и сезонной подготовке техники." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#5a4636" />
+  <link rel="canonical" href="https://agromarkettorshenko.ru/articles/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:site_name" content="{{ site_settings.company_name|default:'АГРОМАРКЕТ ТОРШЕНКО' }}" />
+  <meta property="og:title" content="Полезные материалы | {{ site_settings.company_name|default:'АГРОМАРКЕТ ТОРШЕНКО' }}" />
+  <meta property="og:description" content="Материалы по подбору деталей, обслуживанию техники и сезонной подготовке." />
+  <meta property="og:url" content="https://agromarkettorshenko.ru/articles/" />
+  <meta property="og:image" content="https://agromarkettorshenko.ru/images/og/og-articles.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Полезные материалы | {{ site_settings.company_name|default:'АГРОМАРКЕТ ТОРШЕНКО' }}" />
+  <meta name="twitter:description" content="Материалы по подбору деталей, обслуживанию техники и сезонной подготовке." />
+  <meta name="twitter:image" content="https://agromarkettorshenko.ru/images/og/og-articles.jpg" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Полезные материалы",
+    "url": "https://agromarkettorshenko.ru/articles/",
+    "description": "Материалы по подбору запчастей и обслуживанию сельхозтехники."
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  {% if site_settings.favicon %}
+    <link rel="icon" href="{{ site_settings.favicon.url }}">
+  {% endif %}
+
+  <link rel="stylesheet" href="{% static 'siteapp/css/main.css' %}" />
+</head>
+
+<body data-page="/articles/">
+  <a class="skip-link" href="#main-content">Перейти к содержанию</a>
+
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <div class="topbar__group">
+        <span><i class="fa-solid fa-location-dot"></i> {{ site_settings.address|default:'Аксай, Ростовская область' }}</span>
+        <span><i class="fa-solid fa-clock"></i> {{ site_settings.work_time|default:'Пн–Сб: 08:00–18:00' }}</span>
+      </div>
+
+      <div class="topbar__group">
+        <a href="{% url 'about' %}">О компании</a>
+        <a href="{% url 'delivery' %}">Доставка</a>
+        <a href="{% url 'contacts' %}">Контакты</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="header" id="siteHeader">
+    <div class="header__top">
+      <div class="container header__top-inner">
+        <a href="{% url 'index' %}" class="logo" aria-label="{{ site_settings.company_name|default:'АГРОМАРКЕТ ТОРШЕНКО' }} — на главную">
+          {% if site_settings.logo_image %}
+            <img class="logo__image" src="{{ site_settings.logo_image.url }}" alt="{{ site_settings.company_name|default:'АГРОМАРКЕТ ТОРШЕНКО' }}">
+          {% endif %}
+          <span class="logo__title">{{ site_settings.company_name|default:'АГРОМАРКЕТ ТОРШЕНКО' }}</span>
+          <span class="logo__subtitle">{{ site_settings.subtitle|default:'Запчасти для сельхозтехники с 2014 года' }}</span>
+        </a>
+
+        <form class="header-search" role="search" aria-label="Поиск по сайту">
+          <label class="sr-only" for="siteSearch">Поиск по сайту</label>
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <input id="siteSearch" type="search" placeholder="Поиск по сайту..." autocomplete="off" />
+        </form>
+
+        <div class="header-actions">
+          <a href="tel:{{ site_settings.phone_link|default:'+79081881111' }}" class="header-phone">
+            <i class="fa-solid fa-phone"></i>
+            <span>{{ site_settings.phone|default:'8 (908) 188-11-11' }}</span>
+          </a>
+
+          <button class="btn btn--primary" type="button" data-open-modal="callbackModal" data-request-type="callback" data-modal-title="Заказать звонок">
+            Заказать звонок
+          </button>
+
+          <button class="mobile-toggle" id="mobileToggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Открыть меню">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <nav class="header__nav container" aria-label="Основная навигация">
+      <ul class="nav-list">
+        <li><a href="{% url 'index' %}">Главная</a></li>
+        <li><a href="{% url 'catalog' %}">Каталог</a></li>
+        <li><a class="is-active" href="{% url 'articles' %}">Полезные советы</a></li>
+        <li><a href="{% url 'about' %}">О компании</a></li>
+        <li><a href="{% url 'delivery' %}">Доставка</a></li>
+        <li><a href="{% url 'contacts' %}">Контакты</a></li>
+      </ul>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu" hidden>
+      <div class="container mobile-menu__inner">
+        <a href="{% url 'index' %}">Главная</a>
+        <a href="{% url 'catalog' %}">Каталог</a>
+        <a href="{% url 'articles' %}">Полезные советы</a>
+        <a href="{% url 'about' %}">О компании</a>
+        <a href="{% url 'delivery' %}">Доставка</a>
+        <a href="{% url 'contacts' %}">Контакты</a>
+        <button class="btn btn--primary" type="button" data-open-modal="callbackModal" data-request-type="callback" data-modal-title="Заказать звонок">
+          Заказать звонок
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumbs">
+          <a href="{% url 'index' %}">Главная</a>
+          <span class="separator">/</span>
+          <span>Полезные материалы</span>
+        </div>
+
+        <div class="section-head">
+          <div>
+            <h1 class="section-title">
+              {{ site_settings.articles_title|default:'Материалы по подбору, обслуживанию и сезонной подготовке техники' }}
+            </h1>
+            <p class="section-text">
+              {{ site_settings.articles_text|default:'Короткие практические материалы, которые помогают быстрее сформулировать запрос и избежать типовых ошибок при подборе деталей.' }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Полезные советы по подбору и обслуживанию</h2>
+          </div>
+        </div>
+
+        <div class="article-promo-grid article-promo-grid--wide">
+          {% for article in articles %}
+            <article class="article-promo" {% if article.image %}style="background-image:url('{{ article.image.url }}');"{% endif %}>
+              <div class="article-promo__content">
+                <h3>{{ article.title }}</h3>
+                <a href="#article-{{ article.id }}" class="btn btn--primary">Читать материал</a>
+              </div>
+            </article>
+          {% empty %}
+            <article class="article-promo" style="background-image:url('{% static 'siteapp/images/article-filters.png' %}');">
+              <div class="article-promo__content">
+                <h3>Как подготовить запрос на подбор запчасти</h3>
+                <button class="btn btn--primary" type="button" data-open-modal="callbackModal" data-request-type="selection" data-modal-title="Подобрать деталь">
+                  Получить консультацию
+                </button>
+              </div>
+            </article>
+
+            <article class="article-promo" style="background-image:url('{% static 'siteapp/images/article-bearings.png' %}');">
+              <div class="article-promo__content">
+                <h3>Что проверить перед сезонным обслуживанием техники</h3>
+                <button class="btn btn--primary" type="button" data-open-modal="callbackModal" data-request-type="selection" data-modal-title="Задать вопрос">
+                  Задать вопрос
+                </button>
+              </div>
+            </article>
+
+            <article class="article-promo" style="background-image:url('{% static 'siteapp/images/article-belt.png' %}');">
+              <div class="article-promo__content">
+                <h3>Как не ошибиться с ремнями, фильтрами и подшипниками</h3>
+                <a href="{% url 'catalog' %}" class="btn btn--primary">Перейти в каталог</a>
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container article-layout-list">
+        {% for article in articles %}
+          <article class="article-layout" id="article-{{ article.id }}">
+            <div class="article-layout__icon">
+              <i class="fa-solid fa-newspaper"></i>
+            </div>
+
+            <div class="article-layout__content">
+              <h2>{{ article.title }}</h2>
+              <p>{{ article.text|linebreaksbr }}</p>
+            </div>
+
+            {% if article.image %}
+              <div class="article-layout__photo" style="background-image:url('{{ article.image.url }}');"></div>
+            {% endif %}
+          </article>
+        {% empty %}
+          <article class="article-layout">
+            <div class="article-layout__icon">
+              <i class="fa-solid fa-circle-info"></i>
+            </div>
+
+            <div class="article-layout__content">
+              <h2>Материалы скоро появятся</h2>
+              <p>Пока раздел наполняется, можно сразу обратиться к менеджеру. Для точного подбора желательно указать артикул, модель техники, фото детали или описание узла.</p>
+            </div>
+
+            <div class="article-layout__photo" style="background-image:url('{% static 'siteapp/images/article-filters.png' %}');"></div>
+          </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container cta-panel cta-panel--dark cta-panel--lead">
+        <div class="cta-panel__intro">
+          <h2>После просмотра материалов можно сразу оставить заявку</h2>
+          <p>Если нужен подбор, уточнение по совместимости, цене или наличию, отправьте запрос — менеджер свяжется с вами в рабочее время.</p>
+
+          <ul class="check-list">
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Подбор по артикулу, фото, модели техники или описанию узла.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Уточнение наличия, совместимости и сроков поставки.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Согласование удобного способа получения заказа.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cta-panel__form compact-form-wrap">
+          <div class="compact-form-top">
+            <h3>Оставить заявку</h3>
+            <p>Оставьте имя и телефон — менеджер поможет с подбором или консультацией.</p>
+          </div>
+
+          <form class="form form--compact js-form" data-django-model="Lead" data-submit-mode="static" method="post" enctype="multipart/form-data" action="{% url 'lead_create' %}" data-django-form="lead">
+            {% csrf_token %}
+            <input type="hidden" name="source_page" value="Полезные материалы">
+
+            <input type="text" name="name" placeholder="Ваше имя" autocomplete="name" required>
+            <input type="tel" name="phone" data-phone-mask inputmode="tel" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+            <textarea name="message" rows="4" placeholder="Например: нужна консультация по фильтрам, ремням или подшипникам"></textarea>
+
+            <label class="checkbox-label checkbox-label--light">
+              <input type="checkbox" name="privacy" required>
+              <span>
+                Я соглашаюсь на обработку персональных данных и принимаю
+                <a href="{% url 'politik' %}">политику конфиденциальности</a>.
+              </span>
+            </label>
+
+            <button class="btn btn--primary" type="submit">Отправить заявку</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq-section faq-section--light">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <div>
+            <h2 class="section-title">Вопросы по материалам</h2>
+          </div>
+        </div>
+
+        <div class="faq-list">
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Можно ли подобрать деталь по статье или совету?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Да, материалы помогают подготовить запрос, а менеджер затем уточняет совместимость и наличие позиции.</p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Это техническая инструкция или общий ориентир?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Материалы на сайте — практические ориентиры. Для точного подбора лучше дополнительно связаться с компанией.</p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Что указать в заявке после просмотра материала?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Укажите модель техники, артикул, фото детали, размеры или описание узла — этого достаточно, чтобы начать подбор.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <p class="footer__title">{{ site_settings.company_name|default:'АГРОМАРКЕТ ТОРШЕНКО' }}</p>
+        <p class="footer__text">Раздел с полезными материалами по подбору деталей и обслуживанию сельхозтехники.</p>
+
+        <div class="footer-socials">
+          {% if site_settings.vk_link %}
+            <a href="{{ site_settings.vk_link }}" target="_blank" rel="noopener" aria-label="VK"><i class="fa-brands fa-vk"></i></a>
+          {% endif %}
+          {% if site_settings.telegram_link %}
+            <a href="{{ site_settings.telegram_link }}" target="_blank" rel="noopener" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+          {% endif %}
+          <a href="{{ site_settings.whatsapp_link|default:'https://wa.me/79081881111' }}" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="tel:{{ site_settings.phone_link|default:'+79081881111' }}" aria-label="Телефон"><i class="fa-solid fa-phone"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h2>Разделы сайта</h2>
+        <a href="{% url 'index' %}">Главная</a>
+        <a href="{% url 'catalog' %}">Каталог</a>
+        <a href="{% url 'articles' %}">Полезные советы</a>
+        <a href="{% url 'about' %}">О компании</a>
+      </div>
+
+      <div>
+        <h2>Информация</h2>
+        <a href="{% url 'delivery' %}">Доставка</a>
+        <a href="{% url 'contacts' %}">Контакты</a>
+        <a href="{% url 'politik' %}">Политика конфиденциальности</a>
+      </div>
+
+      <div>
+        <h2>Контакты</h2>
+        <a href="tel:{{ site_settings.phone_link|default:'+79081881111' }}">{{ site_settings.phone|default:'8 (908) 188-11-11' }}</a>
+        <a href="mailto:{{ site_settings.email|default:'info@agromarkettorshenko.ru' }}">{{ site_settings.email|default:'info@agromarkettorshenko.ru' }}</a>
+        <p>{{ site_settings.address|default:'г. Аксай, ул. Ленина, 48' }}</p>
+        <p>{{ site_settings.work_time|default:'Пн–Сб: 08:00–18:00' }}</p>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <span>{{ site_settings.footer_text|default:'© 2026 АГРОМАРКЕТ ТОРШЕНКО. Все права защищены.' }}</span>
+      <span>Информация на сайте помогает быстрее перейти к подбору и связи с менеджером.</span>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" type="button" aria-label="Наверх">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    Спасибо! Заявка отправлена.
+  </div>
+
+  <div class="modal" id="callbackModal" hidden>
+    <div class="modal__overlay" data-close-modal="callbackModal"></div>
+
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="callbackModalTitle">
+      <div class="modal__header">
+        <h2 id="callbackModalTitle">Заказать звонок</h2>
+        <button class="modal__close" type="button" data-close-modal="callbackModal" aria-label="Закрыть окно">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="modal__body">
+        <p class="modal__note">Оставьте контактные данные, если хотите уточнить материал, подобрать позицию или получить консультацию.</p>
+
+        <form class="form js-form" id="modalRequestForm" data-source-page="/articles/" data-django-model="Lead" data-submit-mode="static" method="post" enctype="multipart/form-data" action="{% url 'lead_create' %}" data-django-form="lead">
+          {% csrf_token %}
+
+          <label class="sr-only" for="modalName">Ваше имя</label>
+          <input id="modalName" name="name" type="text" placeholder="Ваше имя" autocomplete="name" required>
+
+          <input type="hidden" id="modalSourcePage" name="source_page" value="/articles/">
+
+          <label class="sr-only" for="modalPhone">Телефон</label>
+          <input id="modalPhone" name="phone" type="tel" data-phone-mask inputmode="tel" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+
+          <label class="sr-only" for="modalRequestType">Тип запроса</label>
+          <select id="modalRequestType" name="request_type">
+            <option value="callback">Обратный звонок</option>
+            <option value="price">Уточнение цены</option>
+            <option value="selection">Подбор детали</option>
+          </select>
+
+          <label class="sr-only" for="modalRequestMessage">Комментарий</label>
+          <textarea id="modalRequestMessage" name="message" rows="4" placeholder="Например: нужна консультация по подбору детали"></textarea>
+
+          <label class="checkbox-label">
+            <input type="checkbox" name="privacy" required>
+            <span>
+              Я соглашаюсь на обработку персональных данных и принимаю
+              <a href="{% url 'politik' %}">политику конфиденциальности</a>.
+            </span>
+          </label>
+
+          <button class="btn btn--primary" type="submit">Отправить заявку</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+    <script src="{% static 'siteapp/js/main.js' %}"></script>
+</body>
+</html>
