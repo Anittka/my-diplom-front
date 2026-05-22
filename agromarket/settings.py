@@ -1,12 +1,16 @@
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+<<<<<<< HEAD
 import dj_database_url
+=======
+>>>>>>> 89f7712a25099520718883959bfce88ec1f1cc26
 
 load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+<<<<<<< HEAD
 # Безопасность и отладка
 SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-agromarket-diplom-local-key')
 DEBUG = os.getenv('DEBUG', 'True') == 'True'
@@ -23,13 +27,27 @@ if os.environ.get('RENDER_EXTERNAL_HOSTNAME'):
     ALLOWED_HOSTS.append(os.environ.get('RENDER_EXTERNAL_HOSTNAME'))
 
 # Проверки безопасности для production
+=======
+SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-agromarket-diplom-local-key')
+DEBUG = os.getenv('DEBUG', 'True') == 'True'
+
+ALLOWED_HOSTS = [
+    h.strip()
+    for h in os.getenv('ALLOWED_HOSTS', '127.0.0.1,localhost,testserver').split(',')
+    if h.strip()
+]
+
+>>>>>>> 89f7712a25099520718883959bfce88ec1f1cc26
 if not DEBUG and SECRET_KEY == 'django-insecure-agromarket-diplom-local-key':
     raise ValueError('Для production необходимо указать SECRET_KEY в .env')
 
 if not DEBUG and ('127.0.0.1' in ALLOWED_HOSTS or 'localhost' in ALLOWED_HOSTS):
     raise ValueError('Для production необходимо указать реальный домен в ALLOWED_HOSTS')
 
+<<<<<<< HEAD
 # Приложения
+=======
+>>>>>>> 89f7712a25099520718883959bfce88ec1f1cc26
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,10 +58,15 @@ INSTALLED_APPS = [
     'siteapp',
 ]
 
+<<<<<<< HEAD
 # Промежуточное ПО (добавлен WhiteNoise)
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',  # Для отдачи статических файлов
+=======
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+>>>>>>> 89f7712a25099520718883959bfce88ec1f1cc26
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -53,12 +76,16 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'agromarket.urls'
+<<<<<<< HEAD
 
 # Шаблоны
+=======
+>>>>>>> 89f7712a25099520718883959bfce88ec1f1cc26
 TEMPLATES = [{
     'BACKEND': 'django.template.backends.django.DjangoTemplates',
     'DIRS': [],
     'APP_DIRS': True,
+<<<<<<< HEAD
     'OPTIONS': {
         'context_processors': [
             'django.template.context_processors.request',
@@ -95,10 +122,36 @@ else:
         }}
 
 # Локализация
+=======
+    'OPTIONS': {'context_processors': [
+        'django.template.context_processors.request',
+        'django.contrib.auth.context_processors.auth',
+        'django.contrib.messages.context_processors.messages',
+        'siteapp.context_processors.site_settings',
+    ]},
+}]
+WSGI_APPLICATION = 'agromarket.wsgi.application'
+
+# По умолчанию SQLite, чтобы проект сразу запускался.
+# Для PostgreSQL создай .env и укажи DB_ENGINE=postgresql.
+if os.getenv('DB_ENGINE') == 'postgresql':
+    DATABASES = {'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('DB_NAME', 'agromarket_db'),
+        'USER': os.getenv('DB_USER', 'postgres'),
+        'PASSWORD': os.getenv('DB_PASSWORD', ''),
+        'HOST': os.getenv('DB_HOST', 'localhost'),
+        'PORT': os.getenv('DB_PORT', '5432'),
+    }}
+else:
+    DATABASES = {'default': {'ENGINE': 'django.db.backends.sqlite3', 'NAME': BASE_DIR / 'db.sqlite3'}}
+
+>>>>>>> 89f7712a25099520718883959bfce88ec1f1cc26
 LANGUAGE_CODE = 'ru-ru'
 TIME_ZONE = 'Europe/Moscow'
 USE_I18N = True
 USE_TZ = True
+<<<<<<< HEAD
 
 # Статические и медиа-файлы
 STATIC_URL = 'static/'
@@ -111,6 +164,16 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Безопасность
+=======
+STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Базовые настройки безопасности. Для локального запуска DEBUG=True, для публикации укажи DEBUG=False в .env.
+>>>>>>> 89f7712a25099520718883959bfce88ec1f1cc26
 CSRF_TRUSTED_ORIGINS = [u.strip() for u in os.getenv('CSRF_TRUSTED_ORIGINS', '').split(',') if u.strip()]
 SECURE_CONTENT_TYPE_NOSNIFF = True
 X_FRAME_OPTIONS = 'DENY'
@@ -124,15 +187,25 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = os.getenv('SECURE_HSTS_INCLUDE_SUBDOMAINS', 'Fa
 SECURE_HSTS_PRELOAD = os.getenv('SECURE_HSTS_PRELOAD', 'False') == 'True'
 DATA_UPLOAD_MAX_MEMORY_SIZE = 5 * 1024 * 1024
 FILE_UPLOAD_MAX_MEMORY_SIZE = 5 * 1024 * 1024
+<<<<<<< HEAD
 
 # Email
+=======
+>>>>>>> 89f7712a25099520718883959bfce88ec1f1cc26
 EMAIL_BACKEND = os.getenv('EMAIL_BACKEND', 'django.core.mail.backends.console.EmailBackend')
 DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'site@agromarket.local')
 ADMIN_EMAIL = os.getenv('ADMIN_EMAIL', '')
 
+<<<<<<< HEAD
 # Папка для бэкапов (если нужно)
 if not os.path.exists('backups'):
     os.makedirs('backups')
 
 # Разрешаем iframe для карты (было в конце)
+=======
+import os
+if not os.path.exists('backups'):
+    os.makedirs('backups')
+
+>>>>>>> 89f7712a25099520718883959bfce88ec1f1cc26
 X_FRAME_OPTIONS = 'SAMEORIGIN'

@@ -279,8 +279,8 @@ class SiteSettings(models.Model):
     about_warehouse_note  = models.TextField('Описание склада / фото на странице О компании', blank=True,
                                               default='Работа строится вокруг реальных запросов клиентов.')
     about_warehouse_image = models.ImageField('Фото склада / компании', upload_to='site/', blank=True, null=True)
-    about_preparing_image = models.ImageField('Фото подготовки заказа', upload_to='site/about/', blank=True, null=True)
-    about_delivery_image = models.ImageField('Фото выдачи/отправки', upload_to='site/about/', blank=True, null=True)
+    #about_preparing_image = models.ImageField('Фото подготовки заказа', upload_to='site/about/', blank=True, null=True)
+    #about_delivery_image = models.ImageField('Фото выдачи/отправки', upload_to='site/about/', blank=True, null=True)
 
     # ── Тексты остальных страниц ─────────────────────────────
     contacts_title  = models.CharField('Заголовок страницы Контакты', max_length=255, default='Как связаться с компанией')
